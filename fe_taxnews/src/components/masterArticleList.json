@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "5b7a249fc267e007cf70bf96",
+    "title": "Top stories title 1",
+    "subTitle": "Top stories subtitle 1",
+    "articleDate": "2018-08-20T02:17:03.000Z"
+  },
+  {
+    "_id": "5b7a29542a599309c749f67b",
+    "title": "Article Top stories 2",
+    "subTitle": "Article Top stories 2 Subtitle",
+    "articleDate": "2018-08-20T02:37:18.000Z"
+  },
+  {
+    "_id": "5b7a29682a599309c749f67c",
+    "title": "Article Top stories 3",
+    "subTitle": "Article Top stories 3 Subtitle",
+    "articleDate": "2018-08-20T02:37:28.000Z"
+  },
+  {
+    "_id": "5b7a29842a599309c749f67d",
+    "title": "Article Top stories 4",
+    "subTitle": "Article Top stories 4 Subtitle",
+    "articleDate": "2018-08-20T02:37:56.000Z"
+  },
+  {
+    "_id": "5b7a299b2a599309c749f67e",
+    "title": "Article Top stories 5",
+    "subTitle": "Article Top stories 5 Subtitle",
+    "articleDate": "2018-08-20T02:38:19.000Z"
+  }
+]
