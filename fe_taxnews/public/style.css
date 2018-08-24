@@ -259,6 +259,11 @@ a.btn {color:#666; text-align: center; text-decoration: none;}
 }
 .total-news {
 	padding: 0;
+	
+	background: #00aeff;
+	margin-top: 28px;
+	height: 1299px;
+	
 }
 .slider{
 	position:relative;
@@ -735,6 +740,7 @@ a.more1 {
 }
 .side-bar {
 	padding: 0 0 0 25px;
+	
 }
 .sign_up input[type="text"] {
 	width: 100%;

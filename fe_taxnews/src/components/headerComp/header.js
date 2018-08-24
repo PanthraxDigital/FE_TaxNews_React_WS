@@ -9,13 +9,13 @@ class Header extends Component {
         <div className="header">
           <div className="header-left">
             <div className="logo">
-              <a href="index.html">
+              <Link to="/">
                 <h6>The</h6>
                 <h1>
                   Tax
                   <span>News</span>
                 </h1>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="social-icons">
@@ -75,29 +75,25 @@ class Header extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/top-stories">
-                TOP STORIES
-              </Link>
+              <Link to="/top-stories">TOP STORIES</Link>
             </li>
             <li>
-              <Link to="/income-tax">
-                INCOME TAX
-              </Link>
+              <Link to="/income-tax">INCOME TAX</Link>
             </li>
             <li>
-            <Link to="/gst">GST</Link>
+              <Link to="/gst">GST</Link>
             </li>
             <li>
-            <Link to="/indirect-tax">INDIRECT TAX</Link>
+              <Link to="/indirect-tax">INDIRECT TAX</Link>
             </li>
             <li>
-            <Link to="/nbfc-rbi">NBFC/RBI</Link>
+              <Link to="/nbfc-rbi">NBFC/RBI</Link>
             </li>
             <li>
-            <Link to="/sebi">SEBI</Link>
+              <Link to="/sebi">SEBI</Link>
             </li>
             <li>
-            <Link to="/more">MORE</Link>
+              <Link to="/more">MORE</Link>
             </li>
           </ul>
         </div>

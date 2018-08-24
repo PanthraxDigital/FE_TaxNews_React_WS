@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { browserHistory } from "react-router";
 import topStoriesData from "./masterArticleList.json";
 import incomeTaxData from "./incomeTax.json";
 
@@ -36,14 +35,15 @@ class Master extends Component {
 
   render() {
     return (
-      <div>
+      <div class="col-md-9 total-news">
         <h1>Welcome to Master</h1>
-
-        <ul>
-          {this.state.masterListData.map(function(data) {
-            return <li>{data.title}</li>;
-          })}
-        </ul>
+        <div class="posts">
+          <ul>
+            {this.state.masterListData.map(function(data) {
+              return <li>{data.title}</li>;
+            })}
+          </ul>
+        </div>
       </div>
     );
   }
