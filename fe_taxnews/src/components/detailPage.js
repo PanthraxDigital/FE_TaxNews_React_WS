@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 class DetailPage extends Component {
+    
+
     constructor(props){
         super(props);
+        
     }
   render() {
     return (
@@ -83,6 +86,6 @@ class DetailPage extends Component {
 
 export default DetailPage;
 
-//1. design the detail page -
+//1. design the detail page - done
 //2. add the facebook comment login
 //3. display the other news article list at the bottom, related to same category

@@ -4,11 +4,12 @@ import incomeTaxData from "./incomeTax.json";
 import { Link } from "react-router-dom";
 
 //Navigation of all the Menu
-
+//var URL = "";
 class MasterPage extends Component {
   constructor(props) {
     super(props);
-    ///alert(this.props.location.pathname);
+    this.url = this.props.location.pathname;
+    //URL = this.props.location.pathname;
   }
 
   state = {
@@ -19,7 +20,7 @@ class MasterPage extends Component {
     // fetch the data as per the URL
     // mean while will mock the json
 
-    switch (this.props.location.pathname) {
+    switch (this.url) {
       case "/top-stories":
         this.setState({
           masterListData: topStoriesData
@@ -43,7 +44,7 @@ class MasterPage extends Component {
               return (
                 <div className="grid box">
                   <div className="grid-header">
-                    <Link className="gotosingle" to="/top-stories/9o5u34iwifjsdf9s098">
+                    <Link className="gotosingle" to={this.url + "/" + data._id}>
                       {data.title}
                     </Link>
                     <ul>
@@ -83,7 +84,7 @@ class MasterPage extends Component {
                   </div>
                 </div>
               );
-            })}
+            }, this)}
           </div>
         </div>
       </div>

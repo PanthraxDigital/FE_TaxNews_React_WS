@@ -8,8 +8,8 @@ class MasterPageRoute extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/top-stories/:id" component={DetailPage}  />
-        <Route exact path="/top-stories" component={MasterPage} />
+        <Route path="/:category/:id" component={DetailPage}  key="1" />
+        <Route exact path="/:category" component={MasterPage} key="2" />
       </Switch>
     );
   }
