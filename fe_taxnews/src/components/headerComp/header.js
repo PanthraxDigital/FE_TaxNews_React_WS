@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import headerStyle from "./header.css";
 
 class Header extends Component {
   render() {
@@ -9,7 +8,7 @@ class Header extends Component {
         <div>
           <div className="header-left">
             <div className="logo">
-              <Link to="/">
+              <Link to="/top-stories/3423werwrwrw">
                 <h6>The</h6>
                 <h1>
                   Tax

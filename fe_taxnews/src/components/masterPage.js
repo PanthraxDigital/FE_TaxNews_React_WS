@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import topStoriesData from "./masterArticleList.json";
 import incomeTaxData from "./incomeTax.json";
+import { Link } from "react-router-dom";
 
 //Navigation of all the Menu
 
-class Master extends Component {
+class MasterPage extends Component {
   constructor(props) {
     super(props);
     ///alert(this.props.location.pathname);
@@ -42,9 +43,9 @@ class Master extends Component {
               return (
                 <div className="grid box">
                   <div className="grid-header">
-                    <a className="gotosingle" href="#">
+                    <Link className="gotosingle" to="/top-stories/9o5u34iwifjsdf9s098">
                       {data.title}
-                    </a>
+                    </Link>
                     <ul>
                       <li>
                         <span>
@@ -90,4 +91,4 @@ class Master extends Component {
   }
 }
 
-export default Master;
+export default MasterPage;
