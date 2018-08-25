@@ -1,56 +1,51 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 class Footer extends Component {
   render() {
     return (
-      <div >
+      <div>
         <div class="footer text-center">
           <div class="bottom-menu">
             <ul>
               <li>
-                <a href="index.html">World News</a>
+                <Link to="#">TOP STORIES</Link>
               </li>{" "}
               |
               <li>
-                <a href="sports.html">Sports</a>
+                <Link to="#">INCOME TAX</Link>
               </li>{" "}
               |
               <li>
-                <a href="tech.html">Techology</a>
+                <Link to="#">GST</Link>
               </li>{" "}
               |
               <li>
-                <a href="business.html">Business</a>
+                <Link to="#">INDIRECT TAX</Link>
               </li>{" "}
               |
               <li>
-                <a href="movies.html">Movies</a>
+                <Link to="#">NBFC/RBI</Link>
               </li>{" "}
               |
               <li>
-                <a href="movies.html">Entertainment</a>
+                <Link to="#">SEBI</Link>
               </li>{" "}
               |
               <li>
-                <a href="books.html">Books</a>
+                <Link to="#">MORE</Link>
               </li>{" "}
               |
               <li>
-                <a href="movies.html">Culture</a>
+                <Link to="#">CLASSIFIED</Link>
               </li>{" "}
-              |
-              <li>
-                <a href="classifieds.html">Classifieds</a>
-              </li>{" "}
-              |
-              <li>
-                <a href="blog.html">Blogs</a>
-              </li>
             </ul>
           </div>
           <div class="copyright text-center">
             <p>
               The Tax News &copy; 2018 All rights reserved | Powered by{" "}
-              <a href="http://panthrax.com">Panthrax Digital Agency</a>
+              <a href="http://panthrax.com">
+                <strong>PDA</strong>
+              </a>
             </p>
           </div>
         </div>

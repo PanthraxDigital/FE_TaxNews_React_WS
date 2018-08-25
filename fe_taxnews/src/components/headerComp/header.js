@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <div >
+        <div>
           <div className="header-left">
             <div className="logo">
               <Link to="/">
@@ -61,6 +61,17 @@ class Header extends Component {
                   <a href="contact.html">Subscribe</a>
                 </li>{" "}
               </ul>
+            </div>
+            <div class="search">
+              <div>
+                <input
+                  type="text"
+                  value=""
+                  onfocus="this.value = '';"
+                  onblur="if (this.value == '') {this.value = '';}"
+                />
+                <input type="submit" value="" />
+              </div>
             </div>
           </div>
 

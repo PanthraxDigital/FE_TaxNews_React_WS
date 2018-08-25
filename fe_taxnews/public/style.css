@@ -19,7 +19,7 @@ body{
 	margin:0;
 	font-family:Arial, Helvetica, sans-serif;
 	/* background:url('../images/body-bg.jpg') no-repeat 0px 0px; */
-	background-color: #191919;
+	background-color: #2f2f2f;
 	opacity: 80%;
 	background-size: 100% 100%;
 }
@@ -1285,17 +1285,18 @@ a.gotosingle {
 .grid img{
 	float:left;
 	background: #fff;
-	padding: 5px;
+	padding: 0px;
 	box-shadow: 0px 0px 5px #ddd;
 	width: 125px;
 	height: 125px;
+	background-image: url('images/news-placeholder.png') no-repeat 0px 0px;;
 }
 img.blog:hover{
 	opacity: 0.9;
 }
 .grid p{
 	font-size: 0.92em;
-	color: rgb(155, 155, 155);
+	color: #666666;
 	line-height: 1.8em;
 	width: 100%;
 }

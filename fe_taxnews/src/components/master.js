@@ -40,15 +40,26 @@ class Master extends Component {
           <div className="grids">
             {this.state.masterListData.map(function(data) {
               return (
-                <div className="grid box" >
+                <div className="grid box">
                   <div className="grid-header">
                     <a className="gotosingle" href="#">
                       {data.title}
                     </a>
                     <ul>
                       <li>
-                        <span>posted by </span> {data.author}
-                        <span>on {data.articleDate}</span>
+                        <span>
+                          posted by {data.author.name.first}{" "}
+                          {data.author.name.last}
+                        </span>
+                        <span>
+                          {" "}
+                          on{" "}
+                          {new Intl.DateTimeFormat("en-GB", {
+                            year: "numeric",
+                            month: "long",
+                            day: "2-digit"
+                          }).format(new Date(data.articleDate))}
+                        </span>
                       </li>
                       {/* <li>
                         <a href="#">5000 views</a>
@@ -57,7 +68,7 @@ class Master extends Component {
                   </div>
                   <div className="grid-img-content">
                     <a href="#">
-                      <img src="" className="blog" />
+                      <img src="images/news-placeholder.png" className="blog" />
                     </a>
                     <p>{data.subTitle}</p>
                     <div className="clearfix" />
