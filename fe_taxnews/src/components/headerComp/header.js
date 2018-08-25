@@ -5,8 +5,8 @@ import headerStyle from "./header.css";
 class Header extends Component {
   render() {
     return (
-      <div>
-        <div className="header">
+      <div className="header">
+        <div >
           <div className="header-left">
             <div className="logo">
               <Link to="/">

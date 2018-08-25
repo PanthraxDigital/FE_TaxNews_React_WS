@@ -35,14 +35,44 @@ class Master extends Component {
 
   render() {
     return (
-      <div class="col-md-9 total-news">
-        <h1>Welcome to Master</h1>
-        <div class="posts">
-          <ul>
+      <div className="col-md-9 total-news">
+        <div className="content">
+          <div className="grids">
             {this.state.masterListData.map(function(data) {
-              return <li>{data.title}</li>;
+              return (
+                <div className="grid box" >
+                  <div className="grid-header">
+                    <a className="gotosingle" href="#">
+                      {data.title}
+                    </a>
+                    <ul>
+                      <li>
+                        <span>posted by </span> {data.author}
+                        <span>on {data.articleDate}</span>
+                      </li>
+                      {/* <li>
+                        <a href="#">5000 views</a>
+                      </li> */}
+                    </ul>
+                  </div>
+                  <div className="grid-img-content">
+                    <a href="#">
+                      <img src="" className="blog" />
+                    </a>
+                    <p>{data.subTitle}</p>
+                    <div className="clearfix" />
+                  </div>
+                  <div className="comments">
+                    <div>
+                      <a className="readmore" href="#">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              );
             })}
-          </ul>
+          </div>
         </div>
       </div>
     );

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 class Footer extends Component {
   render() {
     return (
-      <div style={{ background: "pink", float:'both' }}>
+      <div >
         <div class="footer text-center">
           <div class="bottom-menu">
             <ul>
