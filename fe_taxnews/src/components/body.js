@@ -1,9 +1,32 @@
 import React, { Component } from "react";
 import homeStories from "./homeArticleList.json";
+import axios from "axios";
+import { URL, HOME } from "../networkUtility";
+
 class body extends Component {
   state = {
-    homeDataResult: homeStories
+    homeDataResult: []
   };
+
+  componentDidMount() {
+    console.log("URL " + URL + HOME);
+
+    axios
+      .get(URL + HOME, { headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+      proxy: {
+        host: 'localhost',
+        port: 4001
+      } })
+      .then(function(result) {
+        console.log("the result " + result);
+        this.setState({
+          homeDataResult: result
+        });
+      })
+      .catch(error => console.log(error));
+  }
 
   render() {
     return (
@@ -79,17 +102,17 @@ class body extends Component {
               <h3>Advertisment</h3>
             </div>
             <div className="editor">
-              <img src="https://via.placeholder.com/230x130" /> 
+              <img src="https://via.placeholder.com/230x130" />
             </div>
-            <br></br>
+            <br />
             <div className="editor">
               <img src="https://via.placeholder.com/230x130" />
             </div>
-            <br></br>
+            <br />
             <div className="editor">
               <img src="https://via.placeholder.com/230x130" />
             </div>
-            <br></br>
+            <br />
             <div className="editor">
               <img src="https://via.placeholder.com/230x130" />
             </div>
