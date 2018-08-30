@@ -1,28 +1,23 @@
 import React, { Component } from "react";
-import homeStories from "./homeArticleList.json";
+// import homeStories from "./homeArticleList.json";
 import axios from "axios";
 import { URL, HOME } from "../networkUtility";
 
 class body extends Component {
-  state = {
-    homeDataResult: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      homeDataResult: []
+    };
+  }
 
   componentDidMount() {
-    console.log("URL " + URL + HOME);
 
     axios
-      .get(URL + HOME, { headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-      proxy: {
-        host: 'localhost',
-        port: 4001
-      } })
-      .then(function(result) {
-        console.log("the result " + result);
+      .get(URL + HOME)
+      .then(result => {
         this.setState({
-          homeDataResult: result
+          homeDataResult: result.data.homeArticles
         });
       })
       .catch(error => console.log(error));
@@ -94,7 +89,7 @@ class body extends Component {
                     </div>
                   </div>
                 );
-              }, this)}
+              })}
             </div>
           </div>
           <div className="right-posts">
@@ -121,6 +116,12 @@ class body extends Component {
         </div>
       </div>
     );
+  }
+
+  componentWillUnmount(){
+    this.setState({
+      homeDataResult : []
+    })
   }
 }
 
