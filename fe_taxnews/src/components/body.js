@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import homeStories from "./homeArticleList.json";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { URL, HOME } from "../networkUtility";
 
@@ -12,7 +12,6 @@ class body extends Component {
   }
 
   componentDidMount() {
-
     axios
       .get(URL + HOME)
       .then(result => {
@@ -69,7 +68,7 @@ class body extends Component {
                   <div>
                     <div className="main-title-head">
                       <h3>{getArticleTitle(index)}</h3>
-                      <a href="#">More +</a>
+                      <Link to={getArticleURL(index)}>More +</Link>
                       <div className="clearfix" />
                     </div>
                     <div>
@@ -77,11 +76,18 @@ class body extends Component {
                         return (
                           <div className="world-news-grid">
                             <img src="images/news-placeholder.png" />
-                            <a href="#" className="title">
+                            <Link
+                              style={{ color: "black" }}
+                              to={`${getArticleURL(index)}/${dataResult._id}`}
+                            >
                               {dataResult.title}
-                            </a>
+                            </Link>
                             <p>{String(dataResult.subTitle)}</p>
-                            <a href="#">Read More</a>
+                            <Link
+                              to={`${getArticleURL(index)}/${dataResult._id}`}
+                            >
+                              Read More
+                            </Link>
                           </div>
                         );
                       })}
@@ -118,10 +124,10 @@ class body extends Component {
     );
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.setState({
-      homeDataResult : []
-    })
+      homeDataResult: []
+    });
   }
 }
 
@@ -134,6 +140,18 @@ function getArticleTitle(_index) {
       return "Income Tax";
     case 2:
       return "GST";
+  }
+}
+
+function getArticleURL(_index) {
+  console.log(_index);
+  switch (_index) {
+    case 0:
+      return "/top-stories";
+    case 1:
+      return "/income-tax";
+    case 2:
+      return "/gst";
   }
 }
 

@@ -1,7 +1,9 @@
+"use strict";
+
 import React, { Component } from "react";
-import topStoriesData from "./masterArticleList.json";
-import incomeTaxData from "./incomeTax.json";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { URL } from "../networkUtility";
 
 //Navigation of all the Menu
 //var URL = "";
@@ -9,28 +11,21 @@ class MasterPage extends Component {
   constructor(props) {
     super(props);
     this.url = this.props.location.pathname;
-    //URL = this.props.location.pathname;
+    this.state = {
+      masterListData: []
+    };
   }
-
-  state = {
-    masterListData: []
-  };
 
   componentDidMount() {
     // fetch the data as per the URL
     // mean while will mock the json
-
+    window.scrollTo(0, 0);
     switch (this.url) {
       case "/top-stories":
-        this.setState({
-          masterListData: topStoriesData
-        });
-
+        this.getArticleList(0);
         break;
       case "/income-tax":
-        this.setState({
-          masterListData: incomeTaxData
-        });
+        this.getArticleList(1);
         break;
     }
   }
@@ -89,6 +84,19 @@ class MasterPage extends Component {
         </div>
       </div>
     );
+  }
+
+  getArticleList(_index) {
+    console.log("URL " + URL + `${_index + 1}`);
+    axios
+      .get(URL + `${_index + 1}`)
+      .then(result => {
+        console.log("result " + JSON.stringify(result));
+        this.setState({
+          masterListData: result.data.articles
+        });
+      })
+      .catch(error => console.log(error));
   }
 }
 
