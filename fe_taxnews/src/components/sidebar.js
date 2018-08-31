@@ -35,35 +35,35 @@ class Sidebar extends Component {
           </div>
           <div class="popular-news">
             <div class="popular-grid">
-              <i>Sept 24th 2011 </i>
+            <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
             <div class="popular-grid">
-              <i>Sept 24th 2011 </i>
+            <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
             <div class="popular-grid">
-              <i>Sept 24th 2011 </i>
+            <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
             <div class="popular-grid">
-              <i>Sept 24th 2011 </i>
+            <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
             <div class="popular-grid">
-              <i>Sept 24th 2011 </i>
+              <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>

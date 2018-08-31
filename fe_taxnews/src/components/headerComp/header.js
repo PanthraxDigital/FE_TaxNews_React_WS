@@ -43,6 +43,10 @@ class Header extends Component {
                 <li>
                   <a href="index.html">Home</a>
                 </li>{" "}
+                |{" "}
+                <li>
+                  <a href="contact.html">Careers</a>
+                </li>{" "}
                 |
                 <li>
                   <a href="about.html">About</a>
@@ -54,10 +58,6 @@ class Header extends Component {
                 |
                 <li>
                   <a href="contact.html">Login</a>
-                </li>{" "}
-                |{" "}
-                <li>
-                  <a href="contact.html">Subscribe</a>
                 </li>{" "}
               </ul>
             </div>
