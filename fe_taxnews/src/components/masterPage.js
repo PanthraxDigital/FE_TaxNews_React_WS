@@ -87,11 +87,9 @@ class MasterPage extends Component {
   }
 
   getArticleList(_index) {
-    console.log("URL " + URL + `${_index + 1}`);
     axios
       .get(URL + `${_index + 1}`)
       .then(result => {
-        console.log("result " + JSON.stringify(result));
         this.setState({
           masterListData: result.data.articles
         });

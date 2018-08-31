@@ -29,8 +29,8 @@ class Sidebar extends Component {
         <div class="clearfix" />
         <div class="popular">
           <div class="main-title-head">
-            <h5>Everyday</h5>
-            <h4>Top Stories</h4>
+            <h5>GENERAL</h5>
+            <h4>TAXATION</h4>
             <div class="clearfix" />
           </div>
           <div class="popular-news">

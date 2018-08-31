@@ -17,6 +17,7 @@ class DetailPage extends Component {
       pathname.length
     );
     this.url = `${URL}${this.categoryId}/${this.articleId}`;
+    
     this.state = {
       isLoading: true,
       detailArticle: []
