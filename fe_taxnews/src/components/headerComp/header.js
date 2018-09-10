@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, NavItem, MenuItem } from "react-bootstrap";
 
+const headerText = {
+  fontFamily: "serif",
+  color: "white"
+};
 class Header extends Component {
   constructor(props) {
     super();
@@ -51,10 +55,6 @@ class Header extends Component {
                 <li>
                   <a href="index.html">Home</a>
                 </li>{" "}
-                |{" "}
-                <li>
-                  <a href="#">Jobs</a>
-                </li>{" "}
                 |
                 <li>
                   <a href="#">About</a>
@@ -87,14 +87,24 @@ class Header extends Component {
             menu-strip
             inverse
             collapseOnSelect
-            style={{ marginTop: "25px", borderRadius: "0px" }}
+            style={{
+              marginTop: "25px",
+              borderRadius: "0px",
+              backgroundColor: "black",
+              borderColor: "black"
+            }}
           >
             <Navbar.Header>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem componentClass={Link} href="/" to="/">
+                <NavItem
+                  
+                  componentClass={Link}
+                  href="/"
+                  to="/"
+                >
                   HOME
                 </NavItem>
 
@@ -130,6 +140,29 @@ class Header extends Component {
                   </MenuItem>
                   <MenuItem eventKey={3.2}>EXCISE</MenuItem>
                   <MenuItem eventKey={3.3}>CUSTOM</MenuItem>
+                </NavDropdown>
+                <NavItem componentClass={Link} href="/gst" to="/gst">
+                  NBFC/RBI
+                </NavItem>
+                <NavItem componentClass={Link} href="/gst" to="/gst">
+                  SEBI
+                </NavItem>
+                <NavItem componentClass={Link} href="/gst" to="/gst">
+                  ROC/COMPANY LAW
+                </NavItem>
+                <NavItem componentClass={Link} href="/gst" to="/gst">
+                  JOBS
+                </NavItem>
+                <NavDropdown eventKey={3} title="MORE" id="basic-nav-dropdown">
+                  <MenuItem
+                    eventKey={3.1}
+                    componentClass={Link}
+                    href="/top-stories"
+                    to="/top-stories"
+                  >
+                    FINANCE ACT/BUDGET
+                  </MenuItem>
+                  <MenuItem eventKey={3.2}>OTHERS</MenuItem>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>

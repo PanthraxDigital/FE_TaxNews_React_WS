@@ -57,6 +57,15 @@ label {
   margin: 0;
 }
 /*-----start-header----*/
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+  font-family: serif;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  background-color: red;
+}
 .news-paper {
   background: #fff;
   padding: 1em 1.5em;
