@@ -36,14 +36,14 @@ class Footer extends Component {
               </li>{" "}
               |
               <li>
-                <Link to="#">CLASSIFIED</Link>
+                <Link to="#">JOBS</Link>
               </li>{" "}
             </ul>
           </div>
           <div class="copyright text-center">
             <p>
               TaxKnowledge.in &copy; 2018 All rights reserved | Powered by{" "}
-              <a href="http://panthrax.com">
+              <a href="http://www.panthrax.com">
                 <strong>PDA</strong>
               </a>
             </p>
