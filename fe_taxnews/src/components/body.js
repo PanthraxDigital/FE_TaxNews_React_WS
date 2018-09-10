@@ -29,7 +29,7 @@ class body extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <div>
+        <div className="col-md-9 total-news">
           <h1>Loading Please Wait...</h1>
         </div>
       );
@@ -99,7 +99,7 @@ class body extends Component {
                 })}
               </div>
             </div>
-            <div className="right-posts">
+            <div className="right-posts" style={{ display: "none" }}>
               <div className="editorial">
                 <h3>Advertisment</h3>
               </div>

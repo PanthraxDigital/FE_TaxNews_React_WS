@@ -42,7 +42,7 @@ class Footer extends Component {
           </div>
           <div class="copyright text-center">
             <p>
-              The Tax News &copy; 2018 All rights reserved | Powered by{" "}
+              TaxKnowledge.in &copy; 2018 All rights reserved | Powered by{" "}
               <a href="http://panthrax.com">
                 <strong>PDA</strong>
               </a>

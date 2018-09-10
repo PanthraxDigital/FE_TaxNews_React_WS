@@ -9,10 +9,9 @@ class Header extends Component {
           <div className="header-left">
             <div className="logo">
               <Link to="/top-stories/3423werwrwrw">
-                <h6>The</h6>
                 <h1>
-                  Tax
-                  <span>News</span>
+                  TaxKnowledge
+                  <span>.in</span>
                 </h1>
               </Link>
             </div>
@@ -45,19 +44,19 @@ class Header extends Component {
                 </li>{" "}
                 |{" "}
                 <li>
-                  <a href="contact.html">Careers</a>
+                  <a href="#">Jobs</a>
                 </li>{" "}
                 |
                 <li>
-                  <a href="about.html">About</a>
+                  <a href="#">About</a>
                 </li>{" "}
                 |
                 <li>
-                  <a href="contact.html">Contact</a>
+                  <a href="#">Contact</a>
                 </li>{" "}
                 |
                 <li>
-                  <a href="contact.html">Login</a>
+                  <a href="#">Login</a>
                 </li>{" "}
               </ul>
             </div>
@@ -101,6 +100,9 @@ class Header extends Component {
             </li>
             <li>
               <Link to="/sebi">SEBI</Link>
+            </li>
+            <li>
+              <Link to="/roc">ROC/COMPANY LAW</Link>
             </li>
             <li>
               <Link to="/more">MORE</Link>
