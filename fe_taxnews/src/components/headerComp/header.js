@@ -21,7 +21,7 @@ class Header extends Component {
         <div>
           <div className="header-left">
             <div className="logo">
-              <Link to="/top-stories">
+              <Link to="/">
                 <h1>
                   TaxKnowledge
                   <span>.in</span>
@@ -53,7 +53,7 @@ class Header extends Component {
             <div className="top-menu">
               <ul>
                 <li>
-                  <a href="index.html">Home</a>
+                  <Link to="/">Home</Link>
                 </li>{" "}
                 |
                 <li>
@@ -71,10 +71,7 @@ class Header extends Component {
             </div>
             <div className="search">
               <div>
-                <input
-                  type="text"
-                  value=""
-                />
+                <input type="text" value="" />
                 <input type="submit" value="" />
               </div>
             </div>
@@ -97,12 +94,7 @@ class Header extends Component {
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem
-                  
-                  componentClass={Link}
-                  href="/"
-                  to="/"
-                >
+                <NavItem componentClass={Link} href="/" to="/">
                   HOME
                 </NavItem>
 
