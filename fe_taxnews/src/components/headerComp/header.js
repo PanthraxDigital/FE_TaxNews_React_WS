@@ -77,19 +77,16 @@ class Header extends Component {
             </div>
           </div>
           {/* Menu*/}
-
           <Navbar
-            menu-strip
             inverse
             collapseOnSelect
             style={{
               marginTop: "25px",
               borderRadius: "0px",
               backgroundColor: "black",
-              borderColor: "black"
             }}
           >
-            <Navbar.Header>
+            <Navbar.Header style={{ marginTop: "0px", background: "red", border : '0px' }}>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
@@ -157,7 +154,6 @@ class Header extends Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-
           <div className="clearfix" />
         </div>
         <div className="clearfix" />

@@ -52,6 +52,9 @@ label {
 }
 /*-----start-header----*/
 
+.navbar-header{
+  height: 50px;
+}
 .navbar-inverse .navbar-nav > li > a {
   color: white;
   font-family: serif;
@@ -377,7 +380,7 @@ a.btn {
   top: 0px;
   right: -1px;
   width: 32px;
-  height: 32px;
+  height: 31px;
 }
 .menu-strip {
   background: #070808;
@@ -1485,6 +1488,20 @@ img.blog {
 .grid-header ul li span a {
   font-size: 1em;
   color: rgb(155, 155, 155);
+}
+.loadmore {
+  color: #cf0000;
+  font-size: 0.8em;
+  background: #fff;
+  padding: 10px 12px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 10px #ddd;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 .readmore {
   float: right;
@@ -2627,8 +2644,8 @@ a.bull1 {
     margin-top: 4px;
   }
   .search {
-    width: 30%;
-    padding: 1px 4px;
+    width: 45%;
+    padding: 2.25px 4px;
     margin: 0 auto;
     float: right;
     color: #000;
@@ -2640,7 +2657,7 @@ a.bull1 {
     font-size: 0.8em;
   }
   .top-menu {
-    width: 75%;
+    width: 50%;
     float: left;
     margin: 0;
   }

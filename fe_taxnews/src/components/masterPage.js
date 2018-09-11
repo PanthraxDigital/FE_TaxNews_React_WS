@@ -14,6 +14,16 @@ class MasterPage extends Component {
     this.state = {
       masterListData: []
     };
+    this.categoryId = "";
+    this.loadMoreArticle = this.loadMoreArticle.bind(this);
+  }
+
+  loadMoreArticle(e) {
+    let articleCount = this.state.masterListData.length;
+    let lastArticleDate = this.state.masterListData[articleCount - 1]
+      .articleDate;
+    let formattedDate = String(lastArticleDate).replace("T", " ");
+    this.getNextArticleList(formattedDate);
   }
 
   componentDidMount() {
@@ -22,10 +32,12 @@ class MasterPage extends Component {
     window.scrollTo(0, 0);
     switch (this.url) {
       case "/top-stories":
-        this.getArticleList(0);
+        this.categoryId = 1;
+        this.getArticleList(1);
         break;
       case "/income-tax":
-        this.getArticleList(1);
+        this.categoryId = 2;
+        this.getArticleList(2);
         break;
     }
   }
@@ -81,6 +93,11 @@ class MasterPage extends Component {
               );
             }, this)}
           </div>
+          <div className="text-center">
+            <span className="loadmore" onClick={this.loadMoreArticle}>
+              LODE MORE ARTICLE
+            </span>
+          </div>
         </div>
       </div>
     );
@@ -88,11 +105,30 @@ class MasterPage extends Component {
 
   getArticleList(_index) {
     axios
-      .get(URL + `${_index + 1}`)
+      .get(URL + `${_index}`)
       .then(result => {
         this.setState({
           masterListData: result.data.articles
         });
+      })
+      .catch(error => console.log(error));
+  }
+
+  getNextArticleList(lastArticleDate) {
+    axios
+      .get(URL + `next/${this.categoryId}/${lastArticleDate}`)
+      .then(result => {
+        if (result.data.articles.length > 0) {
+          // console.log(result.data.articles);
+          // this.state.masterListData.push(...result.data.articles);
+          // console.log(this.state.masterListData);
+          this.setState({
+            masterListData: [
+              ...this.state.masterListData,
+              ...result.data.articles
+            ]
+          });
+        }
       })
       .catch(error => console.log(error));
   }

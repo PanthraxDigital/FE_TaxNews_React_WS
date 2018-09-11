@@ -4,11 +4,13 @@ import { URL } from "../networkUtility";
 import { DateFormat } from "../commonUtility";
 import marked from "marked";
 import Comment from "./comment";
+import { Link } from "react-router-dom";
 
 class DetailPage extends Component {
   constructor(props) {
     super(props);
     let pathname = String(this.props.location.pathname);
+
     this.categoryId = pathname.substring(
       pathname.indexOf("/") + 1,
       pathname.lastIndexOf("/")
@@ -87,6 +89,7 @@ class DetailPage extends Component {
               />
               <br />
             </div>
+            <Link to={`/${this.categoryId}`}>Back</Link>
           </div>
         );
       }
@@ -95,12 +98,3 @@ class DetailPage extends Component {
 }
 
 export default DetailPage;
-
-//1. design the detail page - done
-//2. add the facebook comment login
-//3. display the other news article list at the bottom, related to same category
-{
-  /* <li>
-                          <a href="#">5000 views</a>
-                        </li> */
-}
