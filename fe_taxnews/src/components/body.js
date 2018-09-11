@@ -83,15 +83,7 @@ class body extends Component {
                               >
                                 {dataResult.title}
                               </Link>
-                              <p>
-                                {/* {dataResult.subTitle.length >= 500
-                                  ? `${String(dataResult.subTitle).substring(
-                                      0,
-                                      496
-                                    )} ...`
-                                  : String(dataResult.subTitle)} */}
-                                {String(dataResult.subTitle)}}
-                              </p>
+                              <p>{String(dataResult.subTitle)}}</p>
                               <Link
                                 to={`${getArticleURL(index)}/${dataResult._id}`}
                               >

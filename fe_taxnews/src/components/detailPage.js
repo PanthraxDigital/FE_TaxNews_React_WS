@@ -62,35 +62,32 @@ class DetailPage extends Component {
         );
 
         return (
-          <React.Fragment>
-            <div className="col-md-9 total-news">
-              <div className="content">
-                <div className="grid-header">
-                  <a className="gotosingle" href="#">
-                    {this.state.detailArticle.title}
-                  </a>
-                  <ul>
-                    <li>
-                      <span>
-                        posted by {this.state.detailArticle.author.name.first}{" "}
-                        {this.state.detailArticle.author.name.last}
-                      </span>
-                      <span>
-                        {" "}
-                        on {DateFormat(this.state.detailArticle.articleDate)}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  style={{ fontSize: "1.1em" }}
-                  dangerouslySetInnerHTML={{ __html: mdDescription }}
-                />
-                <br />
+          <div className="col-md-9 total-news">
+            <div className="content">
+              <div className="grid-header">
+                <a className="gotosingle" href="#">
+                  {this.state.detailArticle.title}
+                </a>
+                <ul>
+                  <li>
+                    <span>
+                      posted by {this.state.detailArticle.author.name.first}{" "}
+                      {this.state.detailArticle.author.name.last}
+                    </span>
+                    <span>
+                      {" "}
+                      on {DateFormat(this.state.detailArticle.articleDate)}
+                    </span>
+                  </li>
+                </ul>
               </div>
+              <div
+                style={{ fontSize: "1.1em", paddingTop: "10px" }}
+                dangerouslySetInnerHTML={{ __html: mdDescription }}
+              />
+              <br />
             </div>
-            <div className="clearfix" />
-          </React.Fragment>
+          </div>
         );
       }
     }
