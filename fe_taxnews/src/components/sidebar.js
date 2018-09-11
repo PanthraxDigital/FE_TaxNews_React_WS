@@ -3,82 +3,86 @@ import React, { Component } from "react";
 class Sidebar extends Component {
   render() {
     return (
-      <div class="col-md-3 side-bar">
-        <div class="sign_up text-center">
+      <div className="col-md-3 side-bar">
+        <div className="sign_up text-center">
           <h3>Sign Up for Newsletter</h3>
-          <p class="sign">Sign up to receive our free newsletters!</p>
+          <p className="sign">Sign up to receive our free newsletters!</p>
           <div>
-            <input type="text" class="text" value="Email Address" />
-            <input type="submit" value="submit" />
+            <input type="text" className="text" value="Email Address" />
+            <input
+              type="submit"
+              style={{ margin: "0 auto", marginTop: "10px" }}
+            />
           </div>
-          <p class="spam">We do not spam. We value your privacy!</p>
+          <p className="spam">We do not spam. We value your privacy!</p>
         </div>
-        <div class="clearfix" />
+        <div className="clearfix" />
         <div>
-          <div style={{ width: "120px", height: "50px" }}>
+          <div style={{ width: "120px", height: "50px", marginTop: "25px" }}>
             <a href="#">
               <img src="https://farm2.staticflickr.com/1843/42779813950_61fdd81010_t.jpg" />
-              <div class="clearfix" />
+              <div className="clearfix" />
             </a>
           </div>
         </div>
-        <div class="clearfix" />
-        <div class="popular">
-          <div class="main-title-head">
+        <div className="clearfix" />
+        <div className="popular">
+          <div className="main-title-head">
             <h5>GENERAL</h5>
             <h4>TAXATION</h4>
-            <div class="clearfix" />
+            <div className="clearfix" />
           </div>
-          <div class="popular-news">
-            <div class="popular-grid">
+          <div className="popular-news">
+            <div className="popular-grid">
               <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
-            <div class="popular-grid">
+            <div className="popular-grid">
               <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
-            <div class="popular-grid">
+            <div className="popular-grid">
               <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
-            <div class="popular-grid">
+            <div className="popular-grid">
               <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
-            <div class="popular-grid">
+            <div className="popular-grid">
               <i>Sept 02nd 2018 </i>
               <p>
                 Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
-            <a class="more" href="singlepage.html">
+            <a className="more" href="singlepage.html">
               More +
             </a>
           </div>
         </div>
+
         <div>
           <div style={{ marginTop: "20px", display: "none" }}>
             <a href="#">
               <img src="https://via.placeholder.com/250x200" />
-              <div class="clearfix" />
+              <div className="clearfix" />
             </a>
           </div>
         </div>
-        <div class="clearfix" />
+        <div className="clearfix" />
       </div>
     );
   }

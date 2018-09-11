@@ -4,8 +4,8 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <div class="footer text-center">
-          <div class="bottom-menu">
+        <div className="footer text-center">
+          <div className="bottom-menu">
             <ul>
               <li>
                 <Link to="#">TOP STORIES</Link>
@@ -40,7 +40,7 @@ class Footer extends Component {
               </li>{" "}
             </ul>
           </div>
-          <div class="copyright text-center">
+          <div className="copyright text-center">
             <p>
               TaxKnowledge.in &copy; 2018 All rights reserved | Powered by{" "}
               <a href="http://www.panthrax.com">

@@ -40,7 +40,7 @@ class body extends Component {
             <h3>
               <span>From</span> The Desk
             </h3>
-            <div class="bull">
+            <div className="bull">
               <Link to="#">
                 <img src="images/news-placeholder.png" alt="" />
               </Link>
@@ -48,10 +48,10 @@ class body extends Component {
 
             {this.state.fromDesk[0].map((dataVal, _index) => {
               return (
-                <div class="bull-text">
+                <div className="bull-text" key={_index}>
                   <ul>
                     <li style={{ listStyle: "none" }}>
-                      <Link to={`from-desk/${dataVal._id}`} key={_index}>
+                      <Link to={`from-desk/${dataVal._id}`}>
                         {dataVal.title}
                       </Link>
                     </li>
@@ -59,23 +59,23 @@ class body extends Component {
                 </div>
               );
             }, this)}
-            <div class="clearfix" />
+            <div className="clearfix" />
           </div>
           <div className="posts">
             <div className="left-posts">
               <div className="Articles">
                 {this.state.homeDataResult.map(function(data, index) {
                   return (
-                    <div>
+                    <div key={index}>
                       <div className="main-title-head">
                         <h3>{getArticleTitle(index)}</h3>
                         <Link to={getArticleURL(index)}>More +</Link>
                         <div className="clearfix" />
                       </div>
                       <div>
-                        {data.map(function(dataResult) {
+                        {data.map(function(dataResult, index_) {
                           return (
-                            <div className="world-news-grid">
+                            <div className="world-news-grid" key={index_}>
                               <img src="images/news-placeholder.png" />
                               <Link
                                 style={{ color: "black" }}
@@ -83,7 +83,15 @@ class body extends Component {
                               >
                                 {dataResult.title}
                               </Link>
-                              <p>{String(dataResult.subTitle)}</p>
+                              <p>
+                                {/* {dataResult.subTitle.length >= 500
+                                  ? `${String(dataResult.subTitle).substring(
+                                      0,
+                                      496
+                                    )} ...`
+                                  : String(dataResult.subTitle)} */}
+                                {String(dataResult.subTitle)}}
+                              </p>
                               <Link
                                 to={`${getArticleURL(index)}/${dataResult._id}`}
                               >
@@ -92,7 +100,7 @@ class body extends Component {
                             </div>
                           );
                         })}
-                        <div class="clearfix" />
+                        <div className="clearfix" />
                       </div>
                     </div>
                   );
@@ -119,7 +127,7 @@ class body extends Component {
                 <img src="https://via.placeholder.com/230x130" />
               </div>
             </div>
-            <div class="clearfix" />
+            <div className="clearfix" />
           </div>
         </div>
       );

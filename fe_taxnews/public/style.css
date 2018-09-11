@@ -64,7 +64,7 @@ label {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-  background-color: red;
+  background-color: #cf0000;
 }
 .news-paper {
   background: #fff;
@@ -553,6 +553,7 @@ h5.breaking {
 }
 .world-news-grid img {
   width: 100%;
+  margin-bottom: 10px;
 }
 /* without ADS */
 .world-news-grid:nth-child(4) {
@@ -597,7 +598,7 @@ h5.breaking {
   font-size: 0.95em;
   font-weight: normal;
   line-height: 1.5em;
-  margin: 3px 0 8px 0;
+  margin: 3px 10px 8px 0;
 }
 .world-news-grid a {
   color: #cf0000;
@@ -605,6 +606,9 @@ h5.breaking {
   font-size: 0.875em;
   text-transform: uppercase;
   text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+
 }
 a.title {
   color: #202021;
@@ -2314,7 +2318,7 @@ a.bull1 {
     margin: 0;
   }
   .popular {
-    width: 60%;
+    width: 100%;
     float: left;
     margin: 3em 0;
   }
@@ -2502,8 +2506,14 @@ a.bull1 {
     margin-bottom: 0.6em;
   }
   .world-news-grid {
-    width: 32%;
+    width: 98%;
     margin-right: 2%;
+  }
+  .world-news-grid img {
+    width: 50%;
+    margin-right: 10px;
+    float: left;
+    margin-top: 5px;
   }
   .world-news-grid h5 {
     font-size: 0.9em;
@@ -2512,8 +2522,10 @@ a.bull1 {
   .world-news-grid p {
     font-size: 0.825em;
   }
+  
   .sign_up {
-    width: 36%;
+    /* width: 36%; */
+    width: 100%;
   }
   .videos {
     margin-right: 4%;
@@ -2775,7 +2787,7 @@ a.bull1 {
     font-size: 1.4em;
   }
   .bull {
-    width: 60%;
+    width: 100%;
     margin-right: 0%;
     padding: 5px;
     margin-bottom: 0.5em;

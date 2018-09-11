@@ -3,6 +3,7 @@ import axios from "axios";
 import { URL } from "../networkUtility";
 import { DateFormat } from "../commonUtility";
 import marked from "marked";
+import Comment from "./comment";
 
 class DetailPage extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class DetailPage extends Component {
       pathname.length
     );
     this.url = `${URL}${this.categoryId}/${this.articleId}`;
-    
+
     this.state = {
       isLoading: true,
       detailArticle: []
@@ -61,33 +62,35 @@ class DetailPage extends Component {
         );
 
         return (
-          <div className="col-md-9 total-news">
-            <div className="content">
-              <div className="grid-header">
-                <a className="gotosingle" href="#">
-                  {this.state.detailArticle.title}
-                </a>
-                <ul>
-                  <li>
-                    <span>
-                      posted by {this.state.detailArticle.author.name.first}{" "}
-                      {this.state.detailArticle.author.name.last}
-                    </span>
-                    <span>
-                      {" "}
-                      on {DateFormat(this.state.detailArticle.articleDate)}
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="comments">
+          <React.Fragment>
+            <div className="col-md-9 total-news">
+              <div className="content">
+                <div className="grid-header">
+                  <a className="gotosingle" href="#">
+                    {this.state.detailArticle.title}
+                  </a>
+                  <ul>
+                    <li>
+                      <span>
+                        posted by {this.state.detailArticle.author.name.first}{" "}
+                        {this.state.detailArticle.author.name.last}
+                      </span>
+                      <span>
+                        {" "}
+                        on {DateFormat(this.state.detailArticle.articleDate)}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
                 <div
                   style={{ fontSize: "1.1em" }}
                   dangerouslySetInnerHTML={{ __html: mdDescription }}
                 />
+                <br />
               </div>
             </div>
-          </div>
+            <div className="clearfix" />
+          </React.Fragment>
         );
       }
     }

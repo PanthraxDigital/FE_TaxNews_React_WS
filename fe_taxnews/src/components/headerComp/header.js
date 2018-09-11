@@ -21,7 +21,7 @@ class Header extends Component {
         <div>
           <div className="header-left">
             <div className="logo">
-              <Link to="/top-stories/3423werwrwrw">
+              <Link to="/top-stories">
                 <h1>
                   TaxKnowledge
                   <span>.in</span>
@@ -69,13 +69,11 @@ class Header extends Component {
                 </li>{" "}
               </ul>
             </div>
-            <div class="search">
+            <div className="search">
               <div>
                 <input
                   type="text"
                   value=""
-                  onfocus="this.value = '';"
-                  onblur="if (this.value == '') {this.value = '';}"
                 />
                 <input type="submit" value="" />
               </div>
