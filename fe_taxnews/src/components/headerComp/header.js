@@ -5,7 +5,7 @@ import { Navbar, Nav, NavDropdown, NavItem, MenuItem } from "react-bootstrap";
 const headerText = {
   fontFamily: "serif",
   color: "white"
-};  
+};
 class Header extends Component {
   constructor(props) {
     super();
@@ -61,7 +61,12 @@ class Header extends Component {
                 </li>{" "}
                 |
                 <li>
-                  <a href="#">Login</a>
+                  <a
+                    href="http://www.taxknowledge.in:4001/keystone/signin"
+                    target="_blank"
+                  >
+                    Login
+                  </a>
                 </li>{" "}
               </ul>
             </div>
@@ -79,15 +84,17 @@ class Header extends Component {
             style={{
               marginTop: "25px",
               borderRadius: "0px",
-              backgroundColor: "black",
+              backgroundColor: "black"
             }}
           >
-            <Navbar.Header style={{ marginTop: "0px", background: "red", border : '0px' }}>
+            <Navbar.Header
+              style={{ marginTop: "0px", background: "red", border: "0px" }}
+            >
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem componentClass={Link} href="/" to="/">
+                <NavItem componentClass={Link} href="/" eventKey={1} to="/">
                   HOME
                 </NavItem>
 
@@ -95,6 +102,7 @@ class Header extends Component {
                   componentClass={Link}
                   href="/top-stories"
                   to="/top-stories"
+                  eventKey={2}
                 >
                   TOP STORIES
                 </NavItem>
@@ -102,50 +110,104 @@ class Header extends Component {
                   componentClass={Link}
                   href="/income-tax"
                   to="/income-tax"
+                  eventKey={3}
                 >
                   INCOME TAX
                 </NavItem>
-                <NavItem componentClass={Link} href="/gst" to="/gst">
+                <NavItem
+                  componentClass={Link}
+                  href="/gst"
+                  to="/gst"
+                  eventKey={4}
+                >
                   GST
                 </NavItem>
                 <NavDropdown
-                  eventKey={3}
+                  eventKey={5}
                   title="INDIRECT TAX"
                   id="basic-nav-dropdown"
+                  
                 >
                   <MenuItem
-                    eventKey={3.1}
+                    eventKey={5.1}
                     componentClass={Link}
-                    href="/top-stories"
-                    to="/top-stories"
+                    href="/vat-cst"
+                    to="/vat-cst"
                   >
                     VAT/CST
                   </MenuItem>
-                  <MenuItem eventKey={3.2}>EXCISE</MenuItem>
-                  <MenuItem eventKey={3.3}>CUSTOM</MenuItem>
+                  <MenuItem
+                    eventKey={5.2}
+                    componentClass={Link}
+                    href="/excise"
+                    to="/excise"
+                  >
+                    EXCISE
+                  </MenuItem>
+                  <MenuItem
+                    eventKey={5.3}
+                    componentClass={Link}
+                    href="/custom"
+                    to="/custom"
+                  >
+                    CUSTOM
+                  </MenuItem>
                 </NavDropdown>
-                <NavItem componentClass={Link} href="/gst" to="/gst">
+                <NavItem
+                  componentClass={Link}
+                  href="/nbfc-rbi"
+                  to="/nbfc-rbi"
+                  eventKey={6}
+                >
                   NBFC/RBI
                 </NavItem>
-                <NavItem componentClass={Link} href="/gst" to="/gst">
+                <NavItem
+                  componentClass={Link}
+                  href="/sebi"
+                  to="/sebi"
+                  eventKey={7}
+                >
                   SEBI
                 </NavItem>
-                <NavItem componentClass={Link} href="/gst" to="/gst">
+                <NavItem
+                  componentClass={Link}
+                  href="/roc-company-law"
+                  to="/roc-company-law"
+                  eventKey={8}
+                >
                   ROC/COMPANY LAW
                 </NavItem>
-                <NavItem componentClass={Link} href="/gst" to="/gst">
+                <NavItem
+                  componentClass={Link}
+                  href="/jobs"
+                  to="/jobs"
+                  eventKey={9}
+                >
                   JOBS
                 </NavItem>
-                <NavDropdown eventKey={3} title="MORE" id="basic-nav-dropdown">
+                <NavDropdown
+                  eventKey={9}
+                  title="MORE"
+                  id="basic-nav-dropdown"
+                  href="/more"
+                >
                   <MenuItem
-                    eventKey={3.1}
+                    eventKey={9.1}
                     componentClass={Link}
-                    href="/top-stories"
-                    to="/top-stories"
+                    href="/finance-budget"
+                    to="/finance-budget"
                   >
                     FINANCE ACT/BUDGET
                   </MenuItem>
-                  <MenuItem eventKey={3.2}>OTHERS</MenuItem>
+                  <MenuItem
+                    eventKey={9.2}
+                    eventKey={9.1}
+                    componentClass={Link}
+                    href="/others"
+                    to="/others"
+                  >
+                    OTHERS
+                  </MenuItem>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>

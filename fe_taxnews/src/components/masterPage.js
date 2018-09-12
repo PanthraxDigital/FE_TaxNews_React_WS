@@ -12,7 +12,8 @@ class MasterPage extends Component {
     super(props);
     this.url = this.props.location.pathname;
     this.state = {
-      masterListData: []
+      masterListData: [],
+      isLoading: true
     };
     this.categoryId = "";
     this.loadMoreArticle = this.loadMoreArticle.bind(this);
@@ -29,6 +30,7 @@ class MasterPage extends Component {
   componentDidMount() {
     // fetch the data as per the URL
     // mean while will mock the json
+
     window.scrollTo(0, 0);
     switch (this.url) {
       case "/top-stories":
@@ -39,76 +41,148 @@ class MasterPage extends Component {
         this.categoryId = 2;
         this.getArticleList(2);
         break;
+      case "/gst":
+        this.categoryId = 3;
+        this.getArticleList(3);
+        break;
+      case "/vat-cst":
+        this.categoryId = 4;
+        this.getArticleList(4);
+        break;
+      case "/excise":
+        this.categoryId = 5;
+        this.getArticleList(5);
+        break;
+      case "/custom":
+        this.categoryId = 6;
+        this.getArticleList(6);
+        break;
+      case "/nbfc-rbi":
+        this.categoryId = 7;
+        this.getArticleList(7);
+        break;
+      case "/sebi":
+        this.categoryId = 8;
+        this.getArticleList(8);
+        break;
+      case "/roc-company-law":
+        this.categoryId = 9;
+        this.getArticleList(9);
+        break;
+      case "/jobs":
+        this.categoryId = 10;
+        this.getArticleList(10);
+        break;
+      case "/finance-budget":
+        this.categoryId = 11;
+        this.getArticleList(11);
+        break;
+      case "/others":
+        this.categoryId = 12;
+        this.getArticleList(12);
+        break;
     }
   }
 
   render() {
-    return (
-      <div className="col-md-9 total-news">
-        <div className="content">
-          <div className="grids">
-            {this.state.masterListData.map(function(data) {
-              return (
-                <div className="grid box">
-                  <div className="grid-header">
-                    <Link className="gotosingle" to={this.url + "/" + data._id}>
-                      {data.title}
-                    </Link>
-                    <ul>
-                      <li>
-                        <span>
-                          posted by {data.author.name.first}{" "}
-                          {data.author.name.last}
-                        </span>
-                        <span>
-                          {" "}
-                          on{" "}
-                          {new Intl.DateTimeFormat("en-GB", {
-                            year: "numeric",
-                            month: "long",
-                            day: "2-digit"
-                          }).format(new Date(data.articleDate))}
-                        </span>
-                      </li>
-                      {/* <li>
-                        <a href="#">5000 views</a>
-                      </li> */}
-                    </ul>
-                  </div>
-                  <div className="grid-img-content">
-                    <a href="#">
-                      <img src="images/news-placeholder.png" className="blog" />
-                    </a>
-                    <p>{data.subTitle}</p>
-                    <div className="clearfix" />
-                  </div>
-                  <div className="comments">
-                    <div>
-                      <a className="readmore" href="#">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              );
-            }, this)}
-          </div>
-          <div className="text-center">
-            <span className="loadmore" onClick={this.loadMoreArticle}>
-              LODE MORE ARTICLE
-            </span>
+    if (this.state.isLoading) {
+      return (
+        <div className="col-md-9 total-news">
+          <div className="content">
+            <div className="grids">
+              <h3>Loading please wait...</h3>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      if (this.state.masterListData.length > 0) {
+        return (
+          <div className="col-md-9 total-news">
+            <div className="content">
+              <div className="grids">
+                {this.state.masterListData.map(function(data) {
+                  return (
+                    <div className="grid box">
+                      <div className="grid-header">
+                        <Link
+                          className="gotosingle"
+                          to={this.url + "/" + data._id}
+                        >
+                          {data.title}
+                        </Link>
+                        <ul>
+                          <li>
+                            <span>
+                              posted by {data.author.name.first}{" "}
+                              {data.author.name.last}
+                            </span>
+                            <span>
+                              {" "}
+                              on{" "}
+                              {new Intl.DateTimeFormat("en-GB", {
+                                year: "numeric",
+                                month: "long",
+                                day: "2-digit"
+                              }).format(new Date(data.articleDate))}
+                            </span>
+                          </li>
+                          {/* <li>
+                        <a href="#">5000 views</a>
+                      </li> */}
+                        </ul>
+                      </div>
+                      <div className="grid-img-content">
+                        <a href="#">
+                          <img
+                            src="images/news-placeholder.png"
+                            className="blog"
+                          />
+                        </a>
+                        <p>{data.subTitle}</p>
+                        <div className="clearfix" />
+                      </div>
+                      <div className="comments">
+                        <div>
+                          <a className="readmore" href="#">
+                            Read More
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }, this)}
+              </div>
+              <div className="text-center">
+                <span className="loadmore" onClick={this.loadMoreArticle}>
+                  LOAD MORE ARTICLE
+                </span>
+              </div>
+            </div>
+          </div>
+        );
+      } else {
+        return (
+          <div className="col-md-9 total-news">
+            <div className="content">
+              <div className="grids">
+                <h3>No article found. Please come later</h3>
+              </div>
+            </div>
+          </div>
+        );
+      }
+    }
   }
 
   getArticleList(_index) {
     axios
       .get(URL + `${_index}`)
       .then(result => {
+        console.log(result);
         this.setState({
-          masterListData: result.data.articles
+          masterListData: result.data.articles,
+          isLoading: false
         });
       })
       .catch(error => console.log(error));
@@ -123,7 +197,8 @@ class MasterPage extends Component {
             masterListData: [
               ...this.state.masterListData,
               ...result.data.articles
-            ]
+            ],
+            isLoading: false
           });
         } else {
           alert("No More Article Found");
