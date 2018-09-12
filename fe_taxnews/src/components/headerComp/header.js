@@ -5,7 +5,7 @@ import { Navbar, Nav, NavDropdown, NavItem, MenuItem } from "react-bootstrap";
 const headerText = {
   fontFamily: "serif",
   color: "white"
-};
+};  
 class Header extends Component {
   constructor(props) {
     super();
@@ -52,10 +52,6 @@ class Header extends Component {
           <div className="header-right">
             <div className="top-menu">
               <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>{" "}
-                |
                 <li>
                   <a href="#">About</a>
                 </li>{" "}

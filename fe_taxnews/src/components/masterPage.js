@@ -119,15 +119,14 @@ class MasterPage extends Component {
       .get(URL + `next/${this.categoryId}/${lastArticleDate}`)
       .then(result => {
         if (result.data.articles.length > 0) {
-          // console.log(result.data.articles);
-          // this.state.masterListData.push(...result.data.articles);
-          // console.log(this.state.masterListData);
           this.setState({
             masterListData: [
               ...this.state.masterListData,
               ...result.data.articles
             ]
           });
+        } else {
+          alert("No More Article Found");
         }
       })
       .catch(error => console.log(error));

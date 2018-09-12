@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 
 class Sidebar extends Component {
+  constructor(props) {
+    super();
+    this.addNewSubscriber = this.addNewSubscriber.bind(this);
+  }
+
+  addNewSubscriber(e) {
+    alert("hi");
+  }
+
   render() {
     return (
       <div className="col-md-3 side-bar">
@@ -12,6 +21,7 @@ class Sidebar extends Component {
             <input
               type="submit"
               style={{ margin: "0 auto", marginTop: "10px" }}
+              onClick={this.addNewSubscriber}
             />
           </div>
           <p className="spam">We do not spam. We value your privacy!</p>

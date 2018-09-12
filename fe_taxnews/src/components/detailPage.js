@@ -89,7 +89,28 @@ class DetailPage extends Component {
               />
               <br />
             </div>
-            <Link to={`/${this.categoryId}`}>Back</Link>
+            {this.state.detailArticle.link.length > 0 ? (
+              <a
+                href={`${this.state.detailArticle.link}`}
+                target="_blank"
+                type="button"
+                className="btn btn-danger"
+                style={{
+                  backgroundColor: "#cf0000",
+                  marginBottom: "20px",
+                  borderRadius: 0,
+                  marginTop: "30px",
+                  color: "white"
+                }}
+              >
+                To read the full text click here +
+              </a>
+            ) : (
+              ""
+            )}
+            <div>
+              <Link to={`/${this.categoryId}`}>Back</Link>
+            </div>
           </div>
         );
       }
