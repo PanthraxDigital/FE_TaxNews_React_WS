@@ -108,9 +108,16 @@ class DetailPage extends Component {
             ) : (
               ""
             )}
-            <div>
-              <Link to={`/${this.categoryId}`}>Back</Link>
-            </div>
+
+            {this.categoryId === "from-desk" ? (
+              <div>
+                <Link to="/">Back</Link>
+              </div>
+            ) : (
+              <div>
+                <Link to={`/${this.categoryId}`}>Back</Link>
+              </div>
+            )}
           </div>
         );
       }
