@@ -29,7 +29,11 @@ class Sidebar extends Component {
           <div>
             <a href="#">
               <img
-                style={{ width: "200px", marginTop: "-10px" }}
+                style={{
+                  width: "200px",
+                  marginTop: "0px",
+                  marginBottom: "10px"
+                }}
                 src="https://www.google.com/intl/en/cast/about/static/images/download-badges/android-download.png"
               />
               <div className="clearfix" />
