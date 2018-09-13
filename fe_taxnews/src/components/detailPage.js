@@ -1,26 +1,24 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { URL } from "../networkUtility";
-import { DateFormat } from "../commonUtility";
+import { DateFormat, getCategoryId } from "../commonUtility";
 import marked from "marked";
-import Comment from "./comment";
 import { Link } from "react-router-dom";
 
 class DetailPage extends Component {
   constructor(props) {
     super(props);
     let pathname = String(this.props.location.pathname);
-    alert(pathname);
+
     this.categoryId = pathname.substring(
-      pathname.indexOf("/") + 1,
+      pathname.indexOf("/"),
       pathname.lastIndexOf("/")
     );
     this.articleId = pathname.substring(
       pathname.lastIndexOf("/") + 1,
       pathname.length
     );
-    this.dataURL = `${URL}${this.categoryId}/${this.articleId}`;
-    alert(this.dataURL);
+    this.dataURL = `${URL}${getCategoryId(this.categoryId)}/${this.articleId}`;
     this.state = {
       isLoading: true,
       detailArticle: []
@@ -38,12 +36,7 @@ class DetailPage extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    axios.get(this.dataURL).then(result => {
-      this.setState({
-        isLoading: false,
-        detailArticle: result.data.articles
-      });
-    });
+    this.fetchArticleDetail();
   }
 
   render() {
@@ -59,69 +52,88 @@ class DetailPage extends Component {
           </div>
         );
       } else {
-        let mdDescription = marked(
-          this.state.detailArticle.description.md || ""
-        );
+        //console.log("json " + JSON.stringify(this.state.detailArticle));
 
-        return (
-          <div className="col-md-9 total-news">
-            <div className="content">
-              <div className="grid-header">
-                <a className="gotosingle" href="#">
-                  {this.state.detailArticle.title}
+        if (this.state.detailArticle.length > 0) {
+          let mdDescription = marked(
+            this.state.detailArticle[0].description.md || ""
+          );
+          const abc = `${this.categoryId}`;
+          alert(abc);
+
+          return (
+            <div className="col-md-9 total-news">
+              <div className="content">
+                <div className="grid-header">
+                  <a className="gotosingle" href="#">
+                    {this.state.detailArticle[0].title}
+                  </a>
+                  <ul>
+                    <li>
+                      <span>
+                        posted by{" "}
+                        {this.state.detailArticle[0].author.name.first}{" "}
+                        {this.state.detailArticle[0].author.name.last}
+                      </span>
+                      <span>
+                        {" "}
+                        on {DateFormat(this.state.detailArticle[0].articleDate)}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  style={{ fontSize: "1.1em", paddingTop: "10px" }}
+                  dangerouslySetInnerHTML={{ __html: mdDescription }}
+                />
+                <br />
+              </div>
+              {this.state.detailArticle[0].link.length > 0 ? (
+                <a
+                  href={`${this.state.detailArticle[0].link}`}
+                  target="_blank"
+                  type="button"
+                  className="btn btn-danger"
+                  style={{
+                    backgroundColor: "#cf0000",
+                    marginBottom: "20px",
+                    borderRadius: 0,
+                    marginTop: "30px",
+                    color: "white"
+                  }}
+                >
+                  To read the full text click here +
                 </a>
-                <ul>
-                  <li>
-                    <span>
-                      posted by {this.state.detailArticle.author.name.first}{" "}
-                      {this.state.detailArticle.author.name.last}
-                    </span>
-                    <span>
-                      {" "}
-                      on {DateFormat(this.state.detailArticle.articleDate)}
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div
-                style={{ fontSize: "1.1em", paddingTop: "10px" }}
-                dangerouslySetInnerHTML={{ __html: mdDescription }}
-              />
-              <br />
-            </div>
-            {this.state.detailArticle.link.length > 0 ? (
-              <a
-                href={`${this.state.detailArticle.link}`}
-                target="_blank"
-                type="button"
-                className="btn btn-danger"
-                style={{
-                  backgroundColor: "#cf0000",
-                  marginBottom: "20px",
-                  borderRadius: 0,
-                  marginTop: "30px",
-                  color: "white"
-                }}
-              >
-                To read the full text click here +
-              </a>
-            ) : (
-              ""
-            )}
+              ) : (
+                ""
+              )}
 
-            {this.categoryId === "from-desk" ? (
-              <div>
-                <Link to="/">Back</Link>
-              </div>
-            ) : (
-              <div>
-                <Link to={`/${this.categoryId}`}>Back</Link>
-              </div>
-            )}
-          </div>
-        );
+              {this.categoryId === "from-desk" ? (
+                <div>
+                  <Link to="/">Back</Link>
+                </div>
+              ) : (
+                <div>
+                  <Link to={`${this.categoryId}`}>Back</Link>
+                </div>
+              )}
+            </div>
+          );
+        } else {
+          return null;
+        }
       }
     }
+  }
+
+  fetchArticleDetail() {
+    axios.get(this.dataURL).then(result => {
+      console.log("Result from Server " + result);
+      this.setState({
+        isLoading: false,
+        detailArticle: result.data.articles
+      });
+    });
   }
 }
 

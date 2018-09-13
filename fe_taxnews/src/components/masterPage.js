@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { URL } from "../networkUtility";
+import { getCategoryId } from "../commonUtility";
 
 //Navigation of all the Menu
 //var URL = "";
@@ -31,58 +32,9 @@ class MasterPage extends Component {
   componentDidMount() {
     // fetch the data as per the URL
     // mean while will mock the json
-
     window.scrollTo(0, 0);
-    switch (this.url) {
-      case "/top-stories":
-        this.categoryId = 1;
-        this.getArticleList(1);
-        break;
-      case "/income-tax":
-        this.categoryId = 2;
-        this.getArticleList(2);
-        break;
-      case "/gst":
-        this.categoryId = 3;
-        this.getArticleList(3);
-        break;
-      case "/vat-cst":
-        this.categoryId = 4;
-        this.getArticleList(4);
-        break;
-      case "/excise":
-        this.categoryId = 5;
-        this.getArticleList(5);
-        break;
-      case "/custom":
-        this.categoryId = 6;
-        this.getArticleList(6);
-        break;
-      case "/nbfc-rbi":
-        this.categoryId = 7;
-        this.getArticleList(7);
-        break;
-      case "/sebi":
-        this.categoryId = 8;
-        this.getArticleList(8);
-        break;
-      case "/roc-company-law":
-        this.categoryId = 9;
-        this.getArticleList(9);
-        break;
-      case "/jobs":
-        this.categoryId = 10;
-        this.getArticleList(10);
-        break;
-      case "/finance-budget":
-        this.categoryId = 11;
-        this.getArticleList(11);
-        break;
-      case "/others":
-        this.categoryId = 12;
-        this.getArticleList(12);
-        break;
-    }
+    this.categoryId = getCategoryId(this.url);
+    this.getArticleList(this.categoryId);
   }
 
   render() {
