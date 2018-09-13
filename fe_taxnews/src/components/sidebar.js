@@ -47,21 +47,21 @@ class Sidebar extends Component {
               <i>Sept 12th 2018 </i>
               <p>
                 GST Dept recovers Rs. 1.12 Lakh Crore wrongly availed Input Tax
-                Credit in GSTR-3B <a href="singlepage.html">Read More</a>
+                Credit in GSTR-3B <a href="#">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
               <i>Sept 12th 2018 </i>
               <p>
                 Chartered Accountants Firms to get Registration Number in 24
-                Hours: ICAI <a href="singlepage.html">Read More</a>
+                Hours: ICAI <a href="#">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
               <i>Sept 12th 2018 </i>
               <p>
                 The Anti-Profiteering Conundrum{" "}
-                <a href="singlepage.html">Read More</a>
+                <a href="#">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
@@ -69,17 +69,17 @@ class Sidebar extends Component {
               <p>
                 GST: Calcutta HC transfers Appeal filed in Wrong Forum, Directs
                 to Disposal within Four Weeks{" "}
-                <a href="singlepage.html">Read More</a>
+                <a href="#">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
               <i>Sept 12th 2018 </i>
               <p>
               Chennai Customs grants First Automated Bill of Entry {" "}
-                <a href="singlepage.html">Read More</a>
+                <a href="#">Read More</a>
               </p>
             </div>
-            <a className="more" href="singlepage.html">
+            <a className="more" href="#">
               More +
             </a>
           </div>

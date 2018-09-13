@@ -11,9 +11,11 @@ class MasterPage extends Component {
   constructor(props) {
     super(props);
     this.url = this.props.location.pathname;
+    alert(this.url);
     this.state = {
       masterListData: [],
-      isLoading: true
+      isLoading: true,
+      errorMessage: ""
     };
     this.categoryId = "";
     this.loadMoreArticle = this.loadMoreArticle.bind(this);
@@ -144,9 +146,12 @@ class MasterPage extends Component {
                       </div>
                       <div className="comments">
                         <div>
-                          <a className="readmore" href="#">
+                          <Link
+                            className="readmore"
+                            to={this.url + "/" + data._id}
+                          >
                             Read More
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -175,6 +180,7 @@ class MasterPage extends Component {
     }
   }
 
+  // get the list of article on Master Page
   getArticleList(_index) {
     axios
       .get(URL + `${_index}`)
@@ -185,9 +191,15 @@ class MasterPage extends Component {
           isLoading: false
         });
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        alert(error.Message);
+        this.setState({
+          isLoading: false
+        });
+      });
   }
 
+  // get the list of next article on load more
   getNextArticleList(lastArticleDate) {
     axios
       .get(URL + `next/${this.categoryId}/${lastArticleDate}`)

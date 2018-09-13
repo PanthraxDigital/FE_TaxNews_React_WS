@@ -45,7 +45,7 @@ class body extends Component {
     if (this.state.isLoading) {
       return (
         <div className="col-md-9 total-news">
-          <h1>Loading Please Wait...</h1>
+          <h3>Loading Please Wait...</h3>
         </div>
       );
     } else {
