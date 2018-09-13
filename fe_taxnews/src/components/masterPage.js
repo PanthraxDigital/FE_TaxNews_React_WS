@@ -11,7 +11,6 @@ class MasterPage extends Component {
   constructor(props) {
     super(props);
     this.url = this.props.location.pathname;
-    alert(this.url);
     this.state = {
       masterListData: [],
       isLoading: true,

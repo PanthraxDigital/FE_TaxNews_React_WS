@@ -9,7 +9,7 @@ class MasterPageRoute extends Component {
     return (
       <Switch>
         <Route exact path="/:category" component={MasterPage} key="1" />
-        <Route path="/:category/:id" component={DetailPage} key="2" />
+        <Route path="/:category/:articleId" component={DetailPage} key="2" />
       </Switch>
     );
   }

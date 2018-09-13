@@ -10,7 +10,7 @@ class DetailPage extends Component {
   constructor(props) {
     super(props);
     let pathname = String(this.props.location.pathname);
-
+    alert(pathname);
     this.categoryId = pathname.substring(
       pathname.indexOf("/") + 1,
       pathname.lastIndexOf("/")
@@ -19,8 +19,8 @@ class DetailPage extends Component {
       pathname.lastIndexOf("/") + 1,
       pathname.length
     );
-    this.url = `${URL}${this.categoryId}/${this.articleId}`;
-
+    this.dataURL = `${URL}${this.categoryId}/${this.articleId}`;
+    alert(this.dataURL);
     this.state = {
       isLoading: true,
       detailArticle: []
@@ -38,7 +38,7 @@ class DetailPage extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    axios.get(this.url).then(result => {
+    axios.get(this.dataURL).then(result => {
       this.setState({
         isLoading: false,
         detailArticle: result.data.articles
