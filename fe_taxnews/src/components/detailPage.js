@@ -58,9 +58,7 @@ class DetailPage extends Component {
           let mdDescription = marked(
             this.state.detailArticle[0].description.md || ""
           );
-          const abc = `${this.categoryId}`;
-          alert(abc);
-
+          
           return (
             <div className="col-md-9 total-news">
               <div className="content">
@@ -128,7 +126,6 @@ class DetailPage extends Component {
 
   fetchArticleDetail() {
     axios.get(this.dataURL).then(result => {
-      console.log("Result from Server " + result);
       this.setState({
         isLoading: false,
         detailArticle: result.data.articles
