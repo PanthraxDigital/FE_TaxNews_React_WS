@@ -7,7 +7,7 @@ class Sidebar extends Component {
   }
 
   addNewSubscriber(e) {
-    alert("hi");
+    
   }
 
   render() {
@@ -44,37 +44,38 @@ class Sidebar extends Component {
           </div>
           <div className="popular-news">
             <div className="popular-grid">
-              <i>Sept 02nd 2018 </i>
+              <i>Sept 12th 2018 </i>
               <p>
-                Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
+                GST Dept recovers Rs. 1.12 Lakh Crore wrongly availed Input Tax
+                Credit in GSTR-3B <a href="singlepage.html">Read More</a>
+              </p>
+            </div>
+            <div className="popular-grid">
+              <i>Sept 12th 2018 </i>
+              <p>
+                Chartered Accountants Firms to get Registration Number in 24
+                Hours: ICAI <a href="singlepage.html">Read More</a>
+              </p>
+            </div>
+            <div className="popular-grid">
+              <i>Sept 12th 2018 </i>
+              <p>
+                The Anti-Profiteering Conundrum{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
-              <i>Sept 02nd 2018 </i>
+              <i>Sept 12th 2018 </i>
               <p>
-                Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
+                GST: Calcutta HC transfers Appeal filed in Wrong Forum, Directs
+                to Disposal within Four Weeks{" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
-              <i>Sept 02nd 2018 </i>
+              <i>Sept 12th 2018 </i>
               <p>
-                Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
-                <a href="singlepage.html">Read More</a>
-              </p>
-            </div>
-            <div className="popular-grid">
-              <i>Sept 02nd 2018 </i>
-              <p>
-                Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
-                <a href="singlepage.html">Read More</a>
-              </p>
-            </div>
-            <div className="popular-grid">
-              <i>Sept 02nd 2018 </i>
-              <p>
-                Lorem ipsum dolor sit amet conse ctetur adipiscing elit{" "}
+              Chennai Customs grants First Automated Bill of Entry {" "}
                 <a href="singlepage.html">Read More</a>
               </p>
             </div>

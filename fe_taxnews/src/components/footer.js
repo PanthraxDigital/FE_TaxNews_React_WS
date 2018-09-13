@@ -8,35 +8,35 @@ class Footer extends Component {
           <div className="bottom-menu">
             <ul>
               <li>
-                <Link to="#">TOP STORIES</Link>
+                <Link to="/top-stories">TOP STORIES</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">INCOME TAX</Link>
+                <Link to="/income-tax">INCOME TAX</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">GST</Link>
+                <Link to="/gst">GST</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">INDIRECT TAX</Link>
+                <Link to="/excise">EXCISE</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">NBFC/RBI</Link>
+                <Link to="/nbfc-rbi">NBFC/RBI</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">SEBI</Link>
+                <Link to="/sebi">SEBI</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">MORE</Link>
+                <Link to="/others">OTHERS</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">JOBS</Link>
+                <Link to="/jobs">JOBS</Link>
               </li>{" "}
             </ul>
           </div>
