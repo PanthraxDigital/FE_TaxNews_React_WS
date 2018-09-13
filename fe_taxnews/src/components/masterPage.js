@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { URL } from "../networkUtility";
 import { getCategoryId } from "../commonUtility";
+import { has } from "lodash";
 
 //Navigation of all the Menu
 //var URL = "";
@@ -88,7 +89,12 @@ class MasterPage extends Component {
                       <div className="grid-img-content">
                         <a href="#">
                           <img
-                            src="images/news-placeholder.png"
+                            src={
+                              data.image
+                              // data.hasOwnProperty(data.image)
+                              //   ? data.image
+                              //   : "images/news-placeholder.png"
+                            }
                             className="blog"
                           />
                         </a>
@@ -136,14 +142,13 @@ class MasterPage extends Component {
     axios
       .get(URL + `${_index}`)
       .then(result => {
-        console.log(result);
+        console.log("result " + JSON.stringify(result.data.articles));
         this.setState({
           masterListData: result.data.articles,
           isLoading: false
         });
       })
       .catch(error => {
-        alert(error.Message);
         this.setState({
           isLoading: false
         });
