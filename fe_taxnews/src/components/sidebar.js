@@ -6,9 +6,7 @@ class Sidebar extends Component {
     this.addNewSubscriber = this.addNewSubscriber.bind(this);
   }
 
-  addNewSubscriber(e) {
-    
-  }
+  addNewSubscriber(e) {}
 
   render() {
     return (
@@ -28,9 +26,12 @@ class Sidebar extends Component {
         </div>
         <div className="clearfix" />
         <div>
-          <div style={{ width: "120px", height: "50px", marginTop: "25px" }}>
+          <div>
             <a href="#">
-              <img src="https://farm2.staticflickr.com/1843/42779813950_61fdd81010_t.jpg" />
+              <img
+                style={{ width: "200px", marginTop: "-10px" }}
+                src="https://www.google.com/intl/en/cast/about/static/images/download-badges/android-download.png"
+              />
               <div className="clearfix" />
             </a>
           </div>
@@ -60,22 +61,20 @@ class Sidebar extends Component {
             <div className="popular-grid">
               <i>Sept 12th 2018 </i>
               <p>
-                The Anti-Profiteering Conundrum{" "}
-                <a href="#">Read More</a>
+                The Anti-Profiteering Conundrum <a href="#">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
               <i>Sept 12th 2018 </i>
               <p>
                 GST: Calcutta HC transfers Appeal filed in Wrong Forum, Directs
-                to Disposal within Four Weeks{" "}
-                <a href="#">Read More</a>
+                to Disposal within Four Weeks <a href="#">Read More</a>
               </p>
             </div>
             <div className="popular-grid">
               <i>Sept 12th 2018 </i>
               <p>
-              Chennai Customs grants First Automated Bill of Entry {" "}
+                Chennai Customs grants First Automated Bill of Entry{" "}
                 <a href="#">Read More</a>
               </p>
             </div>
