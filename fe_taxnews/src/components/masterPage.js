@@ -88,15 +88,7 @@ class MasterPage extends Component {
                       </div>
                       <div className="grid-img-content">
                         <a href="#">
-                          <img
-                            src={
-                              data.image
-                              // data.hasOwnProperty(data.image)
-                              //   ? data.image
-                              //   : "images/news-placeholder.png"
-                            }
-                            className="blog"
-                          />
+                          <img src={data.image} className="blog" />
                         </a>
                         <p>{data.subTitle}</p>
                         <div className="clearfix" />
