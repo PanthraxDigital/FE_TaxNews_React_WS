@@ -88,7 +88,11 @@ class MasterPage extends Component {
                       </div>
                       <div className="grid-img-content">
                         <a href="#">
-                          <img src={data.image} className="blog" />
+                          <img
+                            src={data.image}
+                            className="blog"
+                            style={{ width: "200px", height: "100px" }}
+                          />
                         </a>
                         <p>{data.subTitle}</p>
                         <div className="clearfix" />

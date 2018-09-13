@@ -65,7 +65,7 @@ class body extends Component {
               </h3>
               <div className="bull">
                 <Link to="#">
-                  <img src="images/news-placeholder.png" alt="" />
+                  <img src={require("../images/change.jpg")} alt="" />
                 </Link>
               </div>
 
@@ -99,7 +99,7 @@ class body extends Component {
                           {data.map(function(dataResult, index_) {
                             return (
                               <div className="world-news-grid" key={index_}>
-                                <img src="images/news-placeholder.png" />
+                                <img src={dataResult.image} />
                                 <Link
                                   style={{ color: "black" }}
                                   to={`${getArticleURL(index)}/${
