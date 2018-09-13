@@ -77,19 +77,10 @@ class Header extends Component {
               </div>
             </div>
           </div>
+          <div className="clearfix" />
           {/* Menu*/}
-          <Navbar
-            inverse
-            collapseOnSelect
-            style={{
-              marginTop: "25px",
-              borderRadius: "0px",
-              backgroundColor: "black"
-            }}
-          >
-            <Navbar.Header
-              style={{ marginTop: "0px", background: "red", border: "0px" }}
-            >
+          <Navbar inverse collapseOnSelect>
+            <Navbar.Header>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
@@ -126,7 +117,6 @@ class Header extends Component {
                   eventKey={5}
                   title="INDIRECT TAX"
                   id="basic-nav-dropdown"
-                  
                 >
                   <MenuItem
                     eventKey={5.1}

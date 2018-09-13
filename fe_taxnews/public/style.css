@@ -52,8 +52,11 @@ label {
 }
 /*-----start-header----*/
 
-.navbar-header {
-  height: 50px;
+.navbar {
+  margin-bottom: 0px;
+  margin-top: 25px;
+  border-radius: 0px;
+  background-color: black;
 }
 .navbar-inverse .navbar-nav > li > a {
   color: white;
@@ -521,9 +524,6 @@ h5.breaking {
   .rslides_tabs {
     bottom: 15px;
   }
-  .ticker-wrap {
-    padding-left: 0%;
-  }
 }
 @media (max-width: 480px) {
   #slider3-pager a {
@@ -532,8 +532,9 @@ h5.breaking {
   .rslides_tabs {
     bottom: 20px;
   }
-  .ticker-wrap {
-    padding-left: 68%;
+  .navbar {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 320px) {
@@ -542,9 +543,6 @@ h5.breaking {
   }
   .rslides_tabs {
     bottom: 25px;
-  }
-  .ticker-wrap {
-    padding-left: 68%;
   }
 }
 .confer {
@@ -2824,6 +2822,7 @@ a.bull1 {
     margin-right: 0%;
     margin-bottom: 1.5em;
   }
+
   .right-posts {
     width: 100%;
   }
@@ -3107,7 +3106,7 @@ a.bull1 {
   }
 }
 .ticker-wrap {
-  width: 100px;
+  width: 8%;
   overflow: hidden;
   padding-right: 0px;
   height: 4rem;
@@ -3128,8 +3127,8 @@ a.bull1 {
   animation-timing-function: linear;
   -webkit-animation-name: ticker;
   animation-name: ticker;
-  -webkit-animation-duration: 120s;
-  animation-duration: 120s;
+  -webkit-animation-duration: 90s;
+  animation-duration: 90s;
 }
 .ticker-wrap .ticker__item {
   display: inline-block;
