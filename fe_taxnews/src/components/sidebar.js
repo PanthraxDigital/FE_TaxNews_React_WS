@@ -26,7 +26,7 @@ class Sidebar extends Component {
         </div>
         <div className="clearfix" />
         <div>
-          <div>
+          <div style={{display:'none'}}>
             <a href="#">
               <img
                 style={{

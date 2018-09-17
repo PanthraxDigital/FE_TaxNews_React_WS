@@ -109,7 +109,7 @@ class DetailPage extends Component {
                 ""
               )}
 
-              {this.categoryId === "from-desk" ? (
+              {this.categoryId === "/from-desk" ? (
                 <div>
                   <Link to="/">Back</Link>
                 </div>

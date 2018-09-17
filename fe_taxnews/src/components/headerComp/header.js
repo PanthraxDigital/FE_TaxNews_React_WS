@@ -72,8 +72,8 @@ class Header extends Component {
             </div>
             <div className="search">
               <div>
-                <input type="text" />
-                <input type="submit" />
+                <input type="text" value="" />
+                <input type="submit" value="" />
               </div>
             </div>
           </div>
