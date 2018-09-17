@@ -179,7 +179,7 @@ class Header extends Component {
                   eventKey={9}
                   title="MORE"
                   id="basic-nav-dropdown"
-                  href="/more"
+                  
                 >
                   <MenuItem
                     eventKey={9.1}

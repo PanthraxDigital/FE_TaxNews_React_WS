@@ -20,7 +20,8 @@ class Main extends Component {
         <Route path="/sebi" component={MasterPageRoute} key="8" />
         <Route path="/roc-company-law" component={MasterPageRoute} key="9" />
         <Route path="/jobs" component={MasterPageRoute} key="10" />
-        <Route path="/more" component={MasterPageRoute} key="11" />
+        <Route path="/finance-budget" component={MasterPageRoute} key="11" />
+        <Route path="/others" component={MasterPageRoute} key="12" />
 
         <Route exact path="/" component={Home} />
       </Switch>
