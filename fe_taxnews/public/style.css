@@ -3143,7 +3143,7 @@ a.bull1 {
 }
 
 .mdFormat p {
-  padding: 10px;
+  padding: 10px 0px;
   text-align: justify;
 }
 /* body {

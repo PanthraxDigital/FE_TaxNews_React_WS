@@ -8,6 +8,9 @@ export const DateFormat = function(_strDate) {
 
 export const getCategoryId = function(_strCategory) {
   switch (_strCategory) {
+    case "/from-desk":
+      return 0;
+
     case "/top-stories":
       return 1;
 

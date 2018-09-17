@@ -74,7 +74,10 @@ class body extends Component {
                   <div className="bull-text" key={_index}>
                     <ul>
                       <li style={{ listStyle: "none" }}>
-                        <Link to={`from-desk/${dataVal._id}`}>
+                        {/* <Link to={`/from-desk/${dataVal._id}`}>
+                          {dataVal.title}
+                        </Link> */}
+                        <Link to={`${getArticleURL(0)}/${dataVal._id}`}>
                           {dataVal.title}
                         </Link>
                       </li>
@@ -88,11 +91,12 @@ class body extends Component {
               <div className="left-posts">
                 <div className="Articles">
                   {this.state.homeDataResult.map(function(data, index) {
+                    let index2 = index + 1;
                     return (
                       <div key={index}>
                         <div className="main-title-head">
-                          <h3>{getArticleTitle(index)}</h3>
-                          <Link to={getArticleURL(index)}>More +</Link>
+                          <h3>{getArticleTitle(index + 1)}</h3>
+                          <Link to={getArticleURL(index + 1)}>More +</Link>
                           <div className="clearfix" />
                         </div>
                         <div>
@@ -102,7 +106,7 @@ class body extends Component {
                                 <img src={dataResult.image} />
                                 <Link
                                   style={{ color: "black" }}
-                                  to={`${getArticleURL(index)}/${
+                                  to={`${getArticleURL(index + 1)}/${
                                     dataResult._id
                                   }`}
                                 >
@@ -110,7 +114,7 @@ class body extends Component {
                                 </Link>
                                 <p>{String(dataResult.subTitle)}</p>
                                 <Link
-                                  to={`${getArticleURL(index)}/${
+                                  to={`${getArticleURL(index + 1)}/${
                                     dataResult._id
                                   }`}
                                 >
@@ -161,24 +165,28 @@ class body extends Component {
   }
 }
 
+// we are showing 3 headers
 function getArticleTitle(_index) {
   switch (_index) {
-    case 0:
-      return "Top Stories";
     case 1:
-      return "Income Tax";
+      return "Top Stories";
     case 2:
+      return "Income Tax";
+    case 3:
       return "GST";
   }
 }
 
+// corresponding url of the 3 header article
 function getArticleURL(_index) {
   switch (_index) {
     case 0:
-      return "/top-stories";
+      return "/from-desk";
     case 1:
-      return "/income-tax";
+      return "/top-stories";
     case 2:
+      return "/income-tax";
+    case 3:
       return "/gst";
   }
 }
