@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
+    "markdown-react-js": "^1.0.0",
     "marked": "^0.5.0",
     "react": "^16.4.2",
     "react-bootstrap": "^0.32.4",

@@ -536,7 +536,6 @@ h5.breaking {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  
 }
 @media (max-width: 320px) {
   #slider3-pager a {
@@ -604,6 +603,7 @@ h5.breaking {
   font-weight: normal;
   line-height: 1.5em;
   margin: 3px 10px 8px 0;
+  text-align: justify;
 }
 .world-news-grid a {
   color: #cf0000;
@@ -613,6 +613,7 @@ h5.breaking {
   text-decoration: none;
   display: flex;
   justify-content: flex-start;
+  text-align: justify;
 }
 a.title {
   color: #202021;
@@ -1464,6 +1465,7 @@ img.blog:hover {
   color: #202021;
   line-height: 1.8em;
   width: 100%;
+  text-align: justify;
 }
 img.blog {
   margin-right: 2em;
@@ -1928,6 +1930,7 @@ a.bull1 {
   text-transform: lowercase;
   display: block;
   text-decoration: none;
+  text-align: justify;
 }
 .bull-text ul li a:hover {
   color: #cf0000;
@@ -3128,8 +3131,8 @@ a.bull1 {
   animation-timing-function: linear;
   -webkit-animation-name: ticker;
   animation-name: ticker;
-  -webkit-animation-duration: 90s;
-  animation-duration: 90s;
+  -webkit-animation-duration: 200s;
+  animation-duration: 200s;
 }
 .ticker-wrap .ticker__item {
   display: inline-block;
@@ -3139,6 +3142,10 @@ a.bull1 {
   font-family: "Times New Roman", Times, serif;
 }
 
+.mdFormat p {
+  padding: 10px;
+  text-align: justify;
+}
 /* body {
   padding-bottom: 5rem;
 }
