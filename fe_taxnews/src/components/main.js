@@ -6,6 +6,10 @@ import MasterPageRoute from "./masterPageRoute";
 //Navigation of all the Menu
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Switch>
@@ -23,13 +27,18 @@ class Main extends Component {
         <Route path="/finance-budget" component={MasterPageRoute} key="11" />
         <Route path="/others" component={MasterPageRoute} key="12" />
 
-        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Home
+              homeDataResult={this.props.homeDataResult}
+            />
+          )}
+        />
       </Switch>
     );
   }
 }
 
 export default Main;
-{
-  /* <Route path="/from-desk/:articleId" component={MasterPageRoute} key="0" /> */
-}

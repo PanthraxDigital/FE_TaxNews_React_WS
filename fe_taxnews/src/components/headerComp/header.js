@@ -9,10 +9,10 @@ const headerText = {
 class Header extends Component {
   constructor(props) {
     super();
-    this.indirectTaxClick = this.indirectTaxClick.bind(this);
+    this.searchResult = this.searchResult.bind(this);
   }
 
-  indirectTaxClick(e) {
+  searchResult(e) {
     alert("hi");
   }
   render() {
@@ -72,8 +72,8 @@ class Header extends Component {
             </div>
             <div className="search">
               <div>
-                <input type="text" value="" />
-                <input type="submit" value="" />
+                <input type="text" value="Search" />
+                <input type="submit" value="" onClick={this.searchResult} />
               </div>
             </div>
           </div>
@@ -175,12 +175,7 @@ class Header extends Component {
                 >
                   JOBS
                 </NavItem>
-                <NavDropdown
-                  eventKey={9}
-                  title="MORE"
-                  id="basic-nav-dropdown"
-                  
-                >
+                <NavDropdown eventKey={9} title="MORE" id="basic-nav-dropdown">
                   <MenuItem
                     eventKey={9.1}
                     componentClass={Link}
@@ -211,53 +206,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-{
-  /* <div className="menu-strip">
-<ul>
-  <li>
-    <Link exact to="/">
-      HOME
-    </Link>
-  </li>
-  <li>
-    <Link to="/top-stories">TOP STORIES</Link>
-  </li>
-  <li>
-    <Link to="/income-tax">INCOME TAX</Link>
-  </li>
-  <li>
-    <Link to="/gst">GST</Link>
-  </li>
-  <li>
-    <a
-      onClick={this.indirectTaxClick}
-      style={{
-        color: "white",
-        cursor: "pointer",
-        fontFamily: "serif",
-        padding: "13px 10px"
-      }}
-    >
-      INDIRECT TAX{" "}
-      <span className="caret" style={{ color: "white" }} />
-    </a>
-  </li>
-  <li>
-    <Link to="/nbfc-rbi">NBFC/RBI</Link>
-  </li>
-  <li>
-    <Link to="/sebi">SEBI</Link>
-  </li>
-  <li>
-    <Link to="/roc">ROC/COMPANY LAW</Link>
-  </li>
-  <li>
-    <Link to="/more">
-      MORE
-      <span className="caret" style={{ color: "white" }} />
-    </Link>
-  </li>
-</ul>
-</div> */
-}

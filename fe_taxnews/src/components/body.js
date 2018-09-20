@@ -8,37 +8,31 @@ class body extends Component {
     super(props);
     this.tickerNewsList = [];
     this.state = {
-      fromDesk: [],
-      homeDataResult: [],
-      isLoading: true,
-      tickerData: []
+      homeData: [],
+      fromDeskData: [],
+      tickerData: [],
+      isLoading: true
     };
   }
 
   componentDidMount() {
-    axios
-      .get(URL + HOME)
-      .then(result => {
-        let homeArticlesCount = result.data.homeArticles.length;
-        for (let index = 0; index < homeArticlesCount; index++) {
-          const articleItem = result.data.homeArticles[index];
+    console.log("comp mounted body.js ");
+    let homeArticlesCount = this.props.homeDataResult.length;
+    for (let index = 0; index < homeArticlesCount; index++) {
+      const articleItem = this.props.homeDataResult[index];
 
-          for (let _index = 0; _index < articleItem.length; _index++) {
-            const innerItem = articleItem[_index];
-            this.tickerNewsList.push(innerItem.title);
-          }
-        }
+      for (let _index = 0; _index < articleItem.length; _index++) {
+        const innerItem = articleItem[_index];
+        this.tickerNewsList.push(innerItem.title);
+      }
+    }
 
-        //console.log("total news" + this.tickerData);
-
-        this.setState({
-          fromDesk: result.data.homeArticles.splice(0, 1),
-          homeDataResult: result.data.homeArticles,
-          isLoading: false,
-          tickerData: this.tickerNewsList
-        });
-      }, this)
-      .catch(error => console.log(error));
+    this.setState({
+      fromDeskData: this.props.homeDataResult.splice(0, 1),
+      homeData: this.props.homeDataResult.slice(0, -1),
+      isLoading: false,
+      tickerData: this.tickerNewsList
+    });
   }
 
   render() {
@@ -51,10 +45,12 @@ class body extends Component {
     } else {
       return (
         <React.Fragment>
-          <div class="ticker-wrap container">
-            <div class="ticker">
-              {this.state.tickerData.map(data => (
-                <div class="ticker__item">{data}</div>
+          <div className="ticker-wrap container">
+            <div className="ticker">
+              {this.state.tickerData.map((data, index1) => (
+                <div className="ticker__item" key={index1}>
+                  {data}
+                </div>
               ))}
             </div>
           </div>
@@ -69,15 +65,12 @@ class body extends Component {
                 </Link>
               </div>
 
-              {this.state.fromDesk[0].map((dataVal, _index) => {
+              {this.state.fromDeskData[0].map((dataVal, _index) => {
                 return (
                   <div className="bull-text" key={_index}>
                     <ul>
                       <li style={{ listStyle: "none" }}>
-                        {/* <Link to={`/from-desk/${dataVal._id}`}>
-                          {dataVal.title}
-                        </Link> */}
-                        <Link to={`${getArticleURL(0)}/${dataVal._id}`}>
+                        <Link to={`/from-desk/${dataVal._id}`}>
                           {dataVal.title}
                         </Link>
                       </li>
@@ -90,13 +83,13 @@ class body extends Component {
             <div className="posts">
               <div className="left-posts">
                 <div className="Articles">
-                  {this.state.homeDataResult.map(function(data, index) {
+                  {this.state.homeData.map(function(data, index) {
                     let index2 = index + 1;
                     return (
                       <div key={index}>
                         <div className="main-title-head">
                           <h3>{getArticleTitle(index + 1)}</h3>
-                          <Link to={getArticleURL(index + 1)}>More +</Link>
+                          <Link to={`${getArticleURL(index + 1)}`}>More +</Link>
                           <div className="clearfix" />
                         </div>
                         <div>
