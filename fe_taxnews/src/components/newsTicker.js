@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import _ from "lodash";
+import { getCategory } from "../commonUtility";
 
 class NewsTicker extends React.Component {
   constructor(props) {
@@ -17,8 +18,12 @@ class NewsTicker extends React.Component {
 
       for (let _index = 0; _index < articleItem.length; _index++) {
         const innerItem = articleItem[_index];
-        console.log(innerItem);
-        this.tickerNewsList.push(innerItem.title);
+        const tickerInfo = {
+          title: innerItem.title,
+          id: innerItem._id,
+          category: innerItem.category
+        };
+        this.tickerNewsList.push(tickerInfo);
       }
       this.setState({
         tickerData: this.tickerNewsList
@@ -26,22 +31,23 @@ class NewsTicker extends React.Component {
     }
   }
   render() {
-    console.log("Home data " + JSON.stringify(this.state.tickerData));
-    if (_.isEmpty(this.tickerNewsList)) {
-      return null;
-    } else {
-      return (
-        <div className="ticker-wrap container">
-          <div className="ticker">
-            {this.state.tickerData.map((data, index1) => (
-              <div className="ticker__item" key={index1}>
-                {data}
-              </div>
-            ))}
-          </div>
+    return (
+      <div className="ticker-wrap container">
+        <div className="ticker">
+          {this.state.tickerData.map((data, index1) => (
+            <div className="ticker__item" key={index1}>
+              <Link
+                
+                to={`${getCategory(parseInt(data.category))}/${data.id}`}
+                key={index1}
+              >
+                {data.title}
+              </Link>
+            </div>
+          ))}
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

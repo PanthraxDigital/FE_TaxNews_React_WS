@@ -35,6 +35,17 @@ class DetailPage extends Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.match.params.articleId !== this.props.match.params.articleId
+    ) {
+      this.dataURL = `${URL}${getCategoryId(this.categoryId)}/${
+        nextProps.match.params.articleId
+      }`;
+      this.fetchArticleDetail();
+    }
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.fetchArticleDetail();
@@ -57,7 +68,7 @@ class DetailPage extends Component {
           let mdDescription = marked(
             this.state.detailArticle[0].description.md || ""
           );
-          
+
           return (
             <div className="col-md-9 total-news">
               <div className="content">

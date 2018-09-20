@@ -43,8 +43,42 @@ export const getCategoryId = function(_strCategory) {
 
     case "/finance-budget":
       return 11;
-
-    case "/others":
+    case "/generalTax":
       return 12;
+    case "/others":
+      return 13;
+  }
+};
+
+export const getCategory = function(_strCategoryId) {
+  switch (_strCategoryId) {
+    case 0:
+      return "/from-desk";
+    case 1:
+      return "/top-stories";
+    case 2:
+      return "/income-tax";
+    case 3:
+      return "/gst";
+    case 4:
+      return "/vat-cst";
+    case 5:
+      return "/excise";
+    case 6:
+      return "/custom";
+    case 7:
+      return "/nbfc-rbi";
+    case 8:
+      return "/sebi";
+    case 9:
+      return "/roc-company-law";
+    case 10:
+      return "/jobs";
+    case 11:
+      return "/finance-budget";
+    case 12:
+      return "generalTax";
+    case 13:
+      return "/others";
   }
 };
