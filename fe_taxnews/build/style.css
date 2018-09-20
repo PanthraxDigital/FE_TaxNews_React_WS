@@ -103,7 +103,7 @@ label {
 .header-right {
   float: right;
   width: 58%;
-  margin-top: -20px;
+  margin-top: -40px;
 }
 .social-icons {
   text-align: right;
@@ -2655,7 +2655,7 @@ a.bull1 {
     margin-top: 4px;
   }
   .search {
-    width: 45%;
+    width: 100%;
     padding: 2.25px 4px;
     margin: 0 auto;
     float: right;
