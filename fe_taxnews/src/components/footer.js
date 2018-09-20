@@ -8,35 +8,19 @@ class Footer extends Component {
           <div className="bottom-menu">
             <ul>
               <li>
-                <Link to="/top-stories">TOP STORIES</Link>
+                <Link to="#">DISCLAIMER</Link>
               </li>{" "}
               |
               <li>
-                <Link to="/income-tax">INCOME TAX</Link>
+                <Link to="#">TERMS AND CONDITIONS</Link>
               </li>{" "}
               |
               <li>
-                <Link to="/gst">GST</Link>
+                <Link to="#">PRIVACY POLICY</Link>
               </li>{" "}
               |
               <li>
-                <Link to="/excise">EXCISE</Link>
-              </li>{" "}
-              |
-              <li>
-                <Link to="/nbfc-rbi">NBFC/RBI</Link>
-              </li>{" "}
-              |
-              <li>
-                <Link to="/sebi">SEBI</Link>
-              </li>{" "}
-              |
-              <li>
-                <Link to="/others">OTHERS</Link>
-              </li>{" "}
-              |
-              <li>
-                <Link to="/jobs">JOBS</Link>
+                <Link to="#">LOGIN</Link>
               </li>{" "}
             </ul>
           </div>

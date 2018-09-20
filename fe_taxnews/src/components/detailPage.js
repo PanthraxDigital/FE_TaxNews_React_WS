@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { URL } from "../networkUtility";
-import { DateFormat, getCategoryId } from "../commonUtility";
+import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
 import marked from "marked";
 import { Link } from "react-router-dom";
 import MDReactComponent from "markdown-react-js";
@@ -126,7 +126,13 @@ class DetailPage extends Component {
                 </div>
               ) : (
                 <div>
-                  <Link to={`${this.categoryId}`}>Back</Link>
+                  <Link to={`${this.categoryId}`}>
+                    BACK TO{" "}
+                    {this.categoryId
+                      .replace("-", " ")
+                      .substring(1, this.categoryId.length)
+                      .toUpperCase()}
+                  </Link>
                 </div>
               )}
             </div>

@@ -27,7 +27,9 @@ class Header extends Component {
                   <span>.in</span>
                 </h1>
               </Link>
-              <span className="text-center">The Power of Knowledge</span>
+              <h5>
+                <span style={{fontFamily:'sans-serif', fontSize:'18px'}} className="text-center">The Power of Knowledge</span>
+              </h5>
             </div>
           </div>
           <div className="social-icons">
