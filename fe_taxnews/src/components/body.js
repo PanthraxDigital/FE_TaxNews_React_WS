@@ -11,12 +11,14 @@ class body extends Component {
       tickerData: [],
       isLoading: true
     };
+
+    console.log(JSON.stringify(this.props.fromDeskResult));
   }
 
   componentDidMount() {
-        this.setState({
-      fromDeskData: this.props.homeDataResult.splice(0, 1),
-      homeData: this.props.homeDataResult.slice(0, -1),
+    this.setState({
+      fromDeskData: this.props.fromDeskResult,
+      homeData: this.props.homeDataResult,
       isLoading: false,
       tickerData: this.tickerNewsList
     });
@@ -32,7 +34,6 @@ class body extends Component {
     } else {
       return (
         <React.Fragment>
-          
           <div className="col-md-9 total-news">
             <div className="live-market">
               <h3>
@@ -44,7 +45,7 @@ class body extends Component {
                 </Link>
               </div>
 
-              {this.state.fromDeskData[0].map((dataVal, _index) => {
+              {this.state.fromDeskData.map((dataVal, _index) => {
                 return (
                   <div className="bull-text" key={_index}>
                     <ul>
@@ -130,11 +131,11 @@ class body extends Component {
     }
   }
 
-  componentWillUnmount() {
-    this.setState({
-      homeDataResult: []
-    });
-  }
+  // componentWillUnmount() {
+  //   this.setState({
+  //     homeDataResult: []
+  //   });
+  // }
 }
 
 // we are showing 3 headers

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/headerComp/header";
-import Main from "./components/main";
+import MainRoute from "./components/mainRoute";
 import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import axios from "axios";
@@ -13,11 +13,8 @@ class App extends Component {
     super(props);
     this.tickerNewsList = [];
     this.state = {
-      //fromDeskResult: [],
-      //tickerDataResult: [],
       isLoading: false,
       homeDataResult: []
-      //sideBarResult: {}
     };
   }
   componentDidMount() {
@@ -27,6 +24,7 @@ class App extends Component {
         this.setState({
           homeDataResult: result.data.homeArticles,
           sideBarResult: result.data.homeArticles.pop(),
+          fromDeskResult: result.data.homeArticles.shift(),
           isLoading: true
         });
       }, this)
@@ -35,15 +33,19 @@ class App extends Component {
 
   render() {
     if (this.state.isLoading) {
+      
       return (
         <div>
           {/* Contains the link of the menu */}
           <Header />
-          {/* Contains the routing details */}
 
+          {/* Contains the routing details */}
           <div className="main-content">
             <NewsTicker homeDataResult={this.state.homeDataResult} />
-            <Main homeDataResult={this.state.homeDataResult} />
+            <MainRoute
+              homeDataResult={this.state.homeDataResult}
+              fromDeskResult={this.state.fromDeskResult}
+            />
             <Sidebar sideBarResult={this.state.sideBarResult} />
           </div>
           <div className="clearfix" />

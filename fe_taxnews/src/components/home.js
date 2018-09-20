@@ -5,13 +5,12 @@ import Body from "../components/body";
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      homeData: this.props.homeDataResult
+    };
   }
   render() {
-    return (
-      <Body
-        homeDataResult={this.props.homeDataResult}
-      />
-    );
+    return <Body homeDataResult={this.state.homeData} />;
   }
 }
 

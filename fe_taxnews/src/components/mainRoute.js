@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./home";
+import Body from "./body";
 import MasterPageRoute from "./masterPageRoute";
 
 //Navigation of all the Menu
 
-class Main extends Component {
+class MainRoute extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      homeDataResult: this.props.homeDataResult,
+      fromDeskResult: this.props.fromDeskResult
+    };
   }
 
   render() {
@@ -28,11 +33,12 @@ class Main extends Component {
         <Route path="/others" component={MasterPageRoute} key="12" />
 
         <Route
-          exact
+          exact={true}
           path="/"
           render={() => (
-            <Home
-              homeDataResult={this.props.homeDataResult}
+            <Body
+              homeDataResult={this.state.homeDataResult}
+              fromDeskResult={this.state.fromDeskResult}
             />
           )}
         />
@@ -41,4 +47,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default MainRoute;
