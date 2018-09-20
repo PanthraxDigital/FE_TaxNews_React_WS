@@ -20,7 +20,12 @@ class Footer extends Component {
               </li>{" "}
               |
               <li>
-                <Link to="#">LOGIN</Link>
+                <a
+                  href="http://api.taxknowledge.in:4002/keystone/signin"
+                  target="_blank"
+                >
+                  LOGIN
+                </a>
               </li>{" "}
             </ul>
           </div>
