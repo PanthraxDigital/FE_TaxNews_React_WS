@@ -11,8 +11,6 @@ class body extends Component {
       tickerData: [],
       isLoading: true
     };
-
-    console.log(JSON.stringify(this.props.fromDeskResult));
   }
 
   componentDidMount() {
@@ -41,7 +39,7 @@ class body extends Component {
               </h3>
               <div className="bull">
                 <Link to="#">
-                  <img src={require("../images/change.jpg")} alt="" />
+                  <img src={this.state.fromDeskData[0].image} alt="" />
                 </Link>
               </div>
 

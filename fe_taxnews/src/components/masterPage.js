@@ -138,7 +138,6 @@ class MasterPage extends Component {
     axios
       .get(URL + `${_index}`)
       .then(result => {
-        console.log("result " + JSON.stringify(result.data.articles));
         this.setState({
           masterListData: result.data.articles,
           isLoading: false

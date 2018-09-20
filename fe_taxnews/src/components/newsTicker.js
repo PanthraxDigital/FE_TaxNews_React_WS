@@ -19,7 +19,7 @@ class NewsTicker extends React.Component {
       for (let _index = 0; _index < articleItem.length; _index++) {
         const innerItem = articleItem[_index];
         const tickerInfo = {
-          title: innerItem.title,
+          title: `${innerItem.title}`,
           id: innerItem._id,
           category: innerItem.category
         };
@@ -37,7 +37,6 @@ class NewsTicker extends React.Component {
           {this.state.tickerData.map((data, index1) => (
             <div className="ticker__item" key={index1}>
               <Link
-                
                 to={`${getCategory(parseInt(data.category))}/${data.id}`}
                 key={index1}
               >

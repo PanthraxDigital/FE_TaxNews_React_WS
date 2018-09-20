@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Body from "../components/body";
+import Body from "./body";
 //Navigation of all the Menu
 
 class Home extends Component {
