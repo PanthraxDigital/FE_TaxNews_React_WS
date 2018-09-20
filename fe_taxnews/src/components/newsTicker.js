@@ -67,15 +67,6 @@ class NewsTicker extends React.Component {
       font-family: "Times New Roman", Times, serif;
     `;
 
-    // const colorTickerItem = styled.span`
-    //   color: red;
-    //   font-size: 20px;
-
-    //   :hover {
-    //     text-decoration: none;
-    //   }
-    // `;
-
     return (
       <TickerWrap className="container">
         <Ticker>

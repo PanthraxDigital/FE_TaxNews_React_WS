@@ -27,6 +27,7 @@ class Header extends Component {
                   <span>.in</span>
                 </h1>
               </Link>
+              <span className="text-center">The Power of Knowledge</span>
             </div>
           </div>
           <div className="social-icons">
@@ -50,7 +51,7 @@ class Header extends Component {
           </div>
           <div className="clearfix" />
           <div className="header-right">
-            <div className="top-menu">
+            <div className="top-menu" style={{ display: "none" }}>
               <ul>
                 <li>
                   <a href="#">About</a>
