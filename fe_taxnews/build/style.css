@@ -1932,7 +1932,7 @@ a.bull1 {
   text-align: justify;
 }
 .bull-text ul li a:hover {
-  color: #cf0000;
+  /* color: #cf0000; */
 }
 /*-- classifieds --*/
 .classifieds {
