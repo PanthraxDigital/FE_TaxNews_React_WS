@@ -6,6 +6,7 @@ import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import axios from "axios";
 import { URL, HOME } from "./networkUtility";
+import NewsTicker from "./components/newsTicker";
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +21,6 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    console.log("comp mounted App.js ");
     axios
       .get(URL + HOME)
       .then(result => {
@@ -42,6 +42,7 @@ class App extends Component {
           {/* Contains the routing details */}
 
           <div className="main-content">
+            <NewsTicker homeDataResult={this.state.homeDataResult} />
             <Main homeDataResult={this.state.homeDataResult} />
             <Sidebar sideBarResult={this.state.sideBarResult} />
           </div>

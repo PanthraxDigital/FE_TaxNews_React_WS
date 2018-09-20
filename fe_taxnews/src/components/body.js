@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { URL, HOME } from "../networkUtility";
 
 class body extends Component {
   constructor(props) {
@@ -16,18 +14,7 @@ class body extends Component {
   }
 
   componentDidMount() {
-    console.log("comp mounted body.js ");
-    let homeArticlesCount = this.props.homeDataResult.length;
-    for (let index = 0; index < homeArticlesCount; index++) {
-      const articleItem = this.props.homeDataResult[index];
-
-      for (let _index = 0; _index < articleItem.length; _index++) {
-        const innerItem = articleItem[_index];
-        this.tickerNewsList.push(innerItem.title);
-      }
-    }
-
-    this.setState({
+        this.setState({
       fromDeskData: this.props.homeDataResult.splice(0, 1),
       homeData: this.props.homeDataResult.slice(0, -1),
       isLoading: false,
@@ -45,15 +32,7 @@ class body extends Component {
     } else {
       return (
         <React.Fragment>
-          <div className="ticker-wrap container">
-            <div className="ticker">
-              {this.state.tickerData.map((data, index1) => (
-                <div className="ticker__item" key={index1}>
-                  {data}
-                </div>
-              ))}
-            </div>
-          </div>
+          
           <div className="col-md-9 total-news">
             <div className="live-market">
               <h3>
