@@ -39,7 +39,14 @@ class body extends Component {
               </h3>
               <div className="bull">
                 <Link to="#">
-                  <img src={this.state.fromDeskData[0].image} alt="" />
+                  <img
+                    src={
+                      this.state.fromDeskData[0].image != null
+                        ? this.state.fromDeskData[0].image.url
+                        : ""
+                    }
+                    alt=""
+                  />
                 </Link>
               </div>
 
@@ -74,7 +81,13 @@ class body extends Component {
                           {data.map(function(dataResult, index_) {
                             return (
                               <div className="world-news-grid" key={index_}>
-                                <img src={dataResult.image} />
+                                <img
+                                  src={
+                                    dataResult.image != null
+                                      ? dataResult.image.url
+                                      : ""
+                                  }
+                                />
                                 <Link
                                   style={{ color: "black" }}
                                   to={`${getArticleURL(index + 1)}/${
@@ -93,7 +106,7 @@ class body extends Component {
                                 </Link>
                               </div>
                             );
-                          })}
+                          }, this)}
                           <div className="clearfix" />
                         </div>
                       </div>

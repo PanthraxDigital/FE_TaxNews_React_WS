@@ -21,6 +21,7 @@ class App extends Component {
     axios
       .get(URL + HOME)
       .then(result => {
+        //console.log("result " + JSON.stringify(result));
         this.setState({
           homeDataResult: result.data.homeArticles,
           sideBarResult: result.data.homeArticles.pop(),
@@ -33,7 +34,6 @@ class App extends Component {
 
   render() {
     if (this.state.isLoading) {
-      
       return (
         <div>
           {/* Contains the link of the menu */}

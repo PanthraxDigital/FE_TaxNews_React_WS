@@ -54,7 +54,6 @@ class DetailPage extends Component {
         );
       } else {
         if (this.state.detailArticle.length > 0) {
-          let mdDescription = this.state.detailArticle[0].description;
 
           return (
             <div className="col-md-9 total-news">
@@ -135,7 +134,7 @@ class DetailPage extends Component {
 
   fetchArticleDetail() {
     axios.get(this.dataURL).then(result => {
-      //console.log("result "+ JSON.stringify(result));
+      console.log("result "+ JSON.stringify(result));
       this.setState({
         isLoading: false,
         detailArticle: result.data.articles
