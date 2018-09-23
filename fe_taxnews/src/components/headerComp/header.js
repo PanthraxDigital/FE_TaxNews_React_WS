@@ -13,7 +13,7 @@ class Header extends Component {
   }
 
   searchResult(e) {
-    alert("hi");
+    alert("Work In Progress");
   }
   render() {
     return (
@@ -28,7 +28,12 @@ class Header extends Component {
                 </h1>
               </Link>
               <h5>
-                <span style={{fontFamily:'sans-serif', fontSize:'18px'}} className="text-center">The Power of Knowledge</span>
+                <div style={{ fontFamily: "sans-serif", fontSize: "18px" }}>
+                  <span>T</span>
+                  he <span>P</span>
+                  ower of <span>K</span>
+                  nowledge
+                </div>
               </h5>
             </div>
           </div>
