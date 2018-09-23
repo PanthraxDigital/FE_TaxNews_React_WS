@@ -8,6 +8,10 @@ class Footer extends Component {
           <div className="bottom-menu">
             <ul>
               <li>
+                <Link to="#">ABOUT</Link>
+              </li>{" "}
+              |
+              <li>
                 <Link to="#">DISCLAIMER</Link>
               </li>{" "}
               |
