@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { URL } from "../networkUtility";
 import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
-import marked from "marked";
 import { Link } from "react-router-dom";
-import MDReactComponent from "markdown-react-js";
 
 class DetailPage extends Component {
   constructor(props) {
@@ -24,15 +22,6 @@ class DetailPage extends Component {
       isLoading: true,
       detailArticle: []
     };
-    marked.setOptions({
-      gfm: true,
-      tables: true,
-      breaks: true,
-      pedantic: true,
-      sanitize: true,
-      smartLists: true,
-      smartypants: true
-    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -65,9 +54,7 @@ class DetailPage extends Component {
         );
       } else {
         if (this.state.detailArticle.length > 0) {
-          let mdDescription = marked(
-            this.state.detailArticle[0].description.md || ""
-          );
+          let mdDescription = this.state.detailArticle[0].description;
 
           return (
             <div className="col-md-9 total-news">
@@ -80,8 +67,11 @@ class DetailPage extends Component {
                     <li>
                       <span>
                         posted by{" "}
-                        {this.state.detailArticle[0].author.name.first}{" "}
-                        {this.state.detailArticle[0].author.name.last}
+                        {this.state.detailArticle[0].author != null
+                          ? this.state.detailArticle[0].author.name.first +
+                            " " +
+                            this.state.detailArticle[0].author.name.last
+                          : "TaxKnowledge Team"}
                       </span>
                       <span>
                         {" "}
@@ -93,11 +83,10 @@ class DetailPage extends Component {
                 <div
                   className="mdFormat"
                   style={{ fontSize: "1.1em", paddingTop: "10px" }}
-                  dangerouslySetInnerHTML={{ __html: mdDescription }}
+                  dangerouslySetInnerHTML={{
+                    __html: this.state.detailArticle[0].description
+                  }}
                 />
-                {/* <MDReactComponent
-                  text={this.state.detailArticle[0].description.md}
-                /> */}
                 <br />
               </div>
               {this.state.detailArticle[0].link.length > 0 ? (
@@ -146,6 +135,7 @@ class DetailPage extends Component {
 
   fetchArticleDetail() {
     axios.get(this.dataURL).then(result => {
+      //console.log("result "+ JSON.stringify(result));
       this.setState({
         isLoading: false,
         detailArticle: result.data.articles

@@ -103,7 +103,7 @@ label {
 .header-right {
   float: right;
   width: 58%;
-  margin-top: -20px;
+  margin-top: -40px;
 }
 .social-icons {
   text-align: right;
@@ -1927,13 +1927,12 @@ a.bull1 {
   font-size: 1em;
   font-weight: bold;
   margin-top: 10px;
-  text-transform: lowercase;
   display: block;
   text-decoration: none;
   text-align: justify;
 }
 .bull-text ul li a:hover {
-  color: #cf0000;
+  /* color: #cf0000; */
 }
 /*-- classifieds --*/
 .classifieds {
@@ -3082,7 +3081,7 @@ a.bull1 {
 /* Scolling the test */
 
 /* News ticker Part 2 */
-/* 
+
 * {
   box-sizing: border-box;
 }
@@ -3140,7 +3139,7 @@ a.bull1 {
   font-size: 2rem;
   color: #cf0000;
   font-family: "Times New Roman", Times, serif;
-} */
+}
 
 .mdFormat p {
   padding: 10px 0px;
