@@ -2305,7 +2305,7 @@ a.bull1 {
     margin-top: 10px;
   }
   img.blog {
-    width: 41%;
+    /* width: 41%; */
   }
   .l_g_r {
     margin-left: 2em;
@@ -2744,7 +2744,7 @@ a.bull1 {
     font-size: 1.2em;
   }
   img.blog {
-    width: 52%;
+    /* width: 52%; */
   }
   span.menu {
     width: 100%;
@@ -2960,7 +2960,7 @@ a.bull1 {
     padding: 2em 0 0 0;
   }
   img.blog {
-    width: 80%;
+    /* width: 80%; */
     margin-bottom: 1em;
   }
   a.gotosingle,
