@@ -54,7 +54,6 @@ class DetailPage extends Component {
         );
       } else {
         if (this.state.detailArticle.length > 0) {
-
           return (
             <div className="col-md-9 total-news">
               <div className="content">
@@ -88,7 +87,7 @@ class DetailPage extends Component {
                 />
                 <br />
               </div>
-              {this.state.detailArticle[0].attachmentLink.length > 0 ? (
+              {this.state.detailArticle[0].hasOwnProperty("attachmentLink") ? (
                 <a
                   href={`${this.state.detailArticle[0].attachmentLink}`}
                   target="_blank"
@@ -134,7 +133,7 @@ class DetailPage extends Component {
 
   fetchArticleDetail() {
     axios.get(this.dataURL).then(result => {
-      console.log("result "+ JSON.stringify(result));
+      console.log("result " + JSON.stringify(result));
       this.setState({
         isLoading: false,
         detailArticle: result.data.articles
