@@ -91,7 +91,6 @@ class MasterPage extends Component {
                           <img
                             src={data.image.url}
                             className="blog"
-                            style={{ width: "200px", height: "100px" }}
                           />
                         </a>
                         <p>{data.subTitle}</p>
