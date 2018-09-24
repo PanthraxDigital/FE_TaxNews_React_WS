@@ -55,9 +55,9 @@ class MasterPage extends Component {
           <div className="col-md-9 total-news">
             <div className="content">
               <div className="grids">
-                {this.state.masterListData.map(function(data) {
+                {this.state.masterListData.map(function(data,index1) {
                   return (
-                    <div className="grid box">
+                    <div className="grid box" key={index1}>
                       <div className="grid-header">
                         <Link
                           className="gotosingle"
@@ -89,7 +89,13 @@ class MasterPage extends Component {
                       <div className="grid-img-content">
                         <a href="#">
                           <img
-                            src={data.image.url}
+                            src={
+                              data.uploadImage != null
+                                ? data.uploadImage.url
+                                : data.imageLink != null
+                                  ? data.imageLink
+                                  : ""
+                            }
                             className="blog"
                           />
                         </a>

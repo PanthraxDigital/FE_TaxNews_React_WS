@@ -30,6 +30,7 @@ class body extends Component {
         </div>
       );
     } else {
+      console.log(this.state.homeData[0][1].imageLink);
       return (
         <React.Fragment>
           <div className="col-md-9 total-news">
@@ -41,9 +42,11 @@ class body extends Component {
                 <Link to="#">
                   <img
                     src={
-                      this.state.fromDeskData[0].image != null
-                        ? this.state.fromDeskData[0].image.url
-                        : ""
+                      this.state.fromDeskData[0].hasOwnProperty("uploadImage")
+                        ? this.state.fromDeskData[0].uploadImage.url
+                        : this.state.fromDeskData[0].imageLink != null
+                          ? this.state.fromDeskData[0].imageLink
+                          : ""
                     }
                     alt=""
                   />
@@ -83,9 +86,11 @@ class body extends Component {
                               <div className="world-news-grid" key={index_}>
                                 <img
                                   src={
-                                    dataResult.image != null
-                                      ? dataResult.image.url
-                                      : ""
+                                    dataResult.hasOwnProperty("uploadImage")
+                                      ? dataResult.uploadImage.url
+                                      : dataResult.imageLink != null
+                                        ? dataResult.imageLink
+                                        : ""
                                   }
                                 />
                                 <Link

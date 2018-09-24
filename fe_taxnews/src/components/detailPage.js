@@ -88,9 +88,9 @@ class DetailPage extends Component {
                 />
                 <br />
               </div>
-              {this.state.detailArticle[0].link.length > 0 ? (
+              {this.state.detailArticle[0].attachmentLink.length > 0 ? (
                 <a
-                  href={`${this.state.detailArticle[0].link}`}
+                  href={`${this.state.detailArticle[0].attachmentLink}`}
                   target="_blank"
                   type="button"
                   className="btn btn-danger"
