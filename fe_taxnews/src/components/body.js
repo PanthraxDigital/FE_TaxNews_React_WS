@@ -30,7 +30,6 @@ class body extends Component {
         </div>
       );
     } else {
-      console.log(this.state.homeData[0][1].imageLink);
       return (
         <React.Fragment>
           <div className="col-md-9 total-news">
