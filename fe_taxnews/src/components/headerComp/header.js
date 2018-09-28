@@ -37,7 +37,7 @@ class Header extends Component {
               </h5>
             </div>
           </div>
-          <div className="social-icons">
+          <div className="social-icons" style={{ display: "none" }}>
             <ul>
               <li>
                 <a href="#">
@@ -78,7 +78,7 @@ class Header extends Component {
                 </li>{" "}
               </ul>
             </div>
-            <div className="search" style={{display:"none"}}>
+            <div className="search">
               <div>
                 <input type="text" value="Search" />
                 <input type="submit" value="" onClick={this.searchResult} />

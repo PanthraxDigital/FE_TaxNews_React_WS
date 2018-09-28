@@ -610,13 +610,12 @@ h5.breaking {
 .world-news-grid a {
   color: #cf0000;
   font-weight: bold;
-  font-size: 1.0em;
+  font-size: 1em;
   text-transform: none;
   text-decoration: none;
   display: flex;
   justify-content: flex-start;
   text-align: justify;
-  
 }
 a.title {
   color: #202021;
@@ -1443,11 +1442,11 @@ img.code {
 }
 a.gotosingle {
   color: #202021;
-  font-size: 1.4em;
-  font-weight: 400;
-  word-spacing: 3px;
-  font-family: "bebasregular";
+  font-size: 1.8em;
+  font-weight: 700;
+  font-family: "Times New Roman", Times, serif;
   margin-bottom: 4px;
+  line-height: 1.2;
   text-decoration: none;
 }
 
@@ -1455,8 +1454,6 @@ a.gotosingle {
   float: left;
   background: #fff;
   padding: 0px;
-  box-shadow: 0px 0px 5px #ddd;
-  width: 125px;
   height: 125px;
   object-fit: cover;
   background-image: url("images/news-placeholder.png") no-repeat 0px 0px;
@@ -1465,9 +1462,9 @@ img.blog:hover {
   opacity: 0.9;
 }
 .grid p {
-  font-size: 0.92em;
+  font-size: 1em;
   color: #202021;
-  line-height: 1.8em;
+  line-height: 1.6em;
   width: 100%;
   text-align: justify;
 }
@@ -2535,11 +2532,9 @@ a.bull1 {
   }
   .world-news-grid img {
     width: 100px;
-    height: 100px;
     margin-right: 10px;
     float: left;
     margin-top: 5px;
-    object-fit: cover;
     
   }
   .world-news-grid h5 {
@@ -2715,7 +2710,7 @@ a.bull1 {
     font-size: 1.3em;
   }
   .world-news-grid a {
-    font-size: 0.8em;
+    font-size: 0.85em;
   }
   .main-title-head h3 {
     font-size: 1.3em;
@@ -2750,7 +2745,9 @@ a.bull1 {
     font-size: 1.2em;
   }
   img.blog {
-    /* width: 52%; */
+    width: 50%;
+    margin-top: 0em;
+    object-fit: scale-down;
   }
   span.menu {
     width: 100%;
@@ -2905,6 +2902,7 @@ a.bull1 {
     width: 100%;
     text-align: center;
     margin-top: 0.5em;
+    
   }
   .team-grid {
     width: 50%;
@@ -2966,7 +2964,7 @@ a.bull1 {
     padding: 2em 0 0 0;
   }
   img.blog {
-    /* width: 80%; */
+    width: 100%;
     margin-bottom: 1em;
   }
   a.gotosingle,
@@ -2974,7 +2972,6 @@ a.bull1 {
     font-size: 0.95em;
   }
   .grid p {
-    height: 140px;
     overflow: hidden;
   }
   ul.comment-list {
@@ -3151,7 +3148,6 @@ a.bull1 {
 .mdFormat p {
   padding: 10px 0px;
   text-align: justify;
-  
 }
 /* body {
   padding-bottom: 5rem;
