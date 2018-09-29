@@ -411,6 +411,7 @@ a.btn {
 .total-news {
   padding: 0;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .slider {
   position: relative;
@@ -557,9 +558,10 @@ h5.breaking {
 }
 .world-news-grid img {
   width: 100%;
-  height: 100%;
+  height: 150px;
   margin-bottom: 10px;
-  object-fit: cover;
+  object-fit: scale-down;
+  border: 1px solid lightgray;
 }
 /* without ADS */
 .world-news-grid:nth-child(4) {
@@ -1442,21 +1444,24 @@ img.code {
 }
 a.gotosingle {
   color: #202021;
-  font-size: 1.8em;
+  font-size: 1.6em;
   font-weight: 700;
   font-family: "Times New Roman", Times, serif;
   margin-bottom: 4px;
   line-height: 1.2;
   text-decoration: none;
+  text-align: justify;
 }
 
 .grid img {
   float: left;
   background: #fff;
   padding: 0px;
-  height: 125px;
-  object-fit: cover;
-  background-image: url("images/news-placeholder.png") no-repeat 0px 0px;
+  height: 150px;
+  width: 100%;
+  max-width: 150px;
+  object-fit: scale-down;
+  border: 1px solid lightgray;
 }
 img.blog:hover {
   opacity: 0.9;
@@ -1469,7 +1474,7 @@ img.blog:hover {
   text-align: justify;
 }
 img.blog {
-  margin-right: 2em;
+  margin-right: 1em;
 }
 .grid p a {
   color: #ea5546;
@@ -1487,6 +1492,7 @@ img.blog {
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
+  
 }
 .grid-header ul li a:hover,
 .content-pagenation li a:hover {
@@ -2196,7 +2202,7 @@ a.bull1 {
     bottom: 1%;
   }
   .world-news-grid p {
-    font-size: 0.875em;
+    font-size: 0.9em;
   }
   .desk p {
     font-size: 0.875em;
@@ -2528,21 +2534,21 @@ a.bull1 {
   }
   .world-news-grid {
     width: 98%;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-top: 20px;
   }
   .world-news-grid img {
-    width: 100px;
+    width: 100%;
+    height: 150px;
     margin-right: 10px;
-    float: left;
     margin-top: 5px;
-    
   }
   .world-news-grid h5 {
     font-size: 0.9em;
     margin-top: 6px;
   }
   .world-news-grid p {
-    font-size: 0.825em;
+    font-size: 0.9em;
   }
 
   .sign_up {
@@ -2570,9 +2576,6 @@ a.bull1 {
   .bottom-menu ul li a {
     font-size: 0.875em;
   }
-  .bottom-menu ul li {
-    margin: 0 -1px;
-  }
   .team-grid:nth-child(4) {
     display: none;
   }
@@ -2582,6 +2585,7 @@ a.bull1 {
   a.gotosingle,
   .msingle-grid h3 {
     font-size: 1.25em;
+    text-align: justify;
   }
   .grid.box {
     margin-bottom: 2em;
@@ -2710,7 +2714,7 @@ a.bull1 {
     font-size: 1.3em;
   }
   .world-news-grid a {
-    font-size: 0.85em;
+    font-size: 1em;
   }
   .main-title-head h3 {
     font-size: 1.3em;
@@ -2743,6 +2747,7 @@ a.bull1 {
   a.gotosingle,
   .msingle-grid h3 {
     font-size: 1.2em;
+    text-align: justify;
   }
   img.blog {
     width: 50%;
@@ -2829,6 +2834,10 @@ a.bull1 {
     margin-right: 0%;
     margin-bottom: 1.5em;
   }
+  .grid img{
+    width : 100%;
+    max-width: 100%;
+  }
 
   .right-posts {
     width: 100%;
@@ -2902,7 +2911,6 @@ a.bull1 {
     width: 100%;
     text-align: center;
     margin-top: 0.5em;
-    
   }
   .team-grid {
     width: 50%;
@@ -2969,7 +2977,8 @@ a.bull1 {
   }
   a.gotosingle,
   .msingle-grid h3 {
-    font-size: 0.95em;
+    font-size: 1.1em;
+    text-align: justify;
   }
   .grid p {
     overflow: hidden;
