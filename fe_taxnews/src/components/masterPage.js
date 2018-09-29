@@ -55,7 +55,7 @@ class MasterPage extends Component {
           <div className="col-md-9 total-news">
             <div className="content">
               <div className="grids">
-                {this.state.masterListData.map(function(data,index1) {
+                {this.state.masterListData.map(function(data, index1) {
                   return (
                     <div className="grid box" key={index1}>
                       <div className="grid-header">
@@ -68,8 +68,12 @@ class MasterPage extends Component {
                         <ul>
                           <li>
                             <span>
-                              posted by {data.author.name.first}{" "}
-                              {data.author.name.last}
+                              posted by{" "}
+                              {data.author != null
+                                ? data.author.name.first +
+                                  " " +
+                                  data.author.name.last
+                                : "TaxKnowledge Team"}
                             </span>
                             <span>
                               {" "}
