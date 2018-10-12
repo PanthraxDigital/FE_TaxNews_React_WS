@@ -14,19 +14,6 @@ class Sidebar extends Component {
     return (
       <div className="col-md-3 side-bar">
         <NewsLetterSubscriber />
-        {/* <div className="sign_up text-center">
-          <h3>Sign Up for Newsletter</h3>
-          <p className="sign">Sign up to receive our free newsletters!</p>
-          <div>
-            <input type="text" className="text" placeholder="Email Address" />
-            <input
-              type="submit"
-              style={{ margin: "0 auto", marginTop: "10px" }}
-              onClick={this.addNewSubscriber}
-            />
-          </div>
-          <p className="spam">We do not spam. We value your privacy!</p>
-        </div> */}
 
         <div className="clearfix" />
         <div>
@@ -81,3 +68,19 @@ class Sidebar extends Component {
 }
 
 export default Sidebar;
+
+{
+  /* <div className="sign_up text-center">
+          <h3>Sign Up for Newsletter</h3>
+          <p className="sign">Sign up to receive our free newsletters!</p>
+          <div>
+            <input type="text" className="text" placeholder="Email Address" />
+            <input
+              type="submit"
+              style={{ margin: "0 auto", marginTop: "10px" }}
+              onClick={this.addNewSubscriber}
+            />
+          </div>
+          <p className="spam">We do not spam. We value your privacy!</p>
+        </div> */
+}
