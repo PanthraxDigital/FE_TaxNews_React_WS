@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { DateFormat } from "../commonUtility";
+import NewsLetterSubscriber from "./newsLetterSubscriber";
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.addNewSubscriber = this.addNewSubscriber.bind(this);
-    
   }
 
   addNewSubscriber(e) {}
@@ -13,7 +13,8 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="col-md-3 side-bar">
-        <div className="sign_up text-center">
+        <NewsLetterSubscriber />
+        {/* <div className="sign_up text-center">
           <h3>Sign Up for Newsletter</h3>
           <p className="sign">Sign up to receive our free newsletters!</p>
           <div>
@@ -25,7 +26,8 @@ class Sidebar extends Component {
             />
           </div>
           <p className="spam">We do not spam. We value your privacy!</p>
-        </div>
+        </div> */}
+
         <div className="clearfix" />
         <div>
           <div style={{ display: "none" }}>
@@ -51,13 +53,12 @@ class Sidebar extends Component {
           </div>
           <div className="popular-news">
             {this.props.sideBarResult.map((data, index) => (
-                <div className="popular-grid" key={index}>
-                  <i>{DateFormat(data.articleDate)}</i>
-                  <p>
-                    {data.title} <a href="#">Read More</a>
-                  </p>
-                </div>
-              
+              <div className="popular-grid" key={index}>
+                <i>{DateFormat(data.articleDate)}</i>
+                <p>
+                  {data.title} <a href="#">Read More</a>
+                </p>
+              </div>
             ))}
           </div>
           <a className="more" href="#">
@@ -80,33 +81,3 @@ class Sidebar extends Component {
 }
 
 export default Sidebar;
-
-{
-  /* <div className="popular-grid">
-              <i>Sept 12th 2018 </i>
-              <p>
-                Chartered Accountants Firms to get Registration Number in 24
-                Hours: ICAI <a href="#">Read More</a>
-              </p>
-            </div>
-            <div className="popular-grid">
-              <i>Sept 12th 2018 </i>
-              <p>
-                The Anti-Profiteering Conundrum <a href="#">Read More</a>
-              </p>
-            </div>
-            <div className="popular-grid">
-              <i>Sept 12th 2018 </i>
-              <p>
-                GST: Calcutta HC transfers Appeal filed in Wrong Forum, Directs
-                to Disposal within Four Weeks <a href="#">Read More</a>
-              </p>
-            </div>
-            <div className="popular-grid">
-              <i>Sept 12th 2018 </i>
-              <p>
-                Chennai Customs grants First Automated Bill of Entry{" "}
-                <a href="#">Read More</a>
-              </p>
-            </div> */
-}

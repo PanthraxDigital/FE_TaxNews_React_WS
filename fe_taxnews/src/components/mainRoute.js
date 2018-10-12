@@ -47,3 +47,8 @@ class MainRoute extends Component {
 }
 
 export default MainRoute;
+
+/*
+Popup for subscriber
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"a4e722edd8d0243c79091fed4","lid":"86af928437","uniqueMethods":true}) })</script>
+*/
