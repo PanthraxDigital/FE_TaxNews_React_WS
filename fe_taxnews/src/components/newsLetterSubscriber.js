@@ -21,24 +21,27 @@ class NewsletterSubscriber extends React.Component {
           rel="stylesheet"
           type="text/css"
         />
-        <div id="mc_embed_signup">
+        <div id="mc_embed_signup" className="sign_up text-center" style={{padding:"5px"}}>
           <form
             action="https://taxknowledge.us19.list-manage.com/subscribe/post?u=a4e722edd8d0243c79091fed4&amp;id=86af928437"
             method="post"
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
             className="validate"
-            target="_blank"
-            readOnly
+            target="_self"
           >
             <div id="mc_embed_signup_scroll">
-              <label htmlFor="mce-EMAIL">Subscribe to our mailing list</label>
+              <h3>Sign Up for Newsletter</h3>
+              <p className="sign" htmlFor="mce-EMAIL">
+                Sign up to receive our free newsletters!
+              </p>
               <input
                 type="email"
+                style={{ width: "100%" }}
                 name="EMAIL"
                 className="email"
                 id="mce-EMAIL"
-                placeholder="email address"
+                placeholder="Email Address"
                 required
                 value={this.state.value}
                 onChange={this.handleChange}
@@ -47,23 +50,17 @@ class NewsletterSubscriber extends React.Component {
               <div
                 style={{ position: "absolute", left: "-5000px" }}
                 aria-hidden="true"
-              >
-                {/* <input
-                  type="text"
-                  name="b_a4e722edd8d0243c79091fed4_86af928437"
-                  tabIndex="-1"
-                  defaultValue=""
-                /> */}
-              </div>
+              />
               <div className="clear">
                 <input
                   type="submit"
                   value="Subscribe"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  className="button"
+                  readOnly="true"
                 />
               </div>
+              <p className="spam">We do not spam. We value your privacy!</p>
             </div>
           </form>
         </div>
