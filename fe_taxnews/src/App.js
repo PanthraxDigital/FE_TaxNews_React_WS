@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import axios from "axios";
 import { URL, HOME } from "./networkUtility";
 import NewsTicker from "./components/newsTicker";
+import SubscriberPopup from "./components/subscriberPopup";
 
 class App extends Component {
   constructor(props) {
@@ -35,22 +36,25 @@ class App extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <div>
-          {/* Contains the link of the menu */}
-          <Header />
+        <React.Fragment>
+          <div>
+            {/* Contains the link of the menu */}
+            <Header />
 
-          {/* Contains the routing details */}
-          <div className="main-content">
-            <NewsTicker homeDataResult={this.state.homeDataResult} />
-            <MainRoute
-              homeDataResult={this.state.homeDataResult}
-              fromDeskResult={this.state.fromDeskResult}
-            />
-            <Sidebar sideBarResult={this.state.sideBarResult} />
+            {/* Contains the routing details */}
+            <div className="main-content">
+              <NewsTicker homeDataResult={this.state.homeDataResult} />
+              <MainRoute
+                homeDataResult={this.state.homeDataResult}
+                fromDeskResult={this.state.fromDeskResult}
+              />
+              <Sidebar sideBarResult={this.state.sideBarResult} />
+            </div>
+            <div className="clearfix" />
+            <Footer />
           </div>
-          <div className="clearfix" />
-          <Footer />
-        </div>
+          <SubscriberPopup />
+        </React.Fragment>
       );
     } else {
       return null;
