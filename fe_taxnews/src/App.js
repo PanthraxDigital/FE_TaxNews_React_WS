@@ -8,6 +8,7 @@ import axios from "axios";
 import { URL, HOME } from "./networkUtility";
 import NewsTicker from "./components/newsTicker";
 import SubscriberPopup from "./components/subscriberPopup";
+import { getCookie, checkCookie } from "./commonUtility";
 
 class App extends Component {
   constructor(props) {
@@ -15,14 +16,21 @@ class App extends Component {
     this.tickerNewsList = [];
     this.state = {
       isLoading: false,
-      homeDataResult: []
+      homeDataResult: [],
+      loadSubscriberPopup: false
     };
   }
   componentDidMount() {
+    // Check the presence of Cookie, if cookie not found, show popup,
+
+    if (checkCookie() != 1) {
+      this.setState({
+        loadSubscriberPopup: true
+      });
+    }
     axios
       .get(URL + HOME)
       .then(result => {
-        //console.log("result " + JSON.stringify(result));
         this.setState({
           homeDataResult: result.data.homeArticles,
           sideBarResult: result.data.homeArticles.pop(),
@@ -31,6 +39,12 @@ class App extends Component {
         });
       }, this)
       .catch(error => console.log(error));
+  }
+
+  closeSubscriberPopup(e) {
+    this.setState({
+      loadSubscriberPopup: false
+    });
   }
 
   render() {
@@ -53,7 +67,13 @@ class App extends Component {
             <div className="clearfix" />
             <Footer />
           </div>
-          <SubscriberPopup />
+          {this.state.loadSubscriberPopup ? (
+            <SubscriberPopup
+              closeSubscriberPopup={this.closeSubscriberPopup.bind(this)}
+            />
+          ) : (
+            ""
+          )}
         </React.Fragment>
       );
     } else {
