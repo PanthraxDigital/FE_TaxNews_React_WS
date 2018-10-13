@@ -3,6 +3,7 @@ import axios from "axios";
 import { URL } from "../networkUtility";
 import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
 import { Link } from "react-router-dom";
+import Comment from "./comment";
 
 class DetailPage extends Component {
   constructor(props) {
@@ -55,74 +56,84 @@ class DetailPage extends Component {
       } else {
         if (this.state.detailArticle.length > 0) {
           return (
-            <div className="col-md-9 total-news">
-              <div className="content">
-                <div className="grid-header">
-                  <a className="gotosingle" href="#" style={{textAlign:"justify"}}>
-                    {this.state.detailArticle[0].title}
+            <React.Fragment>
+              <div className="col-md-9 total-news">
+                <div className="content">
+                  <div className="grid-header">
+                    <a
+                      className="gotosingle"
+                      href="#"
+                      style={{ textAlign: "justify" }}
+                    >
+                      {this.state.detailArticle[0].title}
+                    </a>
+                    <ul>
+                      <li>
+                        <span>
+                          posted by{" "}
+                          {this.state.detailArticle[0].author != null
+                            ? this.state.detailArticle[0].author.name.first +
+                              " " +
+                              this.state.detailArticle[0].author.name.last
+                            : "TaxKnowledge Team"}
+                        </span>
+                        <span>
+                          {" "}
+                          on{" "}
+                          {DateFormat(this.state.detailArticle[0].articleDate)}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    className="mdFormat"
+                    style={{ fontSize: "1.1em", paddingTop: "50px" }}
+                    dangerouslySetInnerHTML={{
+                      __html: this.state.detailArticle[0].description
+                    }}
+                  />
+                  <br />
+                </div>
+                {this.state.detailArticle[0].hasOwnProperty(
+                  "attachmentLink"
+                ) ? (
+                  <a
+                    href={`${this.state.detailArticle[0].attachmentLink}`}
+                    target="_blank"
+                    type="button"
+                    className="btn btn-danger"
+                    style={{
+                      backgroundColor: "#cf0000",
+                      marginBottom: "20px",
+                      borderRadius: 0,
+                      marginTop: "30px",
+                      color: "white"
+                    }}
+                  >
+                    To read the full text click here +
                   </a>
-                  <ul>
-                    <li>
-                      <span>
-                        posted by{" "}
-                        {this.state.detailArticle[0].author != null
-                          ? this.state.detailArticle[0].author.name.first +
-                            " " +
-                            this.state.detailArticle[0].author.name.last
-                          : "TaxKnowledge Team"}
-                      </span>
-                      <span>
-                        {" "}
-                        on {DateFormat(this.state.detailArticle[0].articleDate)}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  className="mdFormat"
-                  style={{ fontSize: "1.1em", paddingTop: "50px" }}
-                  dangerouslySetInnerHTML={{
-                    __html: this.state.detailArticle[0].description
-                  }}
-                />
-                <br />
-              </div>
-              {this.state.detailArticle[0].hasOwnProperty("attachmentLink") ? (
-                <a
-                  href={`${this.state.detailArticle[0].attachmentLink}`}
-                  target="_blank"
-                  type="button"
-                  className="btn btn-danger"
-                  style={{
-                    backgroundColor: "#cf0000",
-                    marginBottom: "20px",
-                    borderRadius: 0,
-                    marginTop: "30px",
-                    color: "white"
-                  }}
-                >
-                  To read the full text click here +
-                </a>
-              ) : (
-                ""
-              )}
+                ) : (
+                  ""
+                )}
 
-              {this.categoryId === "/from-desk" ? (
-                <div>
-                  <Link to="/">BACK</Link>
-                </div>
-              ) : (
-                <div>
-                  <Link to={`${this.categoryId}`}>
-                    READ MORE{" "}
-                    {this.categoryId
-                      .replace("-", " ")
-                      .substring(1, this.categoryId.length)
-                      .toUpperCase()}
-                  </Link>
-                </div>
-              )}
-            </div>
+                {this.categoryId === "/from-desk" ? (
+                  <div>
+                    <Link to="/">BACK</Link>
+                  </div>
+                ) : (
+                  <div>
+                    <Link to={`${this.categoryId}`}>
+                      READ MORE{" "}
+                      {this.categoryId
+                        .replace("-", " ")
+                        .substring(1, this.categoryId.length)
+                        .toUpperCase()}
+                    </Link>
+                  </div>
+                )}
+              </div>
+              <Comment />
+            </React.Fragment>
           );
         } else {
           return null;

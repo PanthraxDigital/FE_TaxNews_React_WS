@@ -1,7 +1,7 @@
 import React from "react";
 
 const SHORTNAME = "taxknowledge";
-const WEBSITE_URL = "http://localhost:3000";
+const WEBSITE_URL = "http://www.taxknowledge.in";
 
 function renderDisqus() {
   if (window.DISQUS === undefined) {
