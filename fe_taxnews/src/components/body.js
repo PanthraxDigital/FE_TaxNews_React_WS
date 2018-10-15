@@ -25,14 +25,14 @@ class body extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <div className="col-md-9 total-news">
+        <div className="total-news">
           <h3>Loading Please Wait...</h3>
         </div>
       );
     } else {
       return (
         <React.Fragment>
-          <div className="col-md-9 total-news">
+          <div className="total-news">
             <div className="live-market">
               <h3>
                 <span>From</span> The Desk

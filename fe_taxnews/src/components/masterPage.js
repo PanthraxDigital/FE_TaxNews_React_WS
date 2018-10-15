@@ -41,7 +41,7 @@ class MasterPage extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <div className="col-md-9 total-news">
+        <div className="total-news">
           <div className="content">
             <div className="grids">
               <h3>Loading please wait...</h3>
@@ -52,7 +52,7 @@ class MasterPage extends Component {
     } else {
       if (this.state.masterListData.length > 0) {
         return (
-          <div className="col-md-9 total-news">
+          <div className="total-news">
             <div className="content">
               <div className="grids">
                 {this.state.masterListData.map(function(data, index1) {

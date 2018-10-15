@@ -124,7 +124,7 @@ class DetailPage extends Component {
                 ) : (
                   <div>
                     <Link to={`${this.categoryId}`}>
-                      READ MORE{" "}
+                      READ MORE FROM{" "}
                       {this.categoryId
                         .replace("-", " ")
                         .substring(1, this.categoryId.length)
@@ -133,7 +133,7 @@ class DetailPage extends Component {
                   </div>
                 )}
               </div>
-              <FBComment pathUrl={this.props.location.pathname}  />
+              <FBComment pathUrl={this.props.location.pathname} />
             </React.Fragment>
           );
         } else {
