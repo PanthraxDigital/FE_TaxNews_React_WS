@@ -4,12 +4,13 @@ import { URL } from "../networkUtility";
 import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
 import { Link } from "react-router-dom";
 import Comment from "./comment";
+import FBComment from "./fbComment";
 
 class DetailPage extends Component {
   constructor(props) {
     super(props);
     let pathname = String(this.props.location.pathname);
-
+    console.log("Url " + this.props.location.pathname);
     this.categoryId = pathname.substring(
       pathname.indexOf("/"),
       pathname.lastIndexOf("/")
@@ -45,7 +46,7 @@ class DetailPage extends Component {
     {
       if (this.state.isLoading) {
         return (
-          <div className="col-md-9 total-news">
+          <div className="total-news">
             <div className="content">
               <div className="grid-header">
                 <h3>Loading Please Wait ...</h3>
@@ -57,7 +58,7 @@ class DetailPage extends Component {
         if (this.state.detailArticle.length > 0) {
           return (
             <React.Fragment>
-              <div className="col-md-9 total-news">
+              <div className="total-news">
                 <div className="content">
                   <div className="grid-header">
                     <a
@@ -132,7 +133,7 @@ class DetailPage extends Component {
                   </div>
                 )}
               </div>
-              <Comment />
+              <FBComment pathUrl={this.props.location.pathname}  />
             </React.Fragment>
           );
         } else {
@@ -144,7 +145,6 @@ class DetailPage extends Component {
 
   fetchArticleDetail() {
     axios.get(this.dataURL).then(result => {
-      console.log("result " + JSON.stringify(result));
       this.setState({
         isLoading: false,
         detailArticle: result.data.articles

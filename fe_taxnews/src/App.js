@@ -56,12 +56,15 @@ class App extends Component {
             <Header />
 
             {/* Contains the routing details */}
+
             <div className="main-content">
               <NewsTicker homeDataResult={this.state.homeDataResult} />
-              <MainRoute
-                homeDataResult={this.state.homeDataResult}
-                fromDeskResult={this.state.fromDeskResult}
-              />
+              <div className="col-md-9">
+                <MainRoute
+                  homeDataResult={this.state.homeDataResult}
+                  fromDeskResult={this.state.fromDeskResult}
+                />
+              </div>
               <Sidebar sideBarResult={this.state.sideBarResult} />
             </div>
             <div className="clearfix" />
