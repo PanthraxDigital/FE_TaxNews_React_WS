@@ -21,11 +21,11 @@ class SubscriberPopup extends React.Component {
       <div className="popup">
         <div className="popup_inner">
           <div className="header-left">
-            <div className="logo">
-              <h1>
+            <div className="logo" style={{fontFamily:'georgia', textTransform:'uppercase', fontSize:'24px'}}>
+              <h2>
                 TaxKnowledge
                 <span>.in</span>
-              </h1>
+              </h2>
               <h5>
                 <div
                   style={{
