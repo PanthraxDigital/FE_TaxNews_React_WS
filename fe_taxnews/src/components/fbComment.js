@@ -13,7 +13,7 @@ class FBComment extends React.Component {
         className="fb-comments"
         data-colorscheme="dark"
         data-width="80%"
-        data-href={`http://localhost:3000${this.props.pathUrl}`}
+        data-href={`http://www.taxknowledge.in${this.props.pathUrl}`}
         data-numposts="15"
       />
     );
