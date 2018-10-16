@@ -3160,10 +3160,6 @@ a.bull1 {
   font-family: "Times New Roman", Times, serif;
 }
 
-.mdFormat p {
-  padding: 10px 0px;
-  text-align: justify;
-}
 
 .popup {
   position: fixed;
@@ -3190,12 +3186,15 @@ a.bull1 {
     margin: 25% auto;
   }
 }
-
-
 @media (max-width: 420px) {
   .popup_inner {
     width: 100%;
     position: absolute;
     margin: 25% auto;
   }
+}
+
+.mdFormat p {
+  padding: 10px 0px;
+  text-align: justify;
 }
