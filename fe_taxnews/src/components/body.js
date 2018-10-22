@@ -100,7 +100,12 @@ class body extends Component {
                                 >
                                   {dataResult.title}
                                 </Link>
-                                <p>{String(dataResult.subTitle)}</p>
+                                <p>
+                                  {String(dataResult.subTitle).substring(
+                                    0,
+                                    200
+                                  ) + " ..."}
+                                </p>
                                 <Link
                                   to={`${getArticleURL(index + 1)}/${
                                     dataResult._id

@@ -48,7 +48,7 @@ class Sidebar extends Component {
               </div>
             ))}
           </div>
-          <a className="more" href="#">
+          <a className="more" href="#" style={{display:"none"}}>
             More +
           </a>
         </div>

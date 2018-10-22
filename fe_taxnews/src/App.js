@@ -31,6 +31,7 @@ class App extends Component {
     axios
       .get(URL + HOME)
       .then(result => {
+        console.log("result" + result);
         this.setState({
           homeDataResult: result.data.homeArticles,
           sideBarResult: result.data.homeArticles.pop(),
