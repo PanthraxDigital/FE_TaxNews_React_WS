@@ -3198,3 +3198,19 @@ a.bull1 {
   padding: 10px 0px;
   text-align: justify;
 }
+
+.Demo__some-network {
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 30px;
+  text-align: center;
+}
+.Demo__some-network__share-button {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 0.2em;
+}
+
+.Demo__some-network__share-button:hover:not(:active) {
+  opacity: 0.75;
+}
