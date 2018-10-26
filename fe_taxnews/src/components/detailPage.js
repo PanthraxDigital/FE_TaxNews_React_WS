@@ -3,14 +3,33 @@ import axios from "axios";
 import { URL } from "../networkUtility";
 import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
 import { Link } from "react-router-dom";
-import Comment from "./comment";
 import FBComment from "./fbComment";
+import { Helmet } from "react-helmet";
+import {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+  PinterestShareButton,
+  EmailShareButton,
+  EmailIcon,
+  TelegramIcon,
+  WhatsappIcon,
+  FacebookIcon,
+  TwitterIcon,
+  GooglePlusIcon,
+  LinkedinIcon,
+  PinterestIcon
+} from "react-share";
 
 class DetailPage extends Component {
   constructor(props) {
     super(props);
     let pathname = String(this.props.location.pathname);
-    console.log("Url " + this.props.location.pathname);
+    let shareUrl = `http://www.taxknowledge.in/${pathname}`;
+    console.log("Url " + shareUrl);
     this.categoryId = pathname.substring(
       pathname.indexOf("/"),
       pathname.lastIndexOf("/")
@@ -22,7 +41,8 @@ class DetailPage extends Component {
     this.dataURL = `${URL}${getCategoryId(this.categoryId)}/${this.articleId}`;
     this.state = {
       isLoading: true,
-      detailArticle: []
+      detailArticle: [],
+      sharebleUrl: shareUrl
     };
   }
 
@@ -43,6 +63,7 @@ class DetailPage extends Component {
   }
 
   render() {
+    let shareUrl = `http://www.taxknowledge.in${this.props.location.pathname}`;
     {
       if (this.state.isLoading) {
         return (
@@ -58,82 +79,177 @@ class DetailPage extends Component {
         if (this.state.detailArticle.length > 0) {
           return (
             <React.Fragment>
-              <div className="total-news">
-                <div className="content">
-                  <div className="grid-header">
-                    <a
-                      className="gotosingle"
-                      href="#"
-                      style={{ textAlign: "justify" }}
-                    >
-                      {this.state.detailArticle[0].title}
-                    </a>
-                    <ul>
-                      <li>
-                        <span>
-                          posted by{" "}
-                          {this.state.detailArticle[0].author != null
-                            ? this.state.detailArticle[0].author.name.first +
-                              " " +
-                              this.state.detailArticle[0].author.name.last
-                            : "TaxKnowledge Team"}
-                        </span>
-                        <span>
-                          {" "}
-                          on{" "}
-                          {DateFormat(this.state.detailArticle[0].articleDate)}
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    className="mdFormat"
-                    style={{ fontSize: "1.1em", paddingTop: "50px" }}
-                    dangerouslySetInnerHTML={{
-                      __html: this.state.detailArticle[0].description
-                    }}
+              <div>
+                <Helmet>
+                  <title>
+                    {this.state.detailArticle[0].title.substring(0, 60)}
+                  </title>
+                  <meta
+                    property="og:title"
+                    content={this.state.detailArticle[0].title.substring(0, 30)}
                   />
-                  <br />
-                </div>
-                {this.state.detailArticle[0].hasOwnProperty(
-                  "attachmentLink"
-                ) ? (
-                  <a
-                    href={`${this.state.detailArticle[0].attachmentLink}`}
-                    target="_blank"
-                    type="button"
-                    className="btn btn-danger"
-                    style={{
-                      backgroundColor: "#cf0000",
-                      marginBottom: "20px",
-                      borderRadius: 0,
-                      marginTop: "30px",
-                      color: "white"
-                    }}
-                  >
-                    To read the full text click here +
-                  </a>
-                ) : (
-                  ""
-                )}
+                  <meta
+                    name="description"
+                    content={this.state.detailArticle[0].description.substring(
+                      0,
+                      150
+                    )}
+                  />
+                  <meta
+                    property="og:description"
+                    content={this.state.detailArticle[0].description.substring(
+                      0,
+                      60
+                    )}
+                  />
 
-                {this.categoryId === "/from-desk" ? (
-                  <div>
-                    <Link to="/">BACK</Link>
+                  <meta property="og:url" content={shareUrl} />
+                  <meta
+                    property="og:image"
+                    content="https://imagedesigncom.com/wp-content/uploads/2015/10/300x200.jpg"
+                  />
+                  <meta property="og:type" content="article" />
+                </Helmet>
+                <div className="total-news">
+                  <div className="content">
+                    <div className="grid-header">
+                      <a
+                        className="gotosingle"
+                        href="#"
+                        style={{ textAlign: "justify" }}
+                      >
+                        {this.state.detailArticle[0].title}
+                      </a>
+                      <ul>
+                        <li>
+                          <span>
+                            posted by{" "}
+                            {this.state.detailArticle[0].author != null
+                              ? this.state.detailArticle[0].author.name.first +
+                                " " +
+                                this.state.detailArticle[0].author.name.last
+                              : "TaxKnowledge Team"}
+                          </span>
+                          <span>
+                            {" "}
+                            on{" "}
+                            {DateFormat(
+                              this.state.detailArticle[0].articleDate
+                            )}
+                          </span>
+                        </li>
+                      </ul>
+
+                      <br />
+                      <div>
+                        <FacebookShareButton
+                          url={`${shareUrl}`}
+                          quote={this.state.detailArticle[0].title}
+                          className="Demo__some-network__share-button"
+                        >
+                          <FacebookIcon size={32} round />
+                        </FacebookShareButton>
+
+                        <TwitterShareButton
+                          url={shareUrl}
+                          title={this.state.detailArticle[0].title}
+                          className="Demo__some-network__share-button"
+                        >
+                          <TwitterIcon size={32} round />
+                        </TwitterShareButton>
+
+                        <TelegramShareButton
+                          url={shareUrl}
+                          title={this.state.detailArticle[0].title}
+                          className="Demo__some-network__share-button"
+                        >
+                          <TelegramIcon size={32} round />
+                        </TelegramShareButton>
+
+                        <WhatsappShareButton
+                          url={shareUrl}
+                          title={this.state.detailArticle[0].title}
+                          separator=":: "
+                          className="Demo__some-network__share-button"
+                        >
+                          <WhatsappIcon size={32} round />
+                        </WhatsappShareButton>
+
+                        <GooglePlusShareButton
+                          url={shareUrl}
+                          className="Demo__some-network__share-button"
+                        >
+                          <GooglePlusIcon size={32} round />
+                        </GooglePlusShareButton>
+
+                        <LinkedinShareButton
+                          url={shareUrl}
+                          title={this.state.detailArticle[0].title}
+                          windowWidth={750}
+                          windowHeight={600}
+                          className="Demo__some-network__share-button"
+                        >
+                          <LinkedinIcon size={32} round />
+                        </LinkedinShareButton>
+                        <EmailShareButton
+                          url={shareUrl}
+                          subject={this.state.detailArticle[0].title}
+                          body={this.state.detailArticle[0].description}
+                          className="Demo__some-network__share-button"
+                        >
+                          <EmailIcon size={32} round />
+                        </EmailShareButton>
+                      </div>
+                    </div>
+                    <div
+                      className="mdFormat"
+                      style={{ fontSize: "1.1em", paddingTop: "50px" }}
+                      dangerouslySetInnerHTML={{
+                        __html: this.state.detailArticle[0].description
+                      }}
+                    />
+                    <br />
                   </div>
-                ) : (
-                  <div>
-                    <Link to={`${this.categoryId}`}>
-                      READ MORE FROM{" "}
-                      {this.categoryId
-                        .replace("-", " ")
-                        .substring(1, this.categoryId.length)
-                        .toUpperCase()}
-                    </Link>
-                  </div>
-                )}
+                  {this.state.detailArticle[0].hasOwnProperty(
+                    "attachmentLink"
+                  ) ? (
+                    <a
+                      href={`${this.state.detailArticle[0].attachmentLink}`}
+                      target="_blank"
+                      type="button"
+                      className="btn btn-danger"
+                      style={{
+                        backgroundColor: "#cf0000",
+                        marginBottom: "20px",
+                        borderRadius: 0,
+                        marginTop: "30px",
+                        color: "white"
+                      }}
+                    >
+                      To read the full text click here +
+                    </a>
+                  ) : (
+                    ""
+                  )}
+
+                  {this.categoryId === "/from-desk" ? (
+                    <div>
+                      <Link to="/">BACK</Link>
+                    </div>
+                  ) : (
+                    <div>
+                      <Link to={`${this.categoryId}`}>
+                        READ MORE FROM{" "}
+                        {this.categoryId
+                          .replace("-", " ")
+                          .substring(1, this.categoryId.length)
+                          .toUpperCase()}
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                <FBComment pathUrl={this.props.location.pathname} />
               </div>
-              <FBComment pathUrl={this.props.location.pathname} />
             </React.Fragment>
           );
         } else {
