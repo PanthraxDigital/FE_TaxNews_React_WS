@@ -81,7 +81,11 @@ class App extends Component {
         </React.Fragment>
       );
     } else {
-      return null;
+      return (
+        <div className="total-news">
+          <h4>Loading Please Wait...</h4>
+        </div>
+      );
     }
   }
 }
