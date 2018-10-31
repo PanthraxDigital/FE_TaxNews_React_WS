@@ -3160,7 +3160,6 @@ a.bull1 {
   font-family: "Times New Roman", Times, serif;
 }
 
-
 .popup {
   position: fixed;
   width: 100%;
@@ -3170,6 +3169,7 @@ a.bull1 {
   right: 0;
   bottom: 0;
   margin: auto;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .popup_inner {
@@ -3213,4 +3213,23 @@ a.bull1 {
 
 .Demo__some-network__share-button:hover:not(:active) {
   opacity: 0.75;
+}
+
+.footerLink p {
+  text-align: justify;
+}
+.footerLink h4 {
+  text-align: center;
+  margin: 5px;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+.footerLink h5 {
+  font-weight: bold;
+  padding-top: 10px;
+}
+.footerLink li ul {
+  padding-left: 2em;
+  list-style-type: square;
+  text-align: justify;
 }

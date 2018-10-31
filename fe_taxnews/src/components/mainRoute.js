@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Body from "./body";
 import MasterPageRoute from "./masterPageRoute";
+import AboutUs from './aboutus';
+import Terms from './terms';
+import Privacy from './privacyPolicy';
+import Disclaimer from './disclaimer';
+import Contact from './contact';
 
 //Navigation of all the Menu
 
@@ -30,6 +35,11 @@ class MainRoute extends Component {
         <Route path="/jobs" component={MasterPageRoute} key="10" />
         <Route path="/finance-budget" component={MasterPageRoute} key="11" />
         <Route path="/others" component={MasterPageRoute} key="12" />
+        <Route path="/aboutus" component={AboutUs} key="13" />
+        <Route path="/terms" component={Terms} key="14" />
+        <Route path="/privacy" component={Privacy} key="15" />
+        <Route path="/disclaimer" component={Disclaimer} key="16" />
+        <Route path="/contact" component={Contact} key="17" />
 
         <Route
           exact={true}
@@ -48,7 +58,3 @@ class MainRoute extends Component {
 
 export default MainRoute;
 
-/*
-Popup for subscriber
-<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"a4e722edd8d0243c79091fed4","lid":"86af928437","uniqueMethods":true}) })</script>
-*/

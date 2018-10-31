@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 class Footer extends Component {
   render() {
     return (
@@ -8,19 +9,23 @@ class Footer extends Component {
           <div className="bottom-menu">
             <ul>
               <li>
-                <Link to="#">ABOUT</Link>
+                <Link to="/aboutus">ABOUT</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">DISCLAIMER</Link>
+                <Link to="/contact">CONTACT</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">TERMS AND CONDITIONS</Link>
+                <Link to="/disclaimer">DISCLAIMER</Link>
               </li>{" "}
               |
               <li>
-                <Link to="#">PRIVACY POLICY</Link>
+                <Link to="/terms">TERMS AND CONDITIONS</Link>
+              </li>{" "}
+              |
+              <li>
+                <Link to="/privacy">PRIVACY POLICY</Link>
               </li>{" "}
               |
               <li>
@@ -35,7 +40,8 @@ class Footer extends Component {
           </div>
           <div className="copyright text-center">
             <p>
-              TaxKnowledge.in &copy; 2018 All rights reserved | Powered by{" "}
+              TaxKnowledge.in &copy; {new Date().getFullYear()} All rights
+              reserved | Powered by{" "}
               <a href="http://www.panthrax.com">
                 <strong>PDA</strong>
               </a>
