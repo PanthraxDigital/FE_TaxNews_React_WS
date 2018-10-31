@@ -78,7 +78,7 @@ class Header extends Component {
                 </li>{" "}
               </ul>
             </div>
-            <div className="search">
+            <div className="search" style={{visibility:'hidden'}}>
               <div>
                 <input type="text" value="Search" />
                 <input type="submit" value="" onClick={this.searchResult} />
