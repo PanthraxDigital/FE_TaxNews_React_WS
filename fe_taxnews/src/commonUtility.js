@@ -1,7 +1,7 @@
 global.Intl = require("intl");
 export const DateFormat = function(_strDate) {
   let formatDate = new Date(_strDate);
-  return formatDate.toISOString.split("T")[0];
+  return formatDate.toISOString.substring(0, 10);
   // return (
   //   formatDate.getDate() +
   //   "/" +
