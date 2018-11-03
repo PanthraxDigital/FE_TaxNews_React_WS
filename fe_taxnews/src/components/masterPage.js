@@ -1,14 +1,11 @@
 "use strict";
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { URL } from "../networkUtility";
-import { getCategoryId } from "../commonUtility";
-import { has } from "lodash";
+import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
 
 //Navigation of all the Menu
-//var URL = "";
 class MasterPage extends Component {
   constructor(props) {
     super(props);
@@ -75,15 +72,7 @@ class MasterPage extends Component {
                                   data.author.name.last
                                 : "TaxKnowledge Team"}
                             </span>
-                            <span>
-                              {" "}
-                              on{" "}
-                              {new Intl.DateTimeFormat("en-GB", {
-                                year: "numeric",
-                                month: "long",
-                                day: "2-digit"
-                              }).format(new Date(data.articleDate))}
-                            </span>
+                            <span> on {DateFormat(data.articleDate)}</span>
                           </li>
                           {/* <li>
                         <a href="#">5000 views</a>
