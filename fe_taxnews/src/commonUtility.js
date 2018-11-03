@@ -1,13 +1,14 @@
 global.Intl = require("intl");
 export const DateFormat = function(_strDate) {
   let formatDate = new Date(_strDate);
-  return (
-    formatDate.getDate() +
-    "/" +
-    (formatDate.getMonth() + 1) +
-    "/" +
-    formatDate.getFullYear()
-  );
+  return formatDate.toISOString.split("T")[0];
+  // return (
+  //   formatDate.getDate() +
+  //   "/" +
+  //   (formatDate.getMonth() + 1) +
+  //   "/" +
+  //   formatDate.getFullYear()
+  // );
 };
 
 export const getCategoryId = function(_strCategory) {
