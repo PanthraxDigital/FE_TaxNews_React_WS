@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { DateFormat } from "../commonUtility";
 import NewsLetterSubscriber from "./newsLetterSubscriber";
+import { Link } from "react-router-dom";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -43,12 +44,14 @@ class Sidebar extends Component {
               <div className="popular-grid" key={index}>
                 <i>{DateFormat(data.articleDate)}</i>
                 <p>
-                  {data.title} <a href="#">Read More</a>
+                  {data.title}
+                  <Link to={`/generalTax/${data._id}`}> Read More</Link>
+                  {/* <a href="#">Read More</a> */}
                 </p>
               </div>
             ))}
           </div>
-          <a className="more" href="#" style={{display:"none"}}>
+          <a className="more" href="#" style={{ display: "none" }}>
             More +
           </a>
         </div>

@@ -29,7 +29,6 @@ class DetailPage extends Component {
     super(props);
     let pathname = String(this.props.location.pathname);
     let shareUrl = `http://www.taxknowledge.in/${pathname}`;
-    console.log("Url " + shareUrl);
     this.categoryId = pathname.substring(
       pathname.indexOf("/"),
       pathname.lastIndexOf("/")
@@ -58,11 +57,12 @@ class DetailPage extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    
     this.fetchArticleDetail();
   }
 
   render() {
+    window.scrollTo(0, 0);
     let shareUrl = `http://www.taxknowledge.in${this.props.location.pathname}`;
     {
       if (this.state.isLoading) {

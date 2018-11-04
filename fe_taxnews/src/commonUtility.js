@@ -82,7 +82,7 @@ export const getCategory = function(_strCategoryId) {
     case 11:
       return "/finance-budget";
     case 12:
-      return "generalTax";
+      return "/generalTax";
     case 13:
       return "/others";
   }
