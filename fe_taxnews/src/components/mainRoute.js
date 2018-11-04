@@ -32,7 +32,7 @@ class MainRoute extends Component {
         <Route path="/nbfc-rbi" component={MasterPageRoute} key="7" />
         <Route path="/sebi" component={MasterPageRoute} key="8" />
         <Route path="/roc-company-law" component={MasterPageRoute} key="9" />
-        <Route path="/jobs" component={MasterPageRoute} key="10" />
+        <Route path="/icai" component={MasterPageRoute} key="10" />
         <Route path="/finance-budget" component={MasterPageRoute} key="11" />
         <Route path="/others" component={MasterPageRoute} key="12" />
         <Route path="/aboutus" component={AboutUs} key="13" />

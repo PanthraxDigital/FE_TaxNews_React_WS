@@ -49,7 +49,8 @@ class Disclaimer extends React.Component {
               doubt the reader should cross-check all the facts, law and
               contents of the material on web with original Government
               publication or notifications.
-            </p><br />
+            </p>
+            <br />
             <p>
               The material contained on this site and on the associated web
               pages is general information and is not intended to be advice on
@@ -61,12 +62,13 @@ class Disclaimer extends React.Component {
               subscriber or not, in respect of anything and of the consequences
               of anything done or omitted to be done by any such person in
               reliance upon the contents of this site and associated web pages.
-            </p><br />
+            </p>
+            <br />
             <p />
           </p>
           <p>
             <p>Taxknowledge makes no warranty that</p>
-            <ul style={{marginLeft:'2em'}}>
+            <ul style={{ marginLeft: "2em" }}>
               <li>The service will meet your requirements</li>
               <li>
                 The service will be uninterrupted, timely, secure, or
@@ -89,11 +91,15 @@ class Disclaimer extends React.Component {
                 system or loss of data that results from the download of any
                 such material
               </li>
-              No Advice or information, whether oral or written obtained by you
-              from Taxknowledge, or through the service shall create any
-              warranty/liability against Taxknowledge.
             </ul>
-          </p><br />
+          </p>
+          <br />
+          <p>
+            No Advice or information, whether oral or written obtained by you
+            from Taxknowledge, or through the service shall create any  
+            warranty/liability against Taxknowledge.
+          </p>
+          <br />
           <p>
             In respect of any products, services and related material purchased
             on the Taxknowledge web site, Taxknowledge hereby disclaims all
@@ -105,7 +111,8 @@ class Disclaimer extends React.Component {
             any claim on the suitability, reliability, availability, timeliness,
             accuracy and refund on their respective products, services or
             related material.
-          </p><br />
+          </p>
+          <br />
           <p>
             Taxknowledge and/or its directors, employees, agents,
             representatives and authors make no representations about the
@@ -114,18 +121,21 @@ class Disclaimer extends React.Component {
             on the Taxknowledge web site for any purpose. All such information,
             software, products, services and related material are provided “as
             is”.
-          </p><br />
+          </p>
+          <br />
           <p>
             At any stage if you are dissatisfied with any portion of the
             Taxknowledge web site, or with any of these terms of use, your sole
             and exclusive remedy is to discontinue the Taxknowledge web site.
-          </p><br />
+          </p>
+          <br />
           <p>
             The relationship between you and Taxknowledge shall be governed by
             the Laws of India. You and Taxknowledge agree to submit to the
             personal and exclusive jurisdiction of the courts located at Mumbai,
             India.
-          </p><br />
+          </p>
+          <br />
           <p>
             Taxknowledge reserves the right, at any time to modify, alter, or
             update these terms of use and Disclaimer, and you are bound by such

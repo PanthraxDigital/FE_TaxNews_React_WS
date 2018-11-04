@@ -27,6 +27,13 @@ class Contact extends React.Component {
             <a href="mailto:info@taxknowledge.in">info@taxknowledge.in </a>
             for any inquiry.
           </p>
+          <br />
+          <p>
+            For submission of articles, send your articles on
+            <a href="mailto:articles@taxknowledge.in">
+              articles@taxknowledge.in
+            </a>
+          </p>
         </div>
       </div>
     );

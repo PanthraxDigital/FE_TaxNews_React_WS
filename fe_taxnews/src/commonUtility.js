@@ -43,7 +43,7 @@ export const getCategoryId = function(_strCategory) {
     case "/roc-company-law":
       return 9;
 
-    case "/jobs":
+    case "/icai":
       return 10;
 
     case "/finance-budget":
@@ -78,7 +78,7 @@ export const getCategory = function(_strCategoryId) {
     case 9:
       return "/roc-company-law";
     case 10:
-      return "/jobs";
+      return "/icai";
     case 11:
       return "/finance-budget";
     case 12:

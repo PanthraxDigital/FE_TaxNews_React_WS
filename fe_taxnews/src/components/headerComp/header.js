@@ -177,11 +177,11 @@ class Header extends Component {
                 </NavItem>
                 <NavItem
                   componentClass={Link}
-                  href="/jobs"
-                  to="/jobs"
+                  href="/icai"
+                  to="/icai"
                   eventKey={9}
                 >
-                  JOBS
+                  ICAI
                 </NavItem>
                 <NavDropdown eventKey={9} title="MORE" id="basic-nav-dropdown">
                   <MenuItem

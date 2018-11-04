@@ -373,6 +373,264 @@ class Terms extends React.Component {
                 consent of the Taxknowledge.
               </p>
             </li>
+            <li>
+              <h5>Disclaimers of all warranties and duties</h5>
+              <p>
+                This site and all content is provided "as is," "as available,"
+                "with all faults," and without warranty of any kind.
+                Taxknowledge.in and taxknowledge.in licensors give no express
+                warranties and disclaim: (a) all implied warranties, including,
+                but not limited to, warranties of merchantability; fitness for a
+                particular purpose; taxknowledge.in of the site; lack of
+                viruses, worms, trojan horses, or other code that manifests
+                contaminating or destructive properties; accuracy, completeness,
+                reliability, timeliness, currency, or usefulness of any content
+                on the site; and (b) any duties of reasonable care, workmanlike
+                effort or lack of negligence. The entire risk as to satisfactory
+                quality, performance, accuracy and effort in connection with the
+                site and content is with you.we assume no liability or
+                responsibility for any errors or omissions in content.
+              </p>
+              <br />
+              <p>
+                In addition, taxknowledge.in disclaims any warranties of
+                non-infringement, title, or quiet enjoyment.
+              </p>
+              <br />
+              <p>
+                We are not responsible for the Content uploaded by you on the
+                Site. We are not responsible for any direct or indirect damages
+                or losses caused to you, including without limitation, lost
+                profits, business interruption or other loss resulting from use
+                of or reliance in any way on anything available on the Site. It
+                is solely your responsibility to evaluate the accuracy,
+                reliability, completeness and usefulness of Content available on
+                the Site that is used by you.
+              </p>
+              <br />
+              <p>
+                We make no warranty that the services or Site will meet your
+                requirements or that the services or your access to the Site
+                will be uninterrupted, timely, accurate or reliable; nor do we
+                make any warranty as to any information that may be obtained
+                through the services or Site. In case there is any defect in any
+                software being used for the provision of the services, we do not
+                make any warranty that defects in such software will be
+                corrected. You understand and agree that any material and/or
+                data downloaded or otherwise obtained through use of the
+                services or Site is done at your own discretion and risk and you
+                will be solely responsible for any damage to your computer
+                system or loss of data that results from the download of such
+                material or data. The Taxknowledge disclaims all liability to
+                either the user or any person claiming for any breach of the
+                terms of the Agreement including claims based on the ratings,
+                reviews mentioned on the Site.
+              </p>
+              <br />
+              <p>
+                The Taxknowledge/Site makes no representations as to the
+                reliability, accuracy of the Content or qualifications of any of
+                the users or the quality, security or legality of any services
+                and the Taxknowledge disclaims any and all liability relating
+                thereto. The Taxknowledge/Site does not implicitly or explicitly
+                support or endorse the procurement of any service on the Site.
+              </p>
+              <br />
+              <p>
+                No advice or information, whether oral or written, obtained by
+                you from the services or Site or through the service(s) or Site
+                shall create any warranty not expressly made herein.
+              </p>
+              <br />
+            </li>
+            <li>
+              <h5>Release and waiver</h5>
+              <p>
+                To the maximum extent permitted by applicable law, you hereby
+                release and waive all claims against the Taxknowledge, and its
+                subsidiaries, affiliates, officers, agents, licensors,
+                co-branders or other partners, and employees from any and all
+                liability for claims, damages (actual and/or consequential),
+                costs and expenses (including litigation costs and attorneys'
+                fees) of every kind and nature, arising from or in any way
+                related to your use of our Site, its services or Content. You
+                understand that any fact relating to any matter covered by this
+                release may be found to be other than now believed to be true
+                and you accept and assume the risk of such possible differences
+                in fact. In addition, you expressly waive and relinquish any and
+                all rights and benefits which you may have under any other state
+                or federal statute or common law principle of similar effect, to
+                the fullest extent permitted by law.
+              </p>
+              <br />
+              <p>
+                If we fail to insist that you perform any of your obligations
+                under these Terms, or if we do not enforce our rights against
+                you, or if we delay in doing so, that will not mean that we have
+                waived our rights against you and will not mean that you do not
+                have to comply with those obligations. If we do waive a default
+                by you, we will only do so in writing, and that will not mean
+                that we will automatically waive any later default by you.
+              </p>
+              <br />
+            </li>
+            <li>
+              <h5>Viruses</h5>
+              <p>
+                You will be responsible for introduction of any viruses,
+                Trojans, worms, logic bombs or other material which is malicious
+                or technologically harmful. You must not attempt to gain
+                unauthorised access to the Site, the server on which the Site is
+                stored or any server, computer or database connected to the
+                Site. You must not attack the Site via a denial-of-service
+                attack or a distributed denial-of service attack. By breaching
+                this provision, you would commit a criminal offence under the
+                Information Technology Act, 2000. We will report any such breach
+                to the relevant law enforcement authorities and we will
+                co-operate with those authorities by disclosing your identity to
+                them. In the event of such a breach, your right to use the Site
+                will cease immediately.
+              </p>
+              <br />
+              <p>
+                You should use your own virus protection software. We cannot and
+                do not guarantee or warrant that files available for downloading
+                from the Site will be free of infection by viruses, worms,
+                Trojan horses or other code that manifest contaminating or
+                destructive properties.
+              </p>
+              <ol style={{ marginLeft: "2em", listStyleType: "lower-roman" }}>
+                <li>
+                  <h5>Links to Third Party Sites</h5>
+                  <p>
+                    As a convenience, we may provide links to third party web
+                    sites from the Site. Taxknowledge.in is not responsible for
+                    and does not endorse the informational content or any
+                    products or services available on any third-party web site
+                    and does not make any representations regarding their
+                    content or accuracy. We do not control any third party web
+                    site, and we are not liable for any technological, legal or
+                    other consequences that arise out of your visit or
+                    transactions there. Your use of third party websites is at
+                    your own risk and subject to the terms and conditions of use
+                    for such sites. This means that we are not your agent and
+                    will not be a party to any contract you enter.
+                  </p>
+                  <br />
+                </li>
+                <li>
+                  <h5>Limitation of Liability and Remedies</h5>
+                  <p>
+                    In no event will taxknowledge.in licensors be liable for any
+                    direct, indirect, incidental, consequential, special,
+                    punitive, exemplary damages, or any and all other damages
+                    whatsoever (including, without limitation, damages for loss
+                    of business profits, business interruption, loss of data,
+                    personal injury, failureto meet any duty including acts of
+                    good faith or of reasonable care, lack of negligence, and
+                    for any other pecuniary or other loss whatsoever) arising
+                    out of or in any way connected with the use or performance
+                    of this site, the delay or inability to use this site, or
+                    this agreement, even in the event of fault, tort (including
+                    negligence), strict liability, breach of contract, or breach
+                    of warranty
+                  </p>
+                  <p>
+                    Of taxknowledge.in and even if taxknowledge.in has been
+                    advised of the possibility of such damages. Notwithstanding
+                    any damages that you might incur for any reason, your
+                    exclusive remedy for all of the foregoing will be limited to
+                    discontinuing your use of the site. These limitations and
+                    exclusions regarding damages will apply even if any remedy
+                    fails. If, however, a court of competent jurisdiction
+                    determines that you are entitled to direct damages pursuant
+                    to applicable law you agree
+                  </p>
+                  <p>
+                    That taxknowledge.in liability will not exceed the amount of
+                    rs 200.00 (indian rupees two hundred). You acknowledge that
+                    this provision is fair.
+                  </p>
+                </li>
+                <li>
+                  <h5>Miscellaneous; Entire Agreement</h5>
+                  <p>
+                    If any part of this Agreement is determined to be illegal,
+                    void, invalid or unenforceable, then the invalid or
+                    unenforceable provision (or portion) will be deemed
+                    superseded by valid, enforceable language that most closely
+                    matches the intent and allocation of risk in the original
+                    provision (or portion) and the rest of the Agreement will
+                    continue in full force and effect. The Agreement constitutes
+                    the entire agreement between you and Taxknowledge.in with
+                    respect to the Site and your use of the Site, and supersedes
+                    all other (prior or contemporaneous) communications or
+                    displays whether electronic, oral, or written, between you
+                    and Taxknowledge.in regarding the Site and your activities.
+                  </p>
+                </li>
+                <li>
+                  <h5>Geographical & Export Restrictions</h5>
+                  <p>
+                    You agree that all Content posted or accessible via the Site
+                    is subject to applicable export control laws and regulations
+                    of the Indian Government. You agree not to export or
+                    re-export any Content directly or indirectly, to any country
+                    not permitted by Indian government export restrictions.
+                  </p>
+                </li>
+                <li>
+                  <h5>Applicable law & jurisdiction</h5>
+                  <p>
+                    This Agreement is governed by the law of India, without
+                    giving effect to the principles of conflicts of laws
+                    thereof. Your consent to this Agreement includes your
+                    consent to jurisdiction and venue in the courts in Mumbai in
+                    all disputes arising out of or relating to this Agreement.
+                    Taxknowledge.in makes no claims that this Site is
+                    appropriate for viewing or accessing outside India. You
+                    consent to exclusive jurisdiction and venue in the courts of
+                    Mumbai. You waive all defences of lack of jurisdiction,
+                    venue, or forum non-convenience. Use of the Site is not
+                    authorized in any jurisdiction that does not give effect to
+                    all provisions of this Agreement. Taxknowledge.in
+                    performance of this Agreement is subject to existing laws
+                    and legal process, and you agree that we may comply with law
+                    enforcement or regulatory requests or requirements
+                    notwithstanding any contrary term of this Agreement. Any
+                    cause of action or claim you may bring in connection with
+                    the Site, including without limitation any Content, must be
+                    commenced within one (1) month after the claim or cause of
+                    action arises otherwise such claim or cause of action shall,
+                    subject to the applicable law, be deemed to be barred. In
+                    any dispute between Taxknowledge.in and you relating to this
+                    Site, the prevailing party will not be entitled to
+                    attorneys' fees, costs and expenses.
+                  </p>
+                </li>
+                <li>
+                  <h5>Term & termination</h5>
+                  <p>
+                    We reserve the right to refuse to continue providing you
+                    with access to this Site if we discover that you are
+                    incompetent to contract by virtue of your age or otherwise
+                    under Applicable Law. This Site is not available to persons
+                    whose membership has been suspended or terminated by us for
+                    any reason whatsoever. The Terms shall continue to form a
+                    valid and binding contract between the user and the
+                    Taxknowledge, and shall continue to be in full force and
+                    effect until users continue to access and use the Site.
+                    Provided, however, certain sections of these Terms such as
+                    Disclaimer of all Warranties and Duties, Limitation of
+                    Liability and Remedies, Intellectual Property Rights,
+                    Indemnification, Release and Waiver, Applicable Law &
+                    Jurisdiction shall continue to remain in full force and
+                    effect indefinitely.
+                  </p>
+                </li>
+              </ol>
+              <br />
+            </li>
           </ol>
         </div>
       </div>
