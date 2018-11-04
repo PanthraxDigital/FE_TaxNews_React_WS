@@ -4,8 +4,8 @@ class Privacy extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount(){
-    window.scrollTo(0,0);
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -23,11 +23,12 @@ class Privacy extends React.Component {
         <hr />
         <div className="footerLink">
           <p>
-            Privacy Policy Taxknowledge.in (“Taxknowledge”) is a one stop for
-            all the Taxation, SEBI, NBFCand Company Law resources. We respects
-            your privacy and is obliged to protect and manage any personal
-            information you share with us through our website
-            www.Taxknowledge.in.(“Site”) We are also committed to take all
+            Privacy Policy Taxknowledge.in <strong>(“Taxknowledge”)</strong> is
+            a one stop for all the Taxation, SEBI, NBFCand Company Law
+            resources. We respects your privacy and is obliged to protect and
+            manage any personal information you share with us through our
+            website www.Taxknowledge.in.
+            <strong>(“Site”)</strong> We are also committed to take all
             reasonable care and security precautions to safeguard your personal
             data and prevent its loss and misuse. You may be required to provide
             personal information at several different points on the Site. By
@@ -36,7 +37,7 @@ class Privacy extends React.Component {
             of your personal information by us, subject to this Privacy
             Statement, terms and conditions of use and Disclaimer.
           </p>
-          <ul>
+          <ul style={{listStyle:'none'}}>
             <li>
               <h5>Information Collection</h5>
               <p>
@@ -78,6 +79,7 @@ class Privacy extends React.Component {
                 It may also be used to improve and customize services, contents
                 and other commercial /non – commercial features on the Site.
               </p>
+              <br />
               <p>
                 Once you registered on Taxknowledge, your username and location
                 which you provide will be visible to other users of
@@ -104,7 +106,7 @@ class Privacy extends React.Component {
                 change or modify this Privacy Statement or Privacy Policy at any
                 time, which shall come into effect from the date of such update,
                 change or modification.
-              </p>
+              </p><br />
               <p>
                 You assume total responsibility and risk for your use of the
                 site and the internet. www.taxknowledge.in provides the site and
@@ -123,14 +125,14 @@ class Privacy extends React.Component {
                 internet generally. www.taxknowledge.in does not warrant that
                 the service will be uninterrupted or error-free or that defects
                 in the service will be corrected.
-              </p>
+              </p><br />
               <p>
                 You understand further that the pure nature of the internet
                 contains unedited materials some of which are sexually explicit
                 or may be offensive to you. Your access to such materials is at
                 your risk. Taxknowledge has no control over and accepts no
                 responsibility whatsoever for such materials
-              </p>
+              </p><br />
             </li>
             <li>
               <h5>Log Files</h5>

@@ -4,8 +4,8 @@ class Terms extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount(){
-    window.scrollTo(0,0);
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -28,11 +28,13 @@ class Terms extends React.Component {
             confirm that you agree and accept these Terms and to comply with
             them.
           </p>
+          <br />
           <p>
             In this Agreement "Taxknowledge.in", "We," "Us," or "Our" refers to
             Taxknowledge, its members and designers/developers."You" or "Your"
             or "User" refers to you, the user of this Site.
-          </p>
+          </p>{" "}
+          <br />
           <p>
             All information posted publicly on the Site by the User is provided
             on a volunteer basis by users of this Web site and members of
@@ -47,12 +49,14 @@ class Terms extends React.Component {
             "Agreement"). Use of the Site includes accessing, browsing, or
             registering to use the Site.
           </p>
+          <br />
           <p>
             Before you start to use the Site, please read these Terms carefully
             and if you do not agree to these Terms, you must not use the Site.
             If you do not agree with any amendments made to these Terms at any
             time in future, you must stop using the Site with immediate effect.
           </p>
+          <br />
           <h4>By using the site, you agree under this agreement as follows:</h4>
           <ol>
             <li>
@@ -184,7 +188,7 @@ class Terms extends React.Component {
                 that violation of any of the following rules constitutes a
                 material breach of this Agreement:
               </p>
-              <ul>
+              <ol style={{ marginLeft: "2em", listStyleType: "lower-roman" }}>
                 <li>
                   Using the Service for any purpose in violation of local,
                   state, national, or international laws;
@@ -240,7 +244,7 @@ class Terms extends React.Component {
                   Engaging in any other behaviour on the Site, which in
                   Taxknowledge sole discretion is unacceptable.
                 </li>
-              </ul>
+              </ol>
               <p>
                 Taxknowledge may (but is not obligated) to remove Content for
                 any reason, with or without notice to you, including without
@@ -281,7 +285,7 @@ class Terms extends React.Component {
               <p>
                 To be effective, the Notification must include the following:
               </p>
-              <ul>
+              <ol style={{ marginLeft: "2em", listStyleType: "lower-roman" }}>
                 <li>
                   A physical or electronic signature of a person authorized to
                   act on behalf of the owner of an exclusive right that is
@@ -314,7 +318,7 @@ class Terms extends React.Component {
                   authorized to act on behalf of the owner of an exclusive right
                   that is allegedly infringed.
                 </li>
-              </ul>
+              </ol>
               <p>
                 Notwithstanding the foregoing, Taxknowledge.in does not
                 guarantee any action based upon the receipt of such information.
