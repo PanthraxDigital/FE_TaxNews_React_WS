@@ -3199,6 +3199,10 @@ a.bull1 {
   text-align: justify;
 }
 
+.mdFormat table {
+  width: 100%;
+}
+
 .Demo__some-network {
   vertical-align: top;
   display: inline-block;
