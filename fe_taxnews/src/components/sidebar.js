@@ -18,7 +18,7 @@ class Sidebar extends Component {
   addNewSubscriber(e) {}
 
   componentDidMount() {
-    this.fetchMediaLink();
+    //this.fetchMediaLink();
   }
 
   render() {
