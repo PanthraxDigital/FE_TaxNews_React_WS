@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Body from "./body";
 import MasterPageRoute from "./masterPageRoute";
-import AboutUs from './aboutus';
-import Terms from './terms';
-import Privacy from './privacyPolicy';
-import Disclaimer from './disclaimer';
-import Contact from './contact';
+import AboutUs from "./aboutus";
+import Terms from "./terms";
+import Privacy from "./privacyPolicy";
+import Disclaimer from "./disclaimer";
+import Contact from "./contact";
+import SiteDown from "./siteDown";
 
 //Navigation of all the Menu
 
@@ -42,7 +43,8 @@ class MainRoute extends Component {
         <Route path="/contact" component={Contact} key="17" />
         <Route path="/generalTax" component={MasterPageRoute} key="18" />
 
-        <Route
+        <Route exact={true} path="/" component={SiteDown} />
+        {/* <Route
           exact={true}
           path="/"
           render={() => (
@@ -51,11 +53,10 @@ class MainRoute extends Component {
               fromDeskResult={this.state.fromDeskResult}
             />
           )}
-        />
+        /> */}
       </Switch>
     );
   }
 }
 
 export default MainRoute;
-
