@@ -55,7 +55,7 @@ class MasterPage extends Component {
                 {this.state.masterListData.map(function(data, index1) {
                   return (
                     <div className="grid box" key={index1}>
-                      <div className="grid-header">
+                      <div className="grid-header" style={{textAlign:'justify'}}>
                         <Link
                           className="gotosingle"
                           to={this.url + "/" + data._id}

@@ -2,14 +2,24 @@ import React, { Component } from "react";
 import { DateFormat } from "../commonUtility";
 import NewsLetterSubscriber from "./newsLetterSubscriber";
 import { Link } from "react-router-dom";
+import { TelegramIcon, WhatsappIcon } from "react-share";
+import axios from "axios";
+import { URL_X } from "../networkUtility";
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: []
+    };
     this.addNewSubscriber = this.addNewSubscriber.bind(this);
   }
 
   addNewSubscriber(e) {}
+
+  componentDidMount() {
+    this.fetchMediaLink();
+  }
 
   render() {
     return (
@@ -56,6 +66,10 @@ class Sidebar extends Component {
           </a>
         </div>
 
+        {this.state.data != null
+          ? this.state.data.map(list => console.log("media name " + list.media))
+          : null}
+
         <div>
           <div style={{ marginTop: "20px", display: "none" }}>
             <a href="#">
@@ -68,22 +82,42 @@ class Sidebar extends Component {
       </div>
     );
   }
+
+  fetchMediaLink() {
+    axios
+      .get(URL_X)
+      .then(result => {
+        console.log("share media" + JSON.stringify(result));
+        this.setState({
+          data: result
+        });
+      })
+      .then(error => {
+        console.log("error " + error);
+      });
+  }
 }
 
 export default Sidebar;
 
-{
-  /* <div className="sign_up text-center">
-          <h3>Sign Up for Newsletter</h3>
-          <p className="sign">Sign up to receive our free newsletters!</p>
-          <div>
-            <input type="text" className="text" placeholder="Email Address" />
-            <input
-              type="submit"
-              style={{ margin: "0 auto", marginTop: "10px" }}
-              onClick={this.addNewSubscriber}
-            />
-          </div>
-          <p className="spam">We do not spam. We value your privacy!</p>
-        </div> */
-}
+//  <table className="mediaGroup">
+//       <tbody>
+//         <tr>
+//           <td className="mediaGroupIcon">
+//             <WhatsappIcon size={50} round />{" "}
+//           </td>
+//           <td className="mediaGroupText">
+//             {" "}
+//             <a href="">Join WhatsApp Group</a>
+//           </td>
+//         </tr>
+//         <tr>
+//           <td className="mediaGroupIcon">
+//             <TelegramIcon size={50} round />{" "}
+//           </td>
+//           <td className="mediaGroupText">
+//             <a href="">Join Telegram Channel</a>
+//           </td>
+//         </tr>
+//       </tbody>
+//     </table>
