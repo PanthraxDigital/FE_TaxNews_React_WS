@@ -4,13 +4,13 @@ import NewsLetterSubscriber from "./newsLetterSubscriber";
 import { Link } from "react-router-dom";
 import { TelegramIcon, WhatsappIcon } from "react-share";
 import axios from "axios";
-import { URL_X } from "../networkUtility";
+import { URL_GROUP_JOIN } from "../networkUtility";
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      groupJoinList: []
     };
     this.addNewSubscriber = this.addNewSubscriber.bind(this);
   }
@@ -18,7 +18,16 @@ class Sidebar extends Component {
   addNewSubscriber(e) {}
 
   componentDidMount() {
-    //this.fetchMediaLink();
+    axios
+      .get(URL_GROUP_JOIN)
+      .then(_result => {
+        this.setState({
+          groupJoinList: _result.data.result
+        });
+      })
+      .catch(error => {
+        console.log("error " + error);
+      });
   }
 
   render() {
@@ -66,10 +75,6 @@ class Sidebar extends Component {
           </a>
         </div>
 
-        {this.state.data != null
-          ? this.state.data.map(list => console.log("media name " + list.media))
-          : null}
-
         <div>
           <div style={{ marginTop: "20px", display: "none" }}>
             <a href="#">
@@ -79,45 +84,93 @@ class Sidebar extends Component {
           </div>
         </div>
         <div className="clearfix" />
+
+        <h4 style={{ textAlign: "center" }}>For Latest Updates</h4>
+        <table className="mediaGroup">
+          <tbody>
+            {this.state.groupJoinList.length > 0
+              ? this.state.groupJoinList.map(function(list, index) {
+                  switch (list.media) {
+                    case "0":
+                      return (
+                        <tr>
+                          <td className="mediaGroupIcon">
+                            <WhatsappIcon size={40} round />{" "}
+                          </td>
+                          <td className="mediaGroupText">
+                            {" "}
+                            <a href={list.link} target="_blank">
+                              Join WhatsApp Group
+                            </a>
+                          </td>
+                        </tr>
+                      );
+
+                    case "1":
+                      return (
+                        <tr>
+                          <td className="mediaGroupIcon">
+                            <TelegramIcon size={40} round />{" "}
+                          </td>
+                          <td className="mediaGroupText">
+                            <a target="_blank" href={list.link}>
+                              Join Telegram Channel
+                            </a>
+                          </td>
+                        </tr>
+                      );
+                  }
+                })
+              : null}
+          </tbody>
+        </table>
       </div>
     );
-  }
-
-  fetchMediaLink() {
-    axios
-      .get(URL_X)
-      .then(result => {
-        console.log("share media" + JSON.stringify(result));
-        this.setState({
-          data: result
-        });
-      })
-      .then(error => {
-        console.log("error " + error);
-      });
   }
 }
 
 export default Sidebar;
 
-//  <table className="mediaGroup">
-//       <tbody>
-//         <tr>
-//           <td className="mediaGroupIcon">
-//             <WhatsappIcon size={50} round />{" "}
-//           </td>
-//           <td className="mediaGroupText">
-//             {" "}
-//             <a href="">Join WhatsApp Group</a>
-//           </td>
-//         </tr>
-//         <tr>
-//           <td className="mediaGroupIcon">
-//             <TelegramIcon size={50} round />{" "}
-//           </td>
-//           <td className="mediaGroupText">
-//             <a href="">Join Telegram Channel</a>
-//           </td>
-//         </tr>
-//       </tbody>
-//     </table>
+{
+  /* <table className="mediaGroup">
+          <tbody>
+            <tr>
+              <td className="mediaGroupIcon">
+                <WhatsappIcon size={50} round />{" "}
+              </td>
+              <td className="mediaGroupText">
+                {" "}
+                <a href="">Join WhatsApp Group</a>
+              </td>
+            </tr>
+            <tr>
+              <td className="mediaGroupIcon">
+                <TelegramIcon size={50} round />{" "}
+              </td>
+              <td className="mediaGroupText">
+                <a href="">Join Telegram Channel</a>
+              </td>
+            </tr>
+          </tbody>
+        </table> */
+}
+
+{
+  /* <tr>
+<td className="mediaGroupIcon">
+  <WhatsappIcon size={50} round />{" "}
+</td>
+<td className="mediaGroupText">
+  {" "}
+  <a href="">Join WhatsApp Group</a>
+</td>
+</tr>
+<tr>
+<td className="mediaGroupIcon">
+  <TelegramIcon size={50} round />{" "}
+</td>
+<td className="mediaGroupText">
+  <a href="">Join Telegram Channel</a>
+</td>
+</tr> */
+}
