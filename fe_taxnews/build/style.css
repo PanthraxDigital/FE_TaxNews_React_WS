@@ -1460,6 +1460,17 @@ a.gotosingle {
   text-align: justify;
 }
 
+div.gotosingle {
+  color: #202021;
+  font-size: 1.6em;
+  font-weight: 700;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: justify;
+}
+
 .grid img {
   float: left;
   background: #fff;
@@ -2593,6 +2604,9 @@ a.bull1 {
     font-size: 1.25em;
     text-align: justify;
   }
+  div.gotosingle{
+    font-size: 1.25em;
+  }
   .grid.box {
     margin-bottom: 2em;
   }
@@ -2754,6 +2768,9 @@ a.bull1 {
   .msingle-grid h3 {
     font-size: 1.2em;
     text-align: justify;
+  }
+  div.gotosingle{
+    font-size: 1.2em
   }
   img.blog {
     width: 50%;
@@ -2985,6 +3002,9 @@ a.bull1 {
   .msingle-grid h3 {
     font-size: 1.1em;
     text-align: justify;
+  }
+  div.gotosingle{
+    font-size: 1.1em;
   }
   .grid p {
     overflow: hidden;

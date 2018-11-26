@@ -113,13 +113,11 @@ class DetailPage extends Component {
                 <div className="total-news">
                   <div className="content">
                     <div className="grid-header">
-                      <a
+                      <div
                         className="gotosingle"
-                        href="#"
-                        style={{ textAlign: "justify" }}
                       >
                         {this.state.detailArticle[0].title}
-                      </a>
+                      </div>
                       <ul>
                         <li>
                           <span>
