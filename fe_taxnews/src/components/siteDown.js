@@ -5,7 +5,8 @@ class SiteDown extends React.Component {
     return (
       <div>
         <h3>
-          Site is down due to heavy user load. We will be resuming shortly.
+          {/* Site is down due to heavy user load. We will be resuming shortly. */}
+          Site is down for the maintenance. We will be resuming shortly.
         </h3>
         <br />
         <h4> Thank you for all your love and support .</h4>

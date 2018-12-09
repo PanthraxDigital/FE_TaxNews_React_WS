@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, NavItem, MenuItem } from "react-bootstrap";
+import axios from "axios";
+import { URL_SEARCH } from "../../networkUtility";
 
 const headerText = {
   fontFamily: "serif",
@@ -8,14 +10,37 @@ const headerText = {
 };
 class Header extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.searchResult = this.searchResult.bind(this);
+    this.changeText = this.changeText.bind(this);
+    this.state = {
+      textValue: ""
+    };
+  }
+
+  changeText(e) {
+    // let newArr = [...this.state.textValue];
+    // newArr.push(e.target.value);
+    this.setState({
+      textValue: e.target.value
+    });
   }
 
   searchResult(e) {
-    alert("Work In Progress");
+    axios
+      .get(`${URL_SEARCH}${e.target.value}`)
+      .then(_result => {
+        console.log("search result " + _result);
+      })
+      .catch(error => {
+        console.log("error " + error);
+      });
   }
+
   render() {
+    let searchTextValue =
+      this.state.textValue == null ? "" : this.state.textValue;
+    console.log("Search value " + searchTextValue);
     return (
       <div className="header">
         <div>
@@ -78,10 +103,17 @@ class Header extends Component {
                 </li>{" "}
               </ul>
             </div>
-            <div className="search" style={{visibility:'hidden'}}>
+            <div className="search">
               <div>
-                <input type="text" value="Search" />
-                <input type="submit" value="" onClick={this.searchResult} />
+                <input
+                  type="text"
+                  value={searchTextValue}
+                  onChange={this.changeText}
+                />
+                <input
+                  type="submit"
+                  onClick={this.searchResult}
+                />
               </div>
             </div>
           </div>

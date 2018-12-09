@@ -43,8 +43,8 @@ class MainRoute extends Component {
         <Route path="/contact" component={Contact} key="17" />
         <Route path="/generalTax" component={MasterPageRoute} key="18" />
 
-        {/* <Route exact={true} path="/" component={SiteDown} /> */}
-        <Route
+        <Route exact={true} path="/" component={SiteDown} />
+        {/* <Route
           exact={true}
           path="/"
           render={() => (
@@ -53,7 +53,7 @@ class MainRoute extends Component {
               fromDeskResult={this.state.fromDeskResult}
             />
           )}
-        />
+        /> */}
       </Switch>
     );
   }
