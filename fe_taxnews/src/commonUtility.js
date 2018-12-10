@@ -2,56 +2,49 @@ global.Intl = require("intl");
 export const DateFormat = function(_strDate) {
   let formatDate = new Date(_strDate);
   //return formatDate.toISOString().substring(0, 10);
-  return (formatDate.getDate() < 10
-    ? "0" + formatDate.getDate()
-    : formatDate.getDate()) +
-        "-" +
-        (formatDate.getMonth() + 1) +
-        "-" +
-        formatDate.getFullYear();
+  return (
+    (formatDate.getDate() < 10
+      ? "0" + formatDate.getDate()
+      : formatDate.getDate()) +
+    "-" +
+    (formatDate.getMonth() + 1) +
+    "-" +
+    formatDate.getFullYear()
+  );
 };
 
 export const getCategoryId = function(_strCategory) {
   switch (_strCategory) {
     case "/from-desk":
       return 0;
-
     case "/top-stories":
       return 1;
-
     case "/income-tax":
       return 2;
-
     case "/gst":
       return 3;
-
     case "/vat-cst":
       return 4;
-
     case "/excise":
       return 5;
-
     case "/custom":
       return 6;
-
     case "/nbfc-rbi":
       return 7;
-
     case "/sebi":
       return 8;
-
     case "/roc-company-law":
       return 9;
-
     case "/icai":
       return 10;
-
     case "/finance-budget":
       return 11;
     case "/generalTax":
       return 12;
     case "/others":
       return 13;
+    case "/hidden-tab":
+      return 14;
   }
 };
 
@@ -85,6 +78,8 @@ export const getCategory = function(_strCategoryId) {
       return "/generalTax";
     case 13:
       return "/others";
+    case 14:
+      return "/hidden-tab";
   }
 };
 

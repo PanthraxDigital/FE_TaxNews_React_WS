@@ -42,6 +42,7 @@ class MainRoute extends Component {
         <Route path="/disclaimer" component={Disclaimer} key="16" />
         <Route path="/contact" component={Contact} key="17" />
         <Route path="/generalTax" component={MasterPageRoute} key="18" />
+        <Route path="/hidden-Tab" component={MasterPageRoute} key="19" />
 
         {/* <Route exact={true} path="/" component={SiteDown} /> */}
         <Route

@@ -76,9 +76,8 @@ class NewsTicker extends React.Component {
                 to={`${getCategory(parseInt(data.category))}/${data.id}`}
                 key={index1}
               >
-                <span>{data.title}</span>
+                <span className="redColorText">{data.title}</span>
               </Link>
-              
             </TickerItem>
           ))}
         </Ticker>

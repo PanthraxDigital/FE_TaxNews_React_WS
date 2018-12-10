@@ -93,7 +93,7 @@ class Sidebar extends Component {
                   switch (list.media) {
                     case "0":
                       return (
-                        <tr>
+                        <tr key={index}>
                           <td className="mediaGroupIcon">
                             <WhatsappIcon size={40} round />{" "}
                           </td>
@@ -108,7 +108,7 @@ class Sidebar extends Component {
 
                     case "1":
                       return (
-                        <tr>
+                        <tr key={index}>
                           <td className="mediaGroupIcon">
                             <TelegramIcon size={40} round />{" "}
                           </td>

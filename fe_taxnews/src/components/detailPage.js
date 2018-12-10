@@ -57,7 +57,6 @@ class DetailPage extends Component {
   }
 
   componentDidMount() {
-    
     this.fetchArticleDetail();
   }
 
@@ -76,7 +75,11 @@ class DetailPage extends Component {
           </div>
         );
       } else {
-        if (this.state.detailArticle.length > 0) {
+        // console.log("value " + this.state.detailArticle);
+        if (
+          this.state.detailArticle != undefined &&
+          this.state.detailArticle.length > 0
+        ) {
           return (
             <React.Fragment>
               <div>
@@ -113,9 +116,7 @@ class DetailPage extends Component {
                 <div className="total-news">
                   <div className="content">
                     <div className="grid-header">
-                      <div
-                        className="gotosingle"
-                      >
+                      <div className="gotosingle">
                         {this.state.detailArticle[0].title}
                       </div>
                       <ul>

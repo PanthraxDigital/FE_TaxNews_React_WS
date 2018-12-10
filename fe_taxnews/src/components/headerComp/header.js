@@ -54,9 +54,9 @@ class Header extends Component {
               </Link>
               <h5>
                 <div style={{ fontFamily: "sans-serif", fontSize: "18px" }}>
-                  <span>T</span>
-                  he <span>P</span>
-                  ower of <span>K</span>
+                  <span className="redColorText">T</span>
+                  he <span className="redColorText">P</span>
+                  ower of <span className="redColorText">K</span>
                   nowledge
                 </div>
               </h5>
@@ -110,10 +110,7 @@ class Header extends Component {
                   value={searchTextValue}
                   onChange={this.changeText}
                 />
-                <input
-                  type="submit"
-                  onClick={this.searchResult}
-                />
+                <input type="submit" onClick={this.searchResult} />
               </div>
             </div>
           </div>
