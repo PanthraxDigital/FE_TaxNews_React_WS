@@ -5,11 +5,23 @@ import DetailPage from "./detailPage";
 //Navigation of all the Menu
 
 class MasterPageRoute extends Component {
+  constructor(props){
+    super(props);
+   
+  }
   render() {
+    console.log("search value "+ this.props.userSearchValue);
     return (
       <Switch>
         <Route exact path="/:category" component={MasterPage} key="1" />
-        <Route path="/:category/:articleId" component={DetailPage} key="2" />
+        <Route
+          exact
+          path="/search?searchText"
+          userSearchValue={this.props.userSearchValue}
+          component={MasterPage}
+          key="2"
+        />
+        <Route path="/:category/:articleId" component={DetailPage} key="3" />
       </Switch>
     );
   }

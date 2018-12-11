@@ -14,6 +14,7 @@ import SiteDown from "./siteDown";
 class MainRoute extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       homeDataResult: this.props.homeDataResult,
       fromDeskResult: this.props.fromDeskResult
@@ -21,8 +22,9 @@ class MainRoute extends Component {
   }
 
   render() {
+    console.log("mainRoute.js " + this.props.userSearchValue);
     return (
-      <Switch>
+      <Switch >
         <Route path="/from-desk" component={MasterPageRoute} key="0" />
         <Route path="/top-stories" component={MasterPageRoute} key="1" />
         <Route path="/income-tax" component={MasterPageRoute} key="2" />
@@ -52,6 +54,7 @@ class MainRoute extends Component {
             <Body
               homeDataResult={this.state.homeDataResult}
               fromDeskResult={this.state.fromDeskResult}
+              userSearchValue={this.props.userSearchValue}
             />
           )}
         />

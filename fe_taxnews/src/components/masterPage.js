@@ -30,6 +30,7 @@ class MasterPage extends Component {
   componentDidMount() {
     // fetch the data as per the URL
     // mean while will mock the json
+    
     window.scrollTo(0, 0);
     this.categoryId = getCategoryId(this.url);
     this.getArticleList(this.categoryId);
@@ -55,7 +56,10 @@ class MasterPage extends Component {
                 {this.state.masterListData.map(function(data, index1) {
                   return (
                     <div className="grid box" key={index1}>
-                      <div className="grid-header" style={{textAlign:'justify'}}>
+                      <div
+                        className="grid-header"
+                        style={{ textAlign: "justify" }}
+                      >
                         <Link
                           className="gotosingle"
                           to={this.url + "/" + data._id}
@@ -86,8 +90,8 @@ class MasterPage extends Component {
                               data.uploadImage != null
                                 ? data.uploadImage.url
                                 : data.imageLink != null
-                                  ? data.imageLink
-                                  : ""
+                                ? data.imageLink
+                                : ""
                             }
                             className="blog"
                           />
@@ -136,6 +140,7 @@ class MasterPage extends Component {
     axios
       .get(URL + `${_index}`)
       .then(result => {
+        console.log("result "+ JSON.stringify(result.data))
         this.setState({
           masterListData: result.data.articles,
           isLoading: false

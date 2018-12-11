@@ -19,28 +19,20 @@ class Header extends Component {
   }
 
   changeText(e) {
-    // let newArr = [...this.state.textValue];
-    // newArr.push(e.target.value);
     this.setState({
       textValue: e.target.value
     });
   }
 
   searchResult(e) {
-    axios
-      .get(`${URL_SEARCH}${e.target.value}`)
-      .then(_result => {
-        console.log("search result " + _result);
-      })
-      .catch(error => {
-        console.log("error " + error);
-      });
+    this.props.searchCallBack(this.state.textValue);
+    
   }
 
   render() {
     let searchTextValue =
       this.state.textValue == null ? "" : this.state.textValue;
-    console.log("Search value " + searchTextValue);
+    
     return (
       <div className="header">
         <div>
@@ -110,7 +102,7 @@ class Header extends Component {
                   value={searchTextValue}
                   onChange={this.changeText}
                 />
-                <input type="submit" onClick={this.searchResult} />
+                <input type="submit" onClick={this.searchResult} value=""/>
               </div>
             </div>
           </div>

@@ -17,7 +17,8 @@ class App extends Component {
     this.state = {
       isLoading: false,
       homeDataResult: [],
-      loadSubscriberPopup: false
+      loadSubscriberPopup: false,
+      searchValue: ""
     };
   }
   componentDidMount() {
@@ -47,28 +48,35 @@ class App extends Component {
     });
   }
 
+  searchCallBack(e) {
+    console.log("App.js " + e);
+    this.setState({
+      searchValue: e,
+      isLoading: true
+    });
+  }
+
   render() {
     if (this.state.isLoading) {
       return (
         <React.Fragment>
           <div>
             {/* Contains the link of the menu */}
-            <Header />
-
+            <Header searchCallBack={this.searchCallBack.bind(this)} />
             {/* Contains the routing details */}
-
             <div className="main-content">
               <NewsTicker homeDataResult={this.state.homeDataResult} />
               <div className="col-md-9">
                 <MainRoute
                   homeDataResult={this.state.homeDataResult}
                   fromDeskResult={this.state.fromDeskResult}
+                  userSearchValue={this.state.searchValue}
                 />
               </div>
               <Sidebar sideBarResult={this.state.sideBarResult} />
             </div>
             <div className="clearfix" />
-            <Footer />
+            <Footer />  
           </div>
           {this.state.loadSubscriberPopup ? (
             <SubscriberPopup
