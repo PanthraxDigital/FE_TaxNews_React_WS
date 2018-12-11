@@ -85,8 +85,23 @@ class Header extends Component {
                   type="text"
                   value={searchTextValue}
                   onChange={this.changeText}
+                  ref={el => (this.inputTitle = el)}
                 />
-                <input type="submit" onClick={this.searchResult} value="" />
+                {/* <input type="submit" onClick={this.searchResult} value="" /> */}
+                {/* <Link to="/search?searchText=">GO</Link> */}
+                {this.inputTitle != undefined ? (
+                  <Link
+                    to={`/search?searchText=${this.inputTitle.value}`}
+                    style={{
+                      color: "#cf0000",
+                      textDecoration: "none"
+                    }}
+                  >
+                    FIND
+                  </Link>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>

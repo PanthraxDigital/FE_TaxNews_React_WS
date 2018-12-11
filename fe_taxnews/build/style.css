@@ -368,18 +368,18 @@ a.btn {
 .search {
   position: relative;
   padding: 5px 8px;
-  width: 35%;
+  width: 55%;
   border: 1px solid #bababa;
   float: right;
   background: #f8f8f8;
 }
 .search input[type="text"] {
   outline: none;
-  color: #b3b3b3;
+  color: black;
   background: #f8f8f8;
   font-size: 1em;
   border: none;
-  width: 84.33%;
+  width: 85%;
 }
 .search input[type="submit"] {
   background: url("../images/sprit-1.png") no-repeat 1px 1px #202021;
@@ -2143,7 +2143,7 @@ a.bull1 {
     width: 64%;
   }
   .search {
-    width: 31%;
+    width: 65%;
   }
   .top-menu {
     margin-top: 0.4em;
@@ -2454,7 +2454,7 @@ a.bull1 {
     margin: 0.4em 0;
   }
   .search {
-    width: 46%;
+    width: 70%;
   }
   .logo {
     margin-top: 26px;

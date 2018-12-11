@@ -1,7 +1,6 @@
 global.Intl = require("intl");
 export const DateFormat = function(_strDate) {
   let formatDate = new Date(_strDate);
-  //return formatDate.toISOString().substring(0, 10);
   return (
     (formatDate.getDate() < 10
       ? "0" + formatDate.getDate()
@@ -108,4 +107,72 @@ export const getCookie = function(cname) {
     }
   }
   return "";
+};
+
+//Production
+export const mapObjectIdWithMenuProd = function(_menuObjectId) {
+  switch (_menuObjectId) {
+    case "5c0da7b258920b125efbed47":
+      return "/from-desk";
+    case "5c0da7c858920b125efbed48":
+      return "/top-stories";
+    case "5c0da7dc58920b125efbed49":
+      return "/income-tax";
+    case "5c0da7f758920b125efbed4a":
+      return "/gst";
+    case "5c0da81358920b125efbed4b":
+      return "/vat-cst";
+    case "5c0da82958920b125efbed4c":
+      return "/excise";
+    case "5c0da83a58920b125efbed4d":
+      return "/custom";
+    case "5c0da8bd58920b125efbed4e":
+      return "/nbfc-rbi";
+    case "5c0da8cb58920b125efbed4f":
+      return "/sebi";
+    case "5c0da8e658920b125efbed50":
+      return "/roc-company-law";
+    case "5c0da90358920b125efbed51":
+      return "/icai";
+    case "5c0da92b58920b125efbed52":
+      return "/finance-budget";
+    case "5c0da94058920b125efbed53":
+      return "/generalTax";
+    case "5c0da95f58920b125efbed54":
+      return "/others";
+  }
+};
+
+//Development
+export const mapObjectIdWithMenuDev = function(_menuObjectId) {
+  switch (_menuObjectId) {
+    case "5c09f2d2ad83e006a5cbd25d":
+      return "/from-desk";
+    case "5c07dd78cc1f9907914e002e":
+      return "/top-stories";
+    case "5c07ddafcc1f9907914e002f":
+      return "/income-tax";
+    case "5c07ddbccc1f9907914e0030":
+      return "/gst";
+    case "5c07ddd0cc1f9907914e0031":
+      return "/vat-cst";
+    case "5c07ddf1cc1f9907914e0032":
+      return "/excise";
+    case "5c07ddfccc1f9907914e0033":
+      return "/custom";
+    case "5c07de0acc1f9907914e0034":
+      return "/nbfc-rbi";
+    case "5c07de14cc1f9907914e0035":
+      return "/sebi";
+    case "5c07de22cc1f9907914e0036":
+      return "/roc-company-law";
+    case "5c07de35cc1f9907914e0037":
+      return "/icai";
+    case "5c09f46337906706d192c052":
+      return "/finance-budget";
+    case "5c09f47a37906706d192c053":
+      return "/generalTax";
+    case "5c09f48837906706d192c054":
+      return "/others";
+  }
 };

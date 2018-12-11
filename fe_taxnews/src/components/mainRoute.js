@@ -8,6 +8,7 @@ import Privacy from "./privacyPolicy";
 import Disclaimer from "./disclaimer";
 import Contact from "./contact";
 import SiteDown from "./siteDown";
+import SearchResult from "./SearchResult";
 
 //Navigation of all the Menu
 
@@ -23,7 +24,7 @@ class MainRoute extends Component {
 
   render() {
     return (
-      <Switch >
+      <Switch>
         <Route path="/from-desk" component={MasterPageRoute} key="0" />
         <Route path="/top-stories" component={MasterPageRoute} key="1" />
         <Route path="/income-tax" component={MasterPageRoute} key="2" />
@@ -44,6 +45,14 @@ class MainRoute extends Component {
         <Route path="/contact" component={Contact} key="17" />
         <Route path="/generalTax" component={MasterPageRoute} key="18" />
         <Route path="/hidden-Tab" component={MasterPageRoute} key="19" />
+        <Route
+          exact={false}
+          path="/search"
+          render={() => (
+            <SearchResult userSearchValue={this.props.userSearchValue} />
+          )}
+          key="20"
+        />
 
         {/* <Route exact={true} path="/" component={SiteDown} /> */}
         <Route
@@ -53,7 +62,6 @@ class MainRoute extends Component {
             <Body
               homeDataResult={this.state.homeDataResult}
               fromDeskResult={this.state.fromDeskResult}
-              userSearchValue={this.props.userSearchValue}
             />
           )}
         />
