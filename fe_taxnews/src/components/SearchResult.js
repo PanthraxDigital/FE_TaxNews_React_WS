@@ -114,8 +114,8 @@ class SearchResult extends React.Component {
       );
     } else {
       return (
-        <div>
-          <h3>Result not found.</h3>
+        <div style={{margin:'20px 0'}}>
+          <h3>Result not found. Try again or try different words.</h3>
         </div>
       );
     }
