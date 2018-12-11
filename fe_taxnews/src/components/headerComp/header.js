@@ -16,6 +16,7 @@ class Header extends Component {
     this.state = {
       textValue: ""
     };
+    this.inputTextRef = React.createRef();
   }
 
   changeText(e) {
@@ -25,14 +26,17 @@ class Header extends Component {
   }
 
   searchResult(e) {
-    this.props.searchCallBack(this.state.textValue);
-    
+    let searchValue = this.state.textValue;
+    this.props.searchCallBack(searchValue);
+    this.setState({
+      textValue: ""
+    });
   }
 
   render() {
     let searchTextValue =
       this.state.textValue == null ? "" : this.state.textValue;
-    
+
     return (
       <div className="header">
         <div>
@@ -75,26 +79,6 @@ class Header extends Component {
           </div>
           <div className="clearfix" />
           <div className="header-right">
-            <div className="top-menu" style={{ display: "none" }}>
-              <ul>
-                <li>
-                  <a href="#">About</a>
-                </li>{" "}
-                |
-                <li>
-                  <a href="#">Contact</a>
-                </li>{" "}
-                |
-                <li>
-                  <a
-                    href="http://api.taxknowledge.in:4002/keystone/signin"
-                    target="_blank"
-                  >
-                    Login
-                  </a>
-                </li>{" "}
-              </ul>
-            </div>
             <div className="search">
               <div>
                 <input
@@ -102,7 +86,7 @@ class Header extends Component {
                   value={searchTextValue}
                   onChange={this.changeText}
                 />
-                <input type="submit" onClick={this.searchResult} value=""/>
+                <input type="submit" onClick={this.searchResult} value="" />
               </div>
             </div>
           </div>

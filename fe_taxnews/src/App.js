@@ -48,8 +48,8 @@ class App extends Component {
     });
   }
 
+  // for searching the result
   searchCallBack(e) {
-    console.log("App.js " + e);
     this.setState({
       searchValue: e,
       isLoading: true
