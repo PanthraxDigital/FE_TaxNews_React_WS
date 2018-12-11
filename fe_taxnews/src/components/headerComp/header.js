@@ -100,7 +100,15 @@ class Header extends Component {
                     FIND
                   </Link>
                 ) : (
-                  ""
+                  <Link
+                  to={`/search?searchText=""`}
+                    style={{
+                      color: "#cf0000",
+                      textDecoration: "none"
+                    }}
+                  >
+                    FIND
+                  </Link>
                 )}
               </div>
             </div>
