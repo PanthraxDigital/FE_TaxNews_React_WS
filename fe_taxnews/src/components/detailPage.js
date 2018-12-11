@@ -75,7 +75,6 @@ class DetailPage extends Component {
           </div>
         );
       } else {
-        // console.log("value " + this.state.detailArticle);
         if (
           this.state.detailArticle != undefined &&
           this.state.detailArticle.length > 0

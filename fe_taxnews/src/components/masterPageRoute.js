@@ -10,7 +10,6 @@ class MasterPageRoute extends Component {
    
   }
   render() {
-    console.log("search value "+ this.props.userSearchValue);
     return (
       <Switch>
         <Route exact path="/:category" component={MasterPage} key="1" />

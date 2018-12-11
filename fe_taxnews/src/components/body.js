@@ -27,13 +27,11 @@ class body extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("Search Value " + JSON.stringify(nextProps.userSearchValue));
+    
     if (nextProps.userSearchValue != undefined) {
       axios
         .get(`${URL_SEARCH}${nextProps.userSearchValue}`)
         .then(_result => {
-          //console.log("result " + JSON.stringify(_result.data));
-          console.log("result " + _result.data.searchResult);
           this.setState({
             searchResultValue: _result.data.searchResult
           });
@@ -318,7 +316,6 @@ function mapObjectIdWithMenuProd(_menuObjectId) {
 
 //Development
 function mapObjectIdWithMenuDev(_menuObjectId) {
-  console.log("objectId " + _menuObjectId);
   switch (_menuObjectId) {
     case "5c09f2d2ad83e006a5cbd25d":
       return "/from-desk";

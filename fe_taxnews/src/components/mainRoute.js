@@ -22,7 +22,6 @@ class MainRoute extends Component {
   }
 
   render() {
-    console.log("mainRoute.js " + this.props.userSearchValue);
     return (
       <Switch >
         <Route path="/from-desk" component={MasterPageRoute} key="0" />
