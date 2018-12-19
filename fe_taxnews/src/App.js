@@ -78,13 +78,13 @@ class App extends Component {
             <div className="clearfix" />
             <Footer />  
           </div>
-          {/* {this.state.loadSubscriberPopup ? (
+          {this.state.loadSubscriberPopup ? (
             <SubscriberPopup
               closeSubscriberPopup={this.closeSubscriberPopup.bind(this)}
             />
           ) : (
             ""
-          )} */}
+          )}
         </React.Fragment>
       );
     } else {
