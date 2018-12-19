@@ -101,7 +101,7 @@ class Header extends Component {
                   </Link>
                 ) : (
                   <Link
-                  to={`/search?searchText=""`}
+                    to={`/search?searchText=""`}
                     style={{
                       color: "#cf0000",
                       textDecoration: "none"
@@ -211,25 +211,6 @@ class Header extends Component {
                 >
                   ICAI
                 </NavItem>
-                <NavDropdown eventKey={9} title="MORE" id="basic-nav-dropdown">
-                  <MenuItem
-                    eventKey={9.1}
-                    componentClass={Link}
-                    href="/finance-budget"
-                    to="/finance-budget"
-                  >
-                    FINANCE ACT/BUDGET
-                  </MenuItem>
-                  <MenuItem
-                    eventKey={9.2}
-                    eventKey={9.1}
-                    componentClass={Link}
-                    href="/others"
-                    to="/others"
-                  >
-                    OTHERS
-                  </MenuItem>
-                </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -242,3 +223,4 @@ class Header extends Component {
 }
 
 export default Header;
+
