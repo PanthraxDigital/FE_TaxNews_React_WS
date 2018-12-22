@@ -536,7 +536,7 @@ h5.breaking {
 @media (max-width: 480px) {
   
   .contentScroll {
-    overflow: scroll;
+    overflow: auto;
   }
 
   #slider3-pager a {
