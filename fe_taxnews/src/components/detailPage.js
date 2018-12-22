@@ -112,7 +112,7 @@ class DetailPage extends Component {
                   />
                   <meta property="og:type" content="article" />
                 </Helmet>
-                <div className="total-news" style={{ overflow: "scroll" }}>
+                <div className="total-news contentScroll">
                   <div className="content">
                     <div className="grid-header">
                       <div className="gotosingle">
@@ -199,7 +199,7 @@ class DetailPage extends Component {
                         </EmailShareButton>
                       </div>
                     </div>
-                    <div >
+                    <div>
                       <div
                         className="mdFormat"
                         style={{ fontSize: "1.1em", paddingTop: "50px" }}

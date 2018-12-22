@@ -534,6 +534,11 @@ h5.breaking {
   }
 }
 @media (max-width: 480px) {
+  
+  .contentScroll {
+    overflow: scroll;
+  }
+
   #slider3-pager a {
     width: 100%;
   }
@@ -2604,7 +2609,7 @@ a.bull1 {
     font-size: 1.25em;
     text-align: justify;
   }
-  div.gotosingle{
+  div.gotosingle {
     font-size: 1.25em;
   }
   .grid.box {
@@ -2769,8 +2774,8 @@ a.bull1 {
     font-size: 1.2em;
     text-align: justify;
   }
-  div.gotosingle{
-    font-size: 1.2em
+  div.gotosingle {
+    font-size: 1.2em;
   }
   img.blog {
     width: 50%;
@@ -3003,7 +3008,7 @@ a.bull1 {
     font-size: 1.1em;
     text-align: justify;
   }
-  div.gotosingle{
+  div.gotosingle {
     font-size: 1.1em;
   }
   .grid p {
@@ -3223,7 +3228,6 @@ a.bull1 {
   width: 100%;
 }
 
-
 .Demo__some-network {
   vertical-align: top;
   display: inline-block;
@@ -3268,5 +3272,5 @@ a.bull1 {
 }
 
 .mediaGroupText a {
-  color : darkslategrey;
+  color: darkslategrey;
 }
