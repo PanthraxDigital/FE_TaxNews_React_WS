@@ -12,19 +12,10 @@ class SearchResult extends React.Component {
     };
   }
 
-  componentWillReceiveProps() {
-    this.searchValue = window.location.search.split("=")[1];
-    axios
-      .get(`${URL_SEARCH}${this.searchValue}`)
-      .then(_result => {
-        this.setState({
-          searchResultValue: _result.data.searchResult
-        });
-      })
-      .catch(error => {
-        console.log("error " + error);
-      });
+  componentWillMount() {
+    this.searchUserResult();
   }
+
 
   render() {
     if (this.state.searchResultValue.length > 0) {
@@ -114,11 +105,25 @@ class SearchResult extends React.Component {
       );
     } else {
       return (
-        <div style={{margin:'20px 0'}}>
+        <div style={{ margin: "20px 0" }}>
           <h3>Result not found. Try again or try different words.</h3>
         </div>
       );
     }
+  }
+
+  searchUserResult() {
+    this.searchValue = window.location.search.split("=")[1];
+    axios
+      .get(`${URL_SEARCH}${this.searchValue}`)
+      .then(_result => {
+        this.setState({
+          searchResultValue: _result.data.searchResult
+        });
+      })
+      .catch(error => {
+        console.log("error " + error);
+      });
   }
 }
 
