@@ -43,7 +43,7 @@ class Footer extends Component {
               TaxKnowledge.in &copy; {new Date().getFullYear()} All rights
               reserved | Powered by{" "}
               <a href="http://www.panthrax.com">
-                <strong>PDA</strong>
+                <strong>Panthrax</strong>
               </a>
             </p>
           </div>
