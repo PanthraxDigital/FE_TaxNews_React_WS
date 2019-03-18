@@ -201,18 +201,17 @@ class DetailPage extends Component {
                       </div>
                     </div>
                     <div>
+                      <AdSense.Google
+                        client="ca-pub-4652165289391769"
+                        slot="4114300139"
+                        layout="in-article"
+                      />
                       <div
                         className="mdFormat"
                         style={{ fontSize: "1.1em", paddingTop: "50px" }}
                         dangerouslySetInnerHTML={{
                           __html: this.state.detailArticle[0].description
                         }}
-                      />
-
-                      <AdSense.Google
-                        client="ca-pub-4652165289391769"
-                        slot="4114300139"
-                        layout="in-article"
                       />
                       <br />
                     </div>

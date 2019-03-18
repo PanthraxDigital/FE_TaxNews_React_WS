@@ -56,10 +56,12 @@ class MasterPage extends Component {
               <div className="grids">
                 {this.state.masterListData.map(function(data, index1) {
                   if (index1 % 5 == 0) {
-                    <AdSense.Google
-                      client="ca-pub-4652165289391769"
-                      slot="4114300139"
-                    />;
+                    return (
+                      <AdSense.Google
+                        client="ca-pub-4652165289391769"
+                        slot="4114300139"
+                      />
+                    );
                   } else {
                     return (
                       <div className="grid box" key={index1}>

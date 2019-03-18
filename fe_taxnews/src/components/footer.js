@@ -6,7 +6,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <AdSense.Google client="ca-pub-4652165289391769" slot="4114300139" />;
+        <AdSense.Google client="ca-pub-4652165289391769" slot="4114300139" />
         <div className="footer text-center">
           <div className="bottom-menu">
             <ul>
