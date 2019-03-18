@@ -5,6 +5,7 @@ import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
 import { Link } from "react-router-dom";
 import FBComment from "./fbComment";
 import { Helmet } from "react-helmet";
+import AdSense from "react-adsense";
 import {
   FacebookShareButton,
   GooglePlusShareButton,
@@ -206,6 +207,12 @@ class DetailPage extends Component {
                         dangerouslySetInnerHTML={{
                           __html: this.state.detailArticle[0].description
                         }}
+                      />
+
+                      <AdSense.Google
+                        client="ca-pub-4652165289391769"
+                        slot="4114300139"
+                        layout="in-article"
                       />
                       <br />
                     </div>

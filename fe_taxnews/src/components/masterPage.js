@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { URL } from "../networkUtility";
+import AdSense from "react-adsense";
 import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
 
 //Navigation of all the Menu
@@ -30,7 +31,7 @@ class MasterPage extends Component {
   componentDidMount() {
     // fetch the data as per the URL
     // mean while will mock the json
-    
+
     window.scrollTo(0, 0);
     this.categoryId = getCategoryId(this.url);
     this.getArticleList(this.categoryId);
@@ -54,63 +55,70 @@ class MasterPage extends Component {
             <div className="content">
               <div className="grids">
                 {this.state.masterListData.map(function(data, index1) {
-                  return (
-                    <div className="grid box" key={index1}>
-                      <div
-                        className="grid-header"
-                        style={{ textAlign: "justify" }}
-                      >
-                        <Link
-                          className="gotosingle"
-                          to={this.url + "/" + data._id}
+                  if (index1 % 5 == 0) {
+                    <AdSense.Google
+                      client="ca-pub-4652165289391769"
+                      slot="4114300139"
+                    />;
+                  } else {
+                    return (
+                      <div className="grid box" key={index1}>
+                        <div
+                          className="grid-header"
+                          style={{ textAlign: "justify" }}
                         >
-                          {data.title}
-                        </Link>
-                        <ul>
-                          <li>
-                            <span>
-                              posted by{" "}
-                              {data.author != null
-                                ? data.author.name.first +
-                                  " " +
-                                  data.author.name.last
-                                : "TaxKnowledge Team"}
-                            </span>
-                            <span> on {DateFormat(data.articleDate)}</span>
-                          </li>
-                          {/* <li>
-                        <a href="#">5000 views</a>
-                      </li> */}
-                        </ul>
-                      </div>
-                      <div className="grid-img-content">
-                        <a href="#">
-                          <img
-                            src={
-                              data.uploadImage != null
-                                ? data.uploadImage.url
-                                : data.imageLink != null
-                                ? data.imageLink
-                                : ""
-                            }
-                            className="blog"
-                          />
-                        </a>
-                        <p>{data.subTitle}</p>
-                        <div className="clearfix" />
-                      </div>
-                      <div className="comments">
-                        <div>
                           <Link
-                            className="readmore"
+                            className="gotosingle"
                             to={this.url + "/" + data._id}
                           >
-                            Read More
+                            {data.title}
                           </Link>
+                          <ul>
+                            <li>
+                              <span>
+                                posted by{" "}
+                                {data.author != null
+                                  ? data.author.name.first +
+                                    " " +
+                                    data.author.name.last
+                                  : "TaxKnowledge Team"}
+                              </span>
+                              <span> on {DateFormat(data.articleDate)}</span>
+                            </li>
+                            {/* <li>
+                        <a href="#">5000 views</a>
+                      </li> */}
+                          </ul>
+                        </div>
+                        <div className="grid-img-content">
+                          <a href="#">
+                            <img
+                              src={
+                                data.uploadImage != null
+                                  ? data.uploadImage.url
+                                  : data.imageLink != null
+                                  ? data.imageLink
+                                  : ""
+                              }
+                              className="blog"
+                            />
+                          </a>
+                          <p>{data.subTitle}</p>
+                          <div className="clearfix" />
+                        </div>
+                        <div className="comments">
+                          <div>
+                            <Link
+                              className="readmore"
+                              to={this.url + "/" + data._id}
+                            >
+                              Read More
+                            </Link>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
+                    );
+                  }
                 }, this)}
               </div>
               <div className="text-center">
