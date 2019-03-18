@@ -9,6 +9,7 @@
     "markdown-react-js": "^1.0.0",
     "marked": "^0.5.0",
     "react": "^16.4.2",
+    "react-adsense": "^0.0.6",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.4.2",
     "react-facebook": "^6.0.14",

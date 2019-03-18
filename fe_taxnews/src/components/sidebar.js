@@ -6,6 +6,7 @@ import { TelegramIcon, WhatsappIcon } from "react-share";
 import axios from "axios";
 import { URL_GROUP_JOIN } from "../networkUtility";
 import { showAds1 } from "../bitvertiser/ads1";
+import AdSense from "react-adsense";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -65,6 +66,12 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="col-md-3 side-bar">
+        <AdSense.Google
+          client="ca-pub-4652165289391769"
+          slot="4114300139"
+          style={{ width: "250px", height: "250px", float: "right" }}
+          format=""
+        />
         <NewsLetterSubscriber />
 
         <div className="clearfix" />
@@ -156,7 +163,25 @@ class Sidebar extends Component {
               : null}
           </tbody>
         </table>
-        <div id="ntv_1986077" />
+        {/* <div id="ntv_1986077" /> */}
+        <AdSense.Google
+          client="ca-pub-4652165289391769"
+          slot="4114300139"
+          style={{ width: "250px", height: "250px", float: "right" }}
+          format=""
+        />
+        <AdSense.Google
+          client="ca-pub-4652165289391769"
+          slot="4114300139"
+          style={{ width: "250px", height: "250px", float: "right" }}
+          format=""
+        />
+        <AdSense.Google
+          client="ca-pub-4652165289391769"
+          slot="4114300139"
+          style={{ width: "250px", height: "250px", float: "right" }}
+          format=""
+        />
       </div>
     );
   }
