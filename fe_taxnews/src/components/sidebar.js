@@ -66,6 +66,7 @@ class Sidebar extends Component {
   render() {
     return (
       <React.Fragment>
+        
         <div className="col-md-3 side-bar">
           <AdSense.Google
             client="ca-pub-4652165289391769"
@@ -78,8 +79,7 @@ class Sidebar extends Component {
             }}
             format=""
           />
-        </div>
-        <div className="col-md-3 side-bar">
+          <br />
           <NewsLetterSubscriber />
 
           <div className="clearfix" />
