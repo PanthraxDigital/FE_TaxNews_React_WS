@@ -71,11 +71,8 @@ class Sidebar extends Component {
             client="ca-pub-4652165289391769"
             slot="4114300139"
             style={{
-              width: "220px",
               height: "200px",
-              margin : "0 auto",
-              padding : '10px',
-              background: "red"
+              margin: "0 auto"
             }}
             format=""
           />
