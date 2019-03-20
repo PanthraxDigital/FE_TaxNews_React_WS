@@ -66,16 +66,16 @@ class Sidebar extends Component {
   render() {
     return (
       <React.Fragment>
-        
         <div className="col-md-3 side-bar">
           <AdSense.Google
             client="ca-pub-4652165289391769"
             slot="4114300139"
             style={{
-              width: "240px",
-              height: "225px",
-              float: "right",
-              marginBottom: "15px"
+              width: "220px",
+              height: "200px",
+              margin : "0 auto",
+              padding : '10px',
+              background: "red"
             }}
             format=""
           />
