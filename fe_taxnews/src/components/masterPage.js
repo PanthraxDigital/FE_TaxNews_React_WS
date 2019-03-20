@@ -5,6 +5,7 @@ import axios from "axios";
 import { URL } from "../networkUtility";
 import AdSense from "react-adsense";
 import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
+import index from "react-adsense";
 
 //Navigation of all the Menu
 class MasterPage extends Component {
@@ -57,70 +58,18 @@ class MasterPage extends Component {
                 {this.state.masterListData.map(function(data, index1) {
                   if (index1 % 5 == 0) {
                     return (
-                      <AdSense.Google
-                        client="ca-pub-4652165289391769"
-                        slot="4114300139"
-                      />
-                    );
-                  } else {
-                    return (
-                      <div className="grid box" key={index1}>
-                        <div
-                          className="grid-header"
-                          style={{ textAlign: "justify" }}
-                        >
-                          <Link
-                            className="gotosingle"
-                            to={this.url + "/" + data._id}
-                          >
-                            {data.title}
-                          </Link>
-                          <ul>
-                            <li>
-                              <span>
-                                posted by{" "}
-                                {data.author != null
-                                  ? data.author.name.first +
-                                    " " +
-                                    data.author.name.last
-                                  : "TaxKnowledge Team"}
-                              </span>
-                              <span> on {DateFormat(data.articleDate)}</span>
-                            </li>
-                            {/* <li>
-                        <a href="#">5000 views</a>
-                      </li> */}
-                          </ul>
-                        </div>
-                        <div className="grid-img-content">
-                          <a href="#">
-                            <img
-                              src={
-                                data.uploadImage != null
-                                  ? data.uploadImage.url
-                                  : data.imageLink != null
-                                  ? data.imageLink
-                                  : ""
-                              }
-                              className="blog"
-                            />
-                          </a>
-                          <p>{data.subTitle}</p>
-                          <div className="clearfix" />
-                        </div>
-                        <div className="comments">
-                          <div>
-                            <Link
-                              className="readmore"
-                              to={this.url + "/" + data._id}
-                            >
-                              Read More
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
+                      <React.Fragment>
+                        <AdSense.Google
+                          client="ca-pub-4652165289391769"
+                          slot="4114300139"
+                          key={index1}
+                        />
+                        <br />
+                        {displayArticleHtml(this.url, data, index1)}
+                      </React.Fragment>
                     );
                   }
+                  return displayArticleHtml(this.url, data, index1);
                 }, this)}
               </div>
               <div className="text-center">
@@ -150,6 +99,7 @@ class MasterPage extends Component {
     axios
       .get(URL + `${_index}`)
       .then(result => {
+        console.log("master list " + JSON.stringify(result));
         this.setState({
           masterListData: result.data.articles,
           isLoading: false
@@ -183,4 +133,49 @@ class MasterPage extends Component {
   }
 }
 
+function displayArticleHtml(URL, data, index1) {
+  return (
+    <div className="grid box" key={index1}>
+      <div className="grid-header" style={{ textAlign: "justify" }}>
+        <Link className="gotosingle" to={URL + "/" + data._id}>
+          {data.title}
+        </Link>
+        <ul>
+          <li>
+            <span>
+              posted by{" "}
+              {data.author != null
+                ? data.author.name.first + " " + data.author.name.last
+                : "TaxKnowledge Team"}
+            </span>
+            <span> on {DateFormat(data.articleDate)}</span>
+          </li>
+        </ul>
+      </div>
+      <div className="grid-img-content">
+        <a href="#">
+          <img
+            src={
+              data.uploadImage != null
+                ? data.uploadImage.url
+                : data.imageLink != null
+                ? data.imageLink
+                : ""
+            }
+            className="blog"
+          />
+        </a>
+        <p>{data.subTitle}</p>
+        <div className="clearfix" />
+      </div>
+      <div className="comments">
+        <div>
+          <Link className="readmore" to={URL + "/" + data._id}>
+            Read More
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 export default MasterPage;

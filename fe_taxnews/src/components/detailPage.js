@@ -200,6 +200,7 @@ class DetailPage extends Component {
                         </EmailShareButton>
                       </div>
                     </div>
+                    <br />
                     <div>
                       <AdSense.Google
                         client="ca-pub-4652165289391769"

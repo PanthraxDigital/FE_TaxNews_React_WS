@@ -28,17 +28,7 @@ class NewsletterSubscriber extends React.Component {
             className="sign_up text-center"
             style={{ padding: "5px" }}
           >
-            <AdSense.Google
-              client="ca-pub-4652165289391769"
-              slot="4114300139"
-              style={{
-                width: "240px",
-                height: "225px",
-                float: "right",
-                marginBottom: "15px"
-              }}
-              format=""
-            />
+           
             <form
               action="https://taxknowledge.us19.list-manage.com/subscribe/post?u=a4e722edd8d0243c79091fed4&amp;id=86af928437"
               method="post"
