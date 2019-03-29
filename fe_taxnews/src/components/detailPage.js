@@ -206,6 +206,8 @@ class DetailPage extends Component {
                         client="ca-pub-4652165289391769"
                         slot="4114300139"
                         layout="in-article"
+                        format="fluid"
+                        responsive="true"
                       />
 
                       <div
