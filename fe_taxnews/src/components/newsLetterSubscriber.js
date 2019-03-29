@@ -1,5 +1,5 @@
 import React from "react";
-import AdSense from "react-adsense";
+
 
 class NewsletterSubscriber extends React.Component {
   constructor(props) {
