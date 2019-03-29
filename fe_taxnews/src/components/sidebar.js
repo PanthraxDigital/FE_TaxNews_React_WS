@@ -91,11 +91,7 @@ class Sidebar extends Component {
     return (
       <React.Fragment>
         <div className="col-md-3 side-bar">
-          <div
-            style={{
-              width: "250px"
-            }}
-          >
+          <div>
             <AdSense.Google
               client="ca-pub-4652165289391769"
               slot="4114300139"
@@ -202,7 +198,7 @@ class Sidebar extends Component {
 
           <AdSense.Google
             client="ca-pub-4652165289391769"
-            slot="5438143602"
+            slot="4114300139"
             style={{
               width: "250px",
               height: "250px",

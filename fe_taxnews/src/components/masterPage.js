@@ -59,11 +59,7 @@ class MasterPage extends Component {
                   if (index1 % 5 == 0) {
                     return (
                       <React.Fragment>
-                        <div
-                          style={{
-                            width: "250px"
-                          }}
-                        >
+                        <div>
                           <AdSense.Google
                             client="ca-pub-4652165289391769"
                             slot="4114300139"
