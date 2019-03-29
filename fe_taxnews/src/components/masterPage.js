@@ -62,7 +62,7 @@ class MasterPage extends Component {
                         <AdSense.Google
                           client="ca-pub-4652165289391769"
                           slot="4114300139"
-                          layout="in-article"
+                          //layout="in-article"
                           style={{
                             width : "250px"
                           }}

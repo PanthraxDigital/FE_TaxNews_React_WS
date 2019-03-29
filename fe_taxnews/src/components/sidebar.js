@@ -99,7 +99,7 @@ class Sidebar extends Component {
               height: "200px",
               marginTop: "10px"
             }}
-            layout="in-article"
+            //layout="in-article"
             // format="fluid"
             // responsive="true"
           />
@@ -205,7 +205,7 @@ class Sidebar extends Component {
                 height: "250px",
                 float: "right"
               }}
-              format=""
+              
             />
           </Sticky>
           {/* <div
