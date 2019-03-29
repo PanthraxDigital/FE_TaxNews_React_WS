@@ -95,13 +95,12 @@ class Sidebar extends Component {
             client="ca-pub-4652165289391769"
             slot="4114300139"
             style={{
-              width: "240px",
+              width: "250px",
               height: "200px",
               marginTop: "10px"
             }}
             layout="in-article"
             format="fluid"
-            availableWidth = "250px"
             responsive="true"
           />
           <br />

@@ -63,7 +63,9 @@ class MasterPage extends Component {
                           client="ca-pub-4652165289391769"
                           slot="4114300139"
                           layout="in-article"
-                          availableWidth = "250px"
+                          style={{
+                            width : "250px"
+                          }}
                           format="fluid"
                           responsive="true"
                           key={index1}
