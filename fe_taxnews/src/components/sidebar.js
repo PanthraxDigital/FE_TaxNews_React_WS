@@ -78,7 +78,6 @@ class Sidebar extends Component {
             format=""
           />
           <br />
-          <NewsLetterSubscriber />
 
           <div className="clearfix" />
           <div>
@@ -119,7 +118,7 @@ class Sidebar extends Component {
               More +
             </a>
           </div>
-
+          <NewsLetterSubscriber />
           <div>
             <div style={{ marginTop: "20px", display: "none" }}>
               <a href="#">
@@ -170,22 +169,17 @@ class Sidebar extends Component {
             </tbody>
           </table>
           {/* <div id="ntv_1986077" /> */}
+
           <AdSense.Google
             client="ca-pub-4652165289391769"
-            slot="4114300139"
-            style={{ width: "250px", height: "250px", float: "right" }}
-            format=""
-          />
-          <AdSense.Google
-            client="ca-pub-4652165289391769"
-            slot="4114300139"
-            style={{ width: "250px", height: "250px", float: "right" }}
-            format=""
-          />
-          <AdSense.Google
-            client="ca-pub-4652165289391769"
-            slot="4114300139"
-            style={{ width: "250px", height: "250px", float: "right" }}
+            slot="5438143602"
+            style={{
+              width: "250px",
+              height: "600px",
+              float: "right",
+              background: "red",
+              position: "fixed"
+            }}
             format=""
           />
         </div>
