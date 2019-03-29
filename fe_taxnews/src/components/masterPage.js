@@ -59,17 +59,20 @@ class MasterPage extends Component {
                   if (index1 % 5 == 0) {
                     return (
                       <React.Fragment>
-                        <AdSense.Google
-                          client="ca-pub-4652165289391769"
-                          slot="4114300139"
-                          //layout="in-article"
+                        <div
                           style={{
-                            width : "250px"
+                            width: "250px"
                           }}
-                          // format="fluid"
-                          // responsive="true"
-                          key={index1}
-                        />
+                        >
+                          <AdSense.Google
+                            client="ca-pub-4652165289391769"
+                            slot="4114300139"
+                            layout="in-article"
+                            format="fluid"
+                            responsive="true"
+                            key={index1}
+                          />
+                        </div>
                         <br />
                         {displayArticleHtml(this.url, data, index1)}
                       </React.Fragment>

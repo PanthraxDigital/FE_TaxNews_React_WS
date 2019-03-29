@@ -201,16 +201,17 @@ class DetailPage extends Component {
                       </div>
                     </div>
                     <br />
-                    <div>
+                    <div
+                      style={{
+                        width: "250px"
+                      }}
+                    >
                       <AdSense.Google
                         client="ca-pub-4652165289391769"
                         slot="4114300139"
-                        //layout="in-article"
-                        style={{
-                          width : "250px"
-                        }}
-                        // format="fluid"
-                        // responsive="true"
+                        layout="in-article"
+                        format="fluid"
+                        responsive="true"
                       />
 
                       <div

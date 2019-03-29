@@ -91,18 +91,24 @@ class Sidebar extends Component {
     return (
       <React.Fragment>
         <div className="col-md-3 side-bar">
-          <AdSense.Google
-            client="ca-pub-4652165289391769"
-            slot="4114300139"
+          <div
             style={{
-              width: "250px",
-              height: "200px",
-              marginTop: "10px"
+              width: "250px"
             }}
-            //layout="in-article"
-            // format="fluid"
-            // responsive="true"
-          />
+          >
+            <AdSense.Google
+              client="ca-pub-4652165289391769"
+              slot="4114300139"
+              style={{
+                width: "250px",
+                height: "200px",
+                marginTop: "10px"
+              }}
+              //layout="in-article"
+              // format="fluid"
+              // responsive="true"
+            />
+          </div>
           <br />
 
           <div className="clearfix" />
@@ -196,18 +202,16 @@ class Sidebar extends Component {
           </table>
           {/* <div id="ntv_1986077" /> */}
 
-          <Sticky enabled={true} top={50} bottomBoundary={1200}>
-            <AdSense.Google
-              client="ca-pub-4652165289391769"
-              slot="5438143602"
-              style={{
-                width: "250px",
-                height: "250px",
-                float: "right"
-              }}
-              
-            />
-          </Sticky>
+          <AdSense.Google
+            client="ca-pub-4652165289391769"
+            slot="5438143602"
+            style={{
+              width: "250px",
+              height: "250px",
+              float: "right"
+            }}
+          />
+
           {/* <div
             style={{
               background: "red",
