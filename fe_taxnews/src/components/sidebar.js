@@ -101,6 +101,7 @@ class Sidebar extends Component {
             }}
             layout="in-article"
             format="fluid"
+            width = "250px"
             responsive="true"
           />
           <br />
