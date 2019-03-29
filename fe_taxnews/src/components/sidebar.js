@@ -200,11 +200,6 @@ class Sidebar extends Component {
             <AdSense.Google
               client="ca-pub-4652165289391769"
               slot="5438143602"
-              style={{
-                width: "250px",
-                height: "250px",
-                float: "right"
-              }}
               layout="in-article"
               format="fluid"
               responsive="true"
