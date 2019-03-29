@@ -256,8 +256,15 @@ class DetailPage extends Component {
                     </div>
                   )}
                 </div>
-                <FBComment pathUrl={this.props.location.pathname} />
+                <FBComment
+                  pathUrl={this.props.location.pathname}
+                  style={{ windowWidth: "100%" }}
+                />
               </div>
+              <AdSense.Google
+                client="ca-pub-4652165289391769"
+                slot="4114300139"
+              />
             </React.Fragment>
           );
         } else {
