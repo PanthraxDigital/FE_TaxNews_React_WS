@@ -201,18 +201,14 @@ class DetailPage extends Component {
                       </div>
                     </div>
                     <br />
-                    <div
-                      style={{
-                        width: "250px"
-                      }}
-                    >
-                      <AdSense.Google
+                    <div>
+                      {/* <AdSense.Google
                         client="ca-pub-4652165289391769"
                         slot="4114300139"
                         layout="in-article"
                         format="fluid"
                         responsive="true"
-                      />
+                      /> */}
 
                       <div
                         className="mdFormat"
@@ -267,10 +263,10 @@ class DetailPage extends Component {
                   style={{ windowWidth: "100%" }}
                 />
               </div>
-              <AdSense.Google
+              {/* <AdSense.Google
                 client="ca-pub-4652165289391769"
                 slot="4114300139"
-              />
+              /> */}
             </React.Fragment>
           );
         } else {

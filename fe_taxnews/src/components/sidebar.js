@@ -96,7 +96,7 @@ class Sidebar extends Component {
               width: "250px"
             }}
           >
-            <AdSense.Google
+            {/* <AdSense.Google
               client="ca-pub-4652165289391769"
               slot="4114300139"
               style={{
@@ -107,7 +107,7 @@ class Sidebar extends Component {
               //layout="in-article"
               // format="fluid"
               // responsive="true"
-            />
+            /> */}
           </div>
           <br />
 
@@ -202,14 +202,14 @@ class Sidebar extends Component {
           </table>
           {/* <div id="ntv_1986077" /> */}
 
-          <AdSense.Google
+          {/* <AdSense.Google
             client="ca-pub-4652165289391769"
             slot="5438143602"
             style={{
               width: "250px",
               height: "250px",
               float: "right"
-            }}
+            }} */}
           />
 
           {/* <div
