@@ -200,7 +200,7 @@ class Sidebar extends Component {
               slot="5438143602"
               style={{
                 width: "250px",
-                height: "600px",
+                height: "250px",
                 float: "right"
               }}
               format=""
