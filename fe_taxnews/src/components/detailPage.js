@@ -209,8 +209,8 @@ class DetailPage extends Component {
                         style={{
                           width : "250px"
                         }}
-                        format="fluid"
-                        responsive="true"
+                        // format="fluid"
+                        // responsive="true"
                       />
 
                       <div

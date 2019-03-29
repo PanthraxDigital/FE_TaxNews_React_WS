@@ -100,8 +100,8 @@ class Sidebar extends Component {
               marginTop: "10px"
             }}
             layout="in-article"
-            format="fluid"
-            responsive="true"
+            // format="fluid"
+            // responsive="true"
           />
           <br />
 

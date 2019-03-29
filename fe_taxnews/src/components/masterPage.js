@@ -66,8 +66,8 @@ class MasterPage extends Component {
                           style={{
                             width : "250px"
                           }}
-                          format="fluid"
-                          responsive="true"
+                          // format="fluid"
+                          // responsive="true"
                           key={index1}
                         />
                         <br />
