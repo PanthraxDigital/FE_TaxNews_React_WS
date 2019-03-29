@@ -7,19 +7,25 @@ import axios from "axios";
 import { URL_GROUP_JOIN } from "../networkUtility";
 import { showAds1 } from "../bitvertiser/ads1";
 import AdSense from "react-adsense";
+// import { StickyContainer, Sticky } from "react-sticky";
+import Sticky from "react-stickynode";
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groupJoinList: []
+      groupJoinList: [],
+      scrollingLock: false
     };
     this.addNewSubscriber = this.addNewSubscriber.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   addNewSubscriber(e) {}
 
   componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+
     // show bitvertiser ads-1
     // (function(d) {
     //   var params = {
@@ -61,6 +67,24 @@ class Sidebar extends Component {
       .catch(error => {
         console.log("error " + error);
       });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll() {
+    if (window.scrollY > 500) {
+      console.log("should lock");
+      this.setState({
+        scrollingLock: true
+      });
+    } else if (window.scrollY < 500) {
+      console.log("not locked");
+      this.setState({
+        scrollingLock: false
+      });
+    }
   }
 
   render() {
@@ -170,18 +194,31 @@ class Sidebar extends Component {
           </table>
           {/* <div id="ntv_1986077" /> */}
 
-          <AdSense.Google
-            client="ca-pub-4652165289391769"
-            slot="5438143602"
+          <Sticky enabled={true} top={50} bottomBoundary={1200}>
+            <AdSense.Google
+              client="ca-pub-4652165289391769"
+              slot="5438143602"
+              style={{
+                width: "250px",
+                height: "600px",
+                float: "right"
+              }}
+              format=""
+            />
+          </Sticky>
+          {/* <div
             style={{
-              width: "250px",
-              height: "600px",
-              float: "right",
               background: "red",
-              position: "fixed"
+              right: "0",
+              width: "100%",
+              height: "100%",
+              float: "right",
+              zIndex: 9999,
+              position: this.state.scrollingLock ? "fixed" : "relative"
             }}
-            format=""
-          />
+          >
+            <span style={{ color: "white" }}> My Content </span>
+          </div> */}
         </div>
       </React.Fragment>
     );
@@ -191,45 +228,15 @@ class Sidebar extends Component {
 export default Sidebar;
 
 {
-  /* <table className="mediaGroup">
-          <tbody>
-            <tr>
-              <td className="mediaGroupIcon">
-                <WhatsappIcon size={50} round />{" "}
-              </td>
-              <td className="mediaGroupText">
-                {" "}
-                <a href="">Join WhatsApp Group</a>
-              </td>
-            </tr>
-            <tr>
-              <td className="mediaGroupIcon">
-                <TelegramIcon size={50} round />{" "}
-              </td>
-              <td className="mediaGroupText">
-                <a href="">Join Telegram Channel</a>
-              </td>
-            </tr>
-          </tbody>
-        </table> */
-}
-
-{
-  /* <tr>
-<td className="mediaGroupIcon">
-  <WhatsappIcon size={50} round />{" "}
-</td>
-<td className="mediaGroupText">
-  {" "}
-  <a href="">Join WhatsApp Group</a>
-</td>
-</tr>
-<tr>
-<td className="mediaGroupIcon">
-  <TelegramIcon size={50} round />{" "}
-</td>
-<td className="mediaGroupText">
-  <a href="">Join Telegram Channel</a>
-</td>
-</tr> */
+  /* <AdSense.Google
+                  client="ca-pub-4652165289391769"
+                  slot="5438143602"
+                  style={{
+                    width: "250px",
+                    height: "600px",
+                    float: "right",
+                    background: "red"
+                  }}
+                  format=""
+                /> */
 }

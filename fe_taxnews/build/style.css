@@ -534,7 +534,6 @@ h5.breaking {
   }
 }
 @media (max-width: 480px) {
-  
   .contentScroll {
     overflow: auto;
   }
@@ -3273,4 +3272,13 @@ a.bull1 {
 
 .mediaGroupText a {
   color: darkslategrey;
+}
+div.sticky {
+  /* position: -webkit-sticky; */
+  position: fixed;
+  top: 10;
+  right : 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4caf50;
 }
