@@ -93,64 +93,65 @@ class body extends Component {
                   {this.state.homeData.map(function(data, index) {
                     let index2 = index + 1;
                     return (
-                      <div key={index}>
-                        <div className="main-title-head">
-                          <h3>{getArticleTitle(index + 1)}</h3>
-                          <Link to={`${getArticleURL(index + 1)}`}>More +</Link>
-                          <div className="clearfix" />
-                        </div>
-                        <div>
-                          {data.map(function(dataResult, index_) {
-                            if (index_ != 3) {
+                      <React.Fragment>
+                        <div key={index}>
+                          <div className="main-title-head">
+                            <h3>{getArticleTitle(index + 1)}</h3>
+                            <Link to={`${getArticleURL(index + 1)}`}>
+                              More +
+                            </Link>
+                            <div className="clearfix" />
+                          </div>
+                          <div>
+                            {data.map(function(dataResult, index_) {
                               return (
-                                <div className="world-news-grid" key={index_}>
-                                  <img
-                                    src={
-                                      dataResult.hasOwnProperty("uploadImage")
-                                        ? dataResult.uploadImage.url
-                                        : dataResult.imageLink != null
-                                        ? dataResult.imageLink
-                                        : ""
-                                    }
-                                  />
-                                  <Link
-                                    style={{ color: "black" }}
-                                    to={`${getArticleURL(index + 1)}/${
-                                      dataResult._id
-                                    }`}
-                                  >
-                                    {dataResult.title}
-                                  </Link>
-                                  <p>
-                                    {String(dataResult.subTitle).substring(
-                                      0,
-                                      200
-                                    ) + " ..."}
-                                  </p>
-                                  <Link
-                                    to={`${getArticleURL(index + 1)}/${
-                                      dataResult._id
-                                    }`}
-                                  >
-                                    Read More
-                                  </Link>
-                                </div>
+                                <React.Fragment>
+                                  <div className="world-news-grid" key={index_}>
+                                    <img
+                                      src={
+                                        dataResult.hasOwnProperty("uploadImage")
+                                          ? dataResult.uploadImage.url
+                                          : dataResult.imageLink != null
+                                          ? dataResult.imageLink
+                                          : ""
+                                      }
+                                    />
+                                    <Link
+                                      style={{ color: "black" }}
+                                      to={`${getArticleURL(index + 1)}/${
+                                        dataResult._id
+                                      }`}
+                                    >
+                                      {dataResult.title}
+                                    </Link>
+                                    <p>
+                                      {String(dataResult.subTitle).substring(
+                                        0,
+                                        200
+                                      ) + " ..."}
+                                    </p>
+                                    <Link
+                                      to={`${getArticleURL(index + 1)}/${
+                                        dataResult._id
+                                      }`}
+                                    >
+                                      Read More
+                                    </Link>
+                                  </div>
+                                </React.Fragment>
                               );
-                            } else {
-                              return (
-                                <AdSense.Google
-                                  client="ca-pub-4652165289391769"
-                                  slot="4114300139"
-                                  layout="in-article"
-                                  format="fluid"
-                                  responsive="true"
-                                />
-                              );
-                            }
-                          }, this)}
-                          <div className="clearfix" />
+                            }, this)}
+                            <div className="clearfix" />
+                          </div>
                         </div>
-                      </div>
+                        <AdSense.Google
+                          client="ca-pub-4652165289391769"
+                          slot="4114300139"
+                          layout="in-article"
+                          format="fluid"
+                          responsive="true"
+                        />
+                      </React.Fragment>
                     );
                   })}
                 </div>
