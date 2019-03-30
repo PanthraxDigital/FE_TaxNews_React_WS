@@ -144,6 +144,7 @@ class body extends Component {
                             <div className="clearfix" />
                           </div>
                         </div>
+                        <br />
                         <AdSense.Google
                           client="ca-pub-4652165289391769"
                           slot="4114300139"
