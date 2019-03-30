@@ -202,13 +202,13 @@ class DetailPage extends Component {
                     </div>
                     <br />
                     <div>
-                      {/* <AdSense.Google
+                      <AdSense.Google
                         client="ca-pub-4652165289391769"
                         slot="4114300139"
                         layout="in-article"
                         format="fluid"
                         responsive="true"
-                      /> */}
+                      />
 
                       <div
                         className="mdFormat"
@@ -258,15 +258,17 @@ class DetailPage extends Component {
                     </div>
                   )}
                 </div>
+                <AdSense.Google
+                  client="ca-pub-4652165289391769"
+                  slot="7185451496"
+                  format=""
+                  responsive="true"
+                />
                 <FBComment
                   pathUrl={this.props.location.pathname}
                   style={{ windowWidth: "100%" }}
                 />
               </div>
-              {/* <AdSense.Google
-                client="ca-pub-4652165289391769"
-                slot="4114300139"
-              /> */}
             </React.Fragment>
           );
         } else {

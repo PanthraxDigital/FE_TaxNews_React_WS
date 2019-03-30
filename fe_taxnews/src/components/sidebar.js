@@ -96,11 +96,13 @@ class Sidebar extends Component {
               client="ca-pub-4652165289391769"
               slot="4114300139"
               style={{
-                width: "250px",
-                height: "200px",
-                marginTop: "10px",
-                float: "right"
+                width: 250,
+                height: 250,
+                float: "left",
+                marginTop: "1em"
               }}
+              format=""
+              responsive="true"
             />
           </div>
           <br />
@@ -200,10 +202,14 @@ class Sidebar extends Component {
             client="ca-pub-4652165289391769"
             slot="4114300139"
             style={{
-              width: "250px",
-              height: "250px",
-              float: "right"
+              width: 250,
+              height: 500,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
             }}
+            format=""
+            responsive="true"
           />
 
           {/* <div

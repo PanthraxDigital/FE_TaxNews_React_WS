@@ -1,4 +1,5 @@
 import React from "react";
+import AdSense from "react-adsense";
 class FBComment extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ class FBComment extends React.Component {
       <div
         className="fb-comments"
         data-colorscheme="dark"
-        data-width="80%"
+        data-width="100%"
         data-href={`http://www.taxknowledge.in${this.props.pathUrl}`}
         data-numposts="15"
       />
