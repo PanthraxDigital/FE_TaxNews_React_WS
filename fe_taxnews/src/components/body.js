@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { URL_SEARCH } from "../networkUtility";
 import { DateFormat, getCategoryId, getCategory } from "../commonUtility";
+import AdSense from "react-adsense";
 
 class body extends Component {
   constructor(props) {
@@ -100,40 +101,52 @@ class body extends Component {
                         </div>
                         <div>
                           {data.map(function(dataResult, index_) {
-                            return (
-                              <div className="world-news-grid" key={index_}>
-                                <img
-                                  src={
-                                    dataResult.hasOwnProperty("uploadImage")
-                                      ? dataResult.uploadImage.url
-                                      : dataResult.imageLink != null
-                                      ? dataResult.imageLink
-                                      : ""
-                                  }
+                            if (index_ != 3) {
+                              return (
+                                <div className="world-news-grid" key={index_}>
+                                  <img
+                                    src={
+                                      dataResult.hasOwnProperty("uploadImage")
+                                        ? dataResult.uploadImage.url
+                                        : dataResult.imageLink != null
+                                        ? dataResult.imageLink
+                                        : ""
+                                    }
+                                  />
+                                  <Link
+                                    style={{ color: "black" }}
+                                    to={`${getArticleURL(index + 1)}/${
+                                      dataResult._id
+                                    }`}
+                                  >
+                                    {dataResult.title}
+                                  </Link>
+                                  <p>
+                                    {String(dataResult.subTitle).substring(
+                                      0,
+                                      200
+                                    ) + " ..."}
+                                  </p>
+                                  <Link
+                                    to={`${getArticleURL(index + 1)}/${
+                                      dataResult._id
+                                    }`}
+                                  >
+                                    Read More
+                                  </Link>
+                                </div>
+                              );
+                            } else {
+                              return (
+                                <AdSense.Google
+                                  client="ca-pub-4652165289391769"
+                                  slot="4114300139"
+                                  layout="in-article"
+                                  format="fluid"
+                                  responsive="true"
                                 />
-                                <Link
-                                  style={{ color: "black" }}
-                                  to={`${getArticleURL(index + 1)}/${
-                                    dataResult._id
-                                  }`}
-                                >
-                                  {dataResult.title}
-                                </Link>
-                                <p>
-                                  {String(dataResult.subTitle).substring(
-                                    0,
-                                    200
-                                  ) + " ..."}
-                                </p>
-                                <Link
-                                  to={`${getArticleURL(index + 1)}/${
-                                    dataResult._id
-                                  }`}
-                                >
-                                  Read More
-                                </Link>
-                              </div>
-                            );
+                              );
+                            }
                           }, this)}
                           <div className="clearfix" />
                         </div>
