@@ -24,7 +24,7 @@ import {
   LinkedinIcon,
   PinterestIcon
 } from "react-share";
-
+var nextParaStart;
 class DetailPage extends Component {
   constructor(props) {
     super(props);
@@ -201,22 +201,39 @@ class DetailPage extends Component {
                       </div>
                     </div>
                     <br />
+                    <AdSense.Google
+                      client="ca-pub-4652165289391769"
+                      slot="4114300139"
+                      format=""
+                      responsive="true"
+                    />
                     <div>
-                      <AdSense.Google
-                        client="ca-pub-4652165289391769"
-                        slot="4114300139"
-                        layout="in-article"
-                        format="fluid"
-                        responsive="true"
-                      />
-
-                      <div
-                        className="mdFormat"
-                        style={{ fontSize: "1.1em", paddingTop: "50px" }}
-                        dangerouslySetInnerHTML={{
-                          __html: this.state.detailArticle[0].description
-                        }}
-                      />
+                      <div>
+                        <div
+                          className="mdFormat"
+                          style={{ fontSize: "1.1em", paddingTop: "50px" }}
+                          dangerouslySetInnerHTML={{
+                            __html: this.descTop(
+                              this.state.detailArticle[0].description
+                            )
+                          }}
+                        />
+                        <AdSense.Google
+                          client="ca-pub-4652165289391769"
+                          slot="4114300139"
+                          format=""
+                          responsive="true"
+                        />
+                        <div
+                          className="mdFormat"
+                          style={{ fontSize: "1.1em", paddingTop: "50px" }}
+                          dangerouslySetInnerHTML={{
+                            __html: this.descBottom(
+                              this.state.detailArticle[0].description
+                            )
+                          }}
+                        />
+                      </div>
                       <br />
                     </div>
                   </div>
@@ -261,8 +278,6 @@ class DetailPage extends Component {
                 <AdSense.Google
                   client="ca-pub-4652165289391769"
                   slot="7185451496"
-                  format=""
-                  responsive="true"
                 />
                 <FBComment
                   pathUrl={this.props.location.pathname}
@@ -286,6 +301,40 @@ class DetailPage extends Component {
       });
     });
   }
+
+  descTop(textDescription) {
+    let countTotalPara = textDescription.split("<p>");
+    let displayDesc = "";
+    let completeParaWithAds = "";
+    nextParaStart = Math.round(countTotalPara.length / 2);
+    for (let index = 0; index < nextParaStart; index++) {
+      completeParaWithAds += countTotalPara[index];
+    }
+    console.log("compelete para top " + completeParaWithAds);
+    return completeParaWithAds;
+  }
+
+  descBottom(textDescription) {
+    let countTotalPara = textDescription.split("<p>");
+    let displayDesc = "";
+    let completeParaWithAds = "";
+    nextParaStart = Math.round(countTotalPara.length / 2);
+    for (let index = nextParaStart; index < countTotalPara.length; index++) {
+      completeParaWithAds += countTotalPara[index];
+    }
+    console.log("compelete para bottom " + completeParaWithAds);
+    return completeParaWithAds;
+  }
 }
 
 export default DetailPage;
+
+{
+  /* <div
+  className="mdFormat"
+  style={{ fontSize: "1.1em", paddingTop: "50px" }}
+  dangerouslySetInnerHTML={{
+    __html: this.state.detailArticle[0].description
+  }}
+/> */
+}

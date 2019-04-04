@@ -26,7 +26,7 @@ class MainRoute extends Component {
     return (
       <Switch>
         <Route path="/from-desk" component={MasterPageRoute} key="0" />
-        <Route path="/top-stories" component={MasterPageRoute} key="1" />
+        <Route path="/top-stories" component={MasterPageRoute} key="1"  />
         <Route path="/income-tax" component={MasterPageRoute} key="2" />
         <Route path="/gst" component={MasterPageRoute} key="3" />
         <Route path="/vat-cst" component={MasterPageRoute} key="4" />
