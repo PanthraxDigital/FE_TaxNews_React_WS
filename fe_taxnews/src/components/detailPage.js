@@ -204,7 +204,8 @@ class DetailPage extends Component {
                     <AdSense.Google
                       client="ca-pub-4652165289391769"
                       slot="4114300139"
-                      format=""
+                      layout="in-article"
+                      format="fluid"
                       responsive="true"
                     />
                     <div>
@@ -221,7 +222,8 @@ class DetailPage extends Component {
                         <AdSense.Google
                           client="ca-pub-4652165289391769"
                           slot="4114300139"
-                          format=""
+                          layout="in-article"
+                          format="fluid"
                           responsive="true"
                         />
                         <div
