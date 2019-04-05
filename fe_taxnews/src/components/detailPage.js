@@ -212,7 +212,11 @@ class DetailPage extends Component {
                       <div>
                         <div
                           className="mdFormat"
-                          style={{ fontSize: "1.1em", paddingTop: "50px" }}
+                          style={{
+                            fontSize: "1.1em",
+                            paddingTop: "50px",
+                            textAlign: "justify"
+                          }}
                           dangerouslySetInnerHTML={{
                             __html: this.descTop(
                               this.state.detailArticle[0].description
@@ -228,7 +232,11 @@ class DetailPage extends Component {
                         />
                         <div
                           className="mdFormat"
-                          style={{ fontSize: "1.1em", paddingTop: "50px" }}
+                          style={{
+                            fontSize: "1.1em",
+                            paddingTop: "50px",
+                            textAlign: "justify"
+                          }}
                           dangerouslySetInnerHTML={{
                             __html: this.descBottom(
                               this.state.detailArticle[0].description
