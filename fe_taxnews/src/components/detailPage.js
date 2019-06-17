@@ -202,8 +202,8 @@ class DetailPage extends Component {
                     </div>
                     <br />
                     <AdSense.Google
-                      client="ca-pub-4652165289391769"
-                      slot="4114300139"
+                      client="ca-pub-4354135056247821"
+                      slot="5578767845"
                       layout="in-article"
                       format="fluid"
                       responsive="true"
@@ -224,8 +224,8 @@ class DetailPage extends Component {
                           }}
                         />
                         <AdSense.Google
-                          client="ca-pub-4652165289391769"
-                          slot="4114300139"
+                          client="ca-pub-4354135056247821"
+                          slot="5578767845"
                           layout="in-article"
                           format="fluid"
                           responsive="true"
@@ -286,8 +286,8 @@ class DetailPage extends Component {
                   )}
                 </div>
                 <AdSense.Google
-                  client="ca-pub-4652165289391769"
-                  slot="7185451496"
+                  client="ca-pub-4354135056247821"
+                  slot="5578767845"
                 />
                 <FBComment
                   pathUrl={this.props.location.pathname}

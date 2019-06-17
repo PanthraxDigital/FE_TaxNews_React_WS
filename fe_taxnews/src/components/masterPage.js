@@ -61,8 +61,8 @@ class MasterPage extends Component {
                       <React.Fragment>
                         <div>
                           <AdSense.Google
-                            client="ca-pub-4652165289391769"
-                            slot="4114300139"
+                            client="ca-pub-4354135056247821"
+                            slot="5578767845"
                             layout="in-article"
                             format="fluid"
                             responsive="true"

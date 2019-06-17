@@ -93,8 +93,8 @@ class Sidebar extends Component {
         <div className="col-md-3 side-bar">
           <div>
             <AdSense.Google
-              client="ca-pub-4652165289391769"
-              slot="4114300139"
+              client="ca-pub-4354135056247821"
+              slot="5578767845"
               style={{
                 width: 250,
                 height: 250,
@@ -199,8 +199,8 @@ class Sidebar extends Component {
           {/* <div id="ntv_1986077" /> */}
 
           <AdSense.Google
-            client="ca-pub-4652165289391769"
-            slot="4114300139"
+            client="ca-pub-4354135056247821"
+            slot="5578767845"
             style={{
               width: 250,
               height: 500,
@@ -232,17 +232,3 @@ class Sidebar extends Component {
 }
 
 export default Sidebar;
-
-{
-  /* <AdSense.Google
-                  client="ca-pub-4652165289391769"
-                  slot="5438143602"
-                  style={{
-                    width: "250px",
-                    height: "600px",
-                    float: "right",
-                    background: "red"
-                  }}
-                  format=""
-                /> */
-}
