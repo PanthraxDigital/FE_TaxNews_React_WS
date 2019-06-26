@@ -77,6 +77,15 @@ class MasterPage extends Component {
                   return displayArticleHtml(this.url, data, index1);
                 }, this)}
               </div>
+              <br />
+              <AdSense.Google
+                client="ca-pub-4354135056247821"
+                slot="5578767845"
+                layout="in-article"
+                format="fluid"
+                responsive="true"
+              />
+              <br />
               <div className="text-center">
                 <span className="loadmore" onClick={this.loadMoreArticle}>
                   LOAD MORE ARTICLE

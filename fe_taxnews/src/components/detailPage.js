@@ -285,10 +285,15 @@ class DetailPage extends Component {
                     </div>
                   )}
                 </div>
+                <br />
                 <AdSense.Google
                   client="ca-pub-4354135056247821"
                   slot="5578767845"
+                  layout="in-article"
+                  format="fluid"
+                  responsive="true"
                 />
+                <br />
                 <FBComment
                   pathUrl={this.props.location.pathname}
                   style={{ windowWidth: "100%" }}

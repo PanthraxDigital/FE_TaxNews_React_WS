@@ -9,6 +9,7 @@ import Disclaimer from "./disclaimer";
 import Contact from "./contact";
 import SiteDown from "./siteDown";
 import SearchResult from "./SearchResult";
+import ShowAdsTxt from "./showadstxt";
 
 //Navigation of all the Menu
 
@@ -26,7 +27,7 @@ class MainRoute extends Component {
     return (
       <Switch>
         <Route path="/from-desk" component={MasterPageRoute} key="0" />
-        <Route path="/top-stories" component={MasterPageRoute} key="1"  />
+        <Route path="/top-stories" component={MasterPageRoute} key="1" />
         <Route path="/income-tax" component={MasterPageRoute} key="2" />
         <Route path="/gst" component={MasterPageRoute} key="3" />
         <Route path="/vat-cst" component={MasterPageRoute} key="4" />
@@ -45,6 +46,7 @@ class MainRoute extends Component {
         <Route path="/contact" component={Contact} key="17" />
         <Route path="/generalTax" component={MasterPageRoute} key="18" />
         <Route path="/hidden-Tab" component={MasterPageRoute} key="19" />
+        <Route path="/ads.txt" component={ShowAdsTxt} key="20" />
         <Route
           exact={false}
           path="/search"
