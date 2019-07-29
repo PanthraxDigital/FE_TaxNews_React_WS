@@ -44,8 +44,7 @@ class Header extends Component {
                 client="ca-pub-4354135056247821"
                 slot="1483284168"
                 responsive='true'
-                format="fluid"
-                style={{ width: '728', height: '90'  }}
+                format="auto"
               />
         <div>
           <div className="header-left">
