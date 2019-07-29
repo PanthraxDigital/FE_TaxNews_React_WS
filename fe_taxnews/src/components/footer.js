@@ -52,8 +52,7 @@ class Footer extends Component {
           <AdSense.Google
                 client="ca-pub-4354135056247821"
                 slot="1483284168"
-                layout="display"
-                format="fluid"
+                
               />
         </div>
       </div>
