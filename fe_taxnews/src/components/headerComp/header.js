@@ -41,12 +41,12 @@ class Header extends Component {
     return (
       <div className="header">
         <AdSense.Google
-          client="ca-pub-4354135056247821"
-          slot="1483284168"
-          responsive="true"
-          format="auto"
-          style={{ width: 900, height: 90 }}
-        />
+                client="ca-pub-4354135056247821"
+                slot="1483284168"
+                responsive='true'
+                format="fluid"
+                style={{ display: 'block' }}
+              />
         <div>
           <div className="header-left">
             <div className="logo">
@@ -231,3 +231,4 @@ class Header extends Component {
 }
 
 export default Header;
+
