@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, NavItem, MenuItem } from "react-bootstrap";
 import axios from "axios";
 import { URL_SEARCH } from "../../networkUtility";
+import AdSense from "react-adsense";
 
 const headerText = {
   fontFamily: "serif",
@@ -39,6 +40,12 @@ class Header extends Component {
 
     return (
       <div className="header">
+        <AdSense.Google
+                client="ca-pub-4354135056247821"
+                slot="1483284168"
+                responsive='true'
+                layout='in-article'
+              />
         <div>
           <div className="header-left">
             <div className="logo">
