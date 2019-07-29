@@ -45,7 +45,7 @@ class Header extends Component {
                 slot="1483284168"
                 responsive='true'
                 format="fluid"
-                style={{ display: 'block' }}
+                style={{ width: '728px', height: '90px'  }}
               />
         <div>
           <div className="header-left">
