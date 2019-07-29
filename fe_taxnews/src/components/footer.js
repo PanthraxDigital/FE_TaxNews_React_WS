@@ -53,8 +53,7 @@ class Footer extends Component {
                 client="ca-pub-4354135056247821"
                 slot="1483284168"
                 layout="display"
-                format="auto"
-                responsive="true"
+                format="fluid"
               />
         </div>
       </div>
