@@ -53,6 +53,7 @@ class Footer extends Component {
                 client="ca-pub-4354135056247821"
                 slot="1483284168"
                 responsive='true'
+                layout='in-article'
               />
         </div>
       </div>
