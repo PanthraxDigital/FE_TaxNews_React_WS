@@ -44,7 +44,7 @@ class Header extends Component {
                 client="ca-pub-4354135056247821"
                 slot="1483284168"
                 responsive='true'
-                layout='in-article'
+                format="auto"
               />
         <div>
           <div className="header-left">
