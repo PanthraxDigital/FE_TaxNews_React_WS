@@ -40,12 +40,6 @@ class Header extends Component {
 
     return (
       <div className="header">
-        <AdSense.Google
-                client="ca-pub-4354135056247821"
-                slot="1483284168"
-                responsive='true'
-                format="auto"
-              />
         <div>
           <div className="header-left">
             <div className="logo">
