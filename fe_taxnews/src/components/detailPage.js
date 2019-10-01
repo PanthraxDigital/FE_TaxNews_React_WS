@@ -317,6 +317,7 @@ class DetailPage extends Component {
     });
   }
 
+
   descTop(textDescription) {
     let countTotalPara = textDescription.split("<p>");
     let displayDesc = "";
