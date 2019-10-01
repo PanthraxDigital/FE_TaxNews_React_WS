@@ -33,7 +33,7 @@ class SubscriberPopup extends React.Component {
           console.log("error " + error);
         });
     }
-    //setCookie("tx_popup", 1, 1);
+    setCookie("tx_popup", 1, 1);
   }
 
   render() {
@@ -47,7 +47,7 @@ class SubscriberPopup extends React.Component {
             >
               close
             </strong>
-            <div >
+            <div>
               <div
                 className="logo"
                 style={{
@@ -84,10 +84,10 @@ class SubscriberPopup extends React.Component {
                     switch (list.media) {
                       case "0":
                         return (
-                          <td key={index} style={{padding : "5px"}}>
+                          <td key={index} style={{ padding: "5px" }}>
                             <table>
                               <tr>
-                              <td style={{padding : "2px"}}>
+                                <td style={{ padding: "2px" }}>
                                   <WhatsappIcon size={20} round />{" "}
                                 </td>
                                 <td
@@ -106,10 +106,10 @@ class SubscriberPopup extends React.Component {
 
                       case "1":
                         return (
-                          <td key={index} style={{padding : "5px"}}>
+                          <td key={index} style={{ padding: "5px" }}>
                             <table>
                               <tr>
-                                <td style={{padding : "2px"}}>
+                                <td style={{ padding: "2px" }}>
                                   <TelegramIcon size={25} round />{" "}
                                 </td>
                                 <td
@@ -129,7 +129,7 @@ class SubscriberPopup extends React.Component {
                 : null}
             </tr>
           </table>
-          <NewsLetterSubscriber  />
+          <NewsLetterSubscriber />
           {/* <AdSense.Google
             client="ca-pub-4354135056247821"
             slot="7853251398"

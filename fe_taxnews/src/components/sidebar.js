@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { TelegramIcon, WhatsappIcon } from "react-share";
 import axios from "axios";
 import { URL_GROUP_JOIN } from "../networkUtility";
+import { URL_VIDEO_LIST } from "../networkUtility";
 import { showAds1 } from "../bitvertiser/ads1";
 import AdSense from "react-adsense";
 // import { StickyContainer, Sticky } from "react-sticky";
@@ -15,7 +16,7 @@ class Sidebar extends Component {
     super(props);
     this.state = {
       groupJoinList: [],
-      scrollingLock: false
+      videoList: []
     };
     this.addNewSubscriber = this.addNewSubscriber.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -26,11 +27,22 @@ class Sidebar extends Component {
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
 
+    // axios
+    //   .get(URL_GROUP_JOIN)
+    //   .then(_result => {
+    //     this.setState({
+    //       groupJoinList: _result.data.result
+    //     });
+    //   })
+    //   .catch(error => {
+    //     console.log("error " + error);
+    //   });
+
     axios
-      .get(URL_GROUP_JOIN)
+      .get(URL_VIDEO_LIST)
       .then(_result => {
         this.setState({
-          groupJoinList: _result.data.result
+          videoList: _result.data.result
         });
       })
       .catch(error => {
@@ -93,24 +105,39 @@ class Sidebar extends Component {
             </div>
           </div>
           <div className="clearfix" />
+          <div className="popular-news">
+            {this.state.videoList.map((vidData, index) => (
+              <div className="popular-grid" key={index}>
+                <p style={{ padding: "5px 0px" }}>{vidData.VideoTitle}</p>
+                <div
+                  class="video-container"
+                  dangerouslySetInnerHTML={{ __html: vidData.EmbedVideoLink }}
+                />
+              </div>
+            ))}
+          </div>
+          <a className="more" href="#">
+            More +
+          </a>
+
           <div className="popular">
             <div className="main-title-head">
               <h5>GENERAL</h5>
               <h4>TAXATION</h4>
               <div className="clearfix" />
             </div>
-            <div className="popular-news">
+            {/* <div className="popular-news">
               {this.props.sideBarResult.map((data, index) => (
                 <div className="popular-grid" key={index}>
                   <i>{DateFormat(data.articleDate)}</i>
                   <p>
                     {data.title}
                     <Link to={`/generalTax/${data._id}`}> Read More</Link>
-                    {/* <a href="#">Read More</a> */}
+                    
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
             <a className="more" href="#" style={{ display: "none" }}>
               More +
             </a>
