@@ -27,16 +27,16 @@ class Sidebar extends Component {
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
 
-    // axios
-    //   .get(URL_GROUP_JOIN)
-    //   .then(_result => {
-    //     this.setState({
-    //       groupJoinList: _result.data.result
-    //     });
-    //   })
-    //   .catch(error => {
-    //     console.log("error " + error);
-    //   });
+    axios
+      .get(URL_GROUP_JOIN)
+      .then(_result => {
+        this.setState({
+          groupJoinList: _result.data.result
+        });
+      })
+      .catch(error => {
+        console.log("error " + error);
+      });
 
     axios
       .get(URL_VIDEO_LIST)
