@@ -116,8 +116,8 @@ class Sidebar extends Component {
               </div>
             ))}
           </div>
-          <a className="more" href="#">
-            More +
+          <a className="more" href="https://www.youtube.com/channel/UC9BNHuiceHP6brh1P4aSY-A" target="_blank">
+            Watch More +
           </a>
 
           <div className="popular">
@@ -126,7 +126,7 @@ class Sidebar extends Component {
               <h4>TAXATION</h4>
               <div className="clearfix" />
             </div>
-            {/* <div className="popular-news">
+            <div className="popular-news">
               {this.props.sideBarResult.map((data, index) => (
                 <div className="popular-grid" key={index}>
                   <i>{DateFormat(data.articleDate)}</i>
@@ -137,7 +137,7 @@ class Sidebar extends Component {
                   </p>
                 </div>
               ))}
-            </div> */}
+            </div>
             <a className="more" href="#" style={{ display: "none" }}>
               More +
             </a>
