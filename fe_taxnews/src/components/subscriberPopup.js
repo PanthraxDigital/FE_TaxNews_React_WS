@@ -53,7 +53,8 @@ class SubscriberPopup extends React.Component {
                 style={{
                   fontFamily: "georgia",
                   textTransform: "uppercase",
-                  fontSize: "21px"
+                  fontSize: "21px",
+                  display : "none"
                 }}
               >
                 <h3>
@@ -77,7 +78,7 @@ class SubscriberPopup extends React.Component {
               </div>
             </div>
           </div>
-          <table class="table">
+          {/* <table class="table">
             <tr className="mediaGroup">
               {this.state.groupJoinList.length > 0
                 ? this.state.groupJoinList.map(function(list, index) {
@@ -129,14 +130,14 @@ class SubscriberPopup extends React.Component {
                 : null}
             </tr>
           </table>
-          <NewsLetterSubscriber />
-          {/* <AdSense.Google
+          <NewsLetterSubscriber /> */}
+          <AdSense.Google
             client="ca-pub-4354135056247821"
-            slot="7853251398"
+            slot="5578767845"
             layout="display"
             format="auto"
             responsive="true"
-          /> */}
+          />
         </div>
       </div>
     );
@@ -144,3 +145,4 @@ class SubscriberPopup extends React.Component {
 }
 
 export default SubscriberPopup;
+//slot="7853251398"

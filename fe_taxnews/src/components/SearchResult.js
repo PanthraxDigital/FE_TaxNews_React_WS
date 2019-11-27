@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { URL_SEARCH } from "../networkUtility";
 import * as Utility from "../commonUtility";
+//const queryString = require('query-string');
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -13,9 +14,16 @@ class SearchResult extends React.Component {
   }
 
   componentWillMount() {
-    this.searchUserResult();
+    var query = window.location.search.substring(1);
+    this.searchUserResult(query);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // only update chart if the data has changed
+    var query = window.location.search.substring(1);
+    this.searchUserResult(query);
+    
+  }
 
   render() {
     if (this.state.searchResultValue.length > 0) {
@@ -112,8 +120,9 @@ class SearchResult extends React.Component {
     }
   }
 
-  searchUserResult() {
+  searchUserResult(qtrValue) {
     this.searchValue = window.location.search.split("=")[1];
+    this.searchResult != "" ? this.searchResult : qtrValue;
     axios
       .get(`${URL_SEARCH}${this.searchValue}`)
       .then(_result => {
