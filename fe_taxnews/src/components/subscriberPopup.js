@@ -43,18 +43,17 @@ class SubscriberPopup extends React.Component {
           <div>
             <strong
               onClick={this.closePopup}
-              style={{ padding: "20px", cursor: "pointer", float: "right" }}
+              style={{ padding: "50px", cursor: "pointer", float: "right" }}
             >
               close
             </strong>
-            <div>
+            <div style={{display:"none"}}>
               <div
                 className="logo"
                 style={{
                   fontFamily: "georgia",
                   textTransform: "uppercase",
-                  fontSize: "21px",
-                  display : "none"
+                  fontSize: "21px"
                 }}
               >
                 <h3>
