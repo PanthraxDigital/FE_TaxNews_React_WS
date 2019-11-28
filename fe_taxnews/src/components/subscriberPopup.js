@@ -134,7 +134,7 @@ class SubscriberPopup extends React.Component {
           <div >
             <strong
               onClick={this.closePopup}
-              style={{ padding: "15px", cursor: "pointer", float: "right", background:"red",color:"white" }}
+              style={{ padding: "5px", cursor: "pointer", float: "right", background:"red",color:"white" }}
             >
               close
             </strong>
