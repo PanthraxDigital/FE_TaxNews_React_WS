@@ -41,12 +41,7 @@ class SubscriberPopup extends React.Component {
       <div className="popup">
         <div className="popup_inner">
           <div>
-            <strong
-              onClick={this.closePopup}
-              style={{ padding: "50px", cursor: "pointer", float: "right" }}
-            >
-              close
-            </strong>
+            
             <div style={{display:"none"}}>
               <div
                 className="logo"
@@ -137,6 +132,12 @@ class SubscriberPopup extends React.Component {
             format="auto"
             responsive="true"
           />
+          <strong
+              onClick={this.closePopup}
+              style={{ padding: "15px", cursor: "pointer", float: "right" }}
+            >
+              close
+            </strong>
         </div>
       </div>
     );
