@@ -21,19 +21,30 @@ class SubscriberPopup extends React.Component {
   componentDidMount() {
     // set the cookie value = 1, which will NOT show the popup untill session expire
 
-    if (getCookie("tx_popup") == 0) {
-      axios
-        .get(URL_GROUP_JOIN)
-        .then(_result => {
-          this.setState({
-            groupJoinList: _result.data.result
-          });
-        })
-        .catch(error => {
-          console.log("error " + error);
+    axios
+      .get(URL_GROUP_JOIN)
+      .then(_result => {
+        this.setState({
+          groupJoinList: _result.data.result
         });
-    }
-    setCookie("tx_popup", 1, 1);
+      })
+      .catch(error => {
+        console.log("error " + error);
+      });
+
+    // if (getCookie("tx_popup") == 0) {
+    //   axios
+    //     .get(URL_GROUP_JOIN)
+    //     .then(_result => {
+    //       this.setState({
+    //         groupJoinList: _result.data.result
+    //       });
+    //     })
+    //     .catch(error => {
+    //       console.log("error " + error);
+    //     });
+    // }
+    // setCookie("tx_popup", 1, 1);
   }
 
   render() {
@@ -41,6 +52,20 @@ class SubscriberPopup extends React.Component {
       <div className="popup">
         <div className="popup_inner">
           <div>
+            <div>
+              <strong
+                onClick={this.closePopup}
+                style={{
+                  padding: "0px",
+                  cursor: "pointer",
+                  float: "right",
+                  background: "white",
+                  color: "black"
+                }}
+              >
+                close
+              </strong>
+            </div>
             <div style={{ display: "none" }}>
               <div
                 className="logo"
@@ -71,7 +96,74 @@ class SubscriberPopup extends React.Component {
               </div>
             </div>
           </div>
-          {/* <table class="table">
+          <AdSense.Google
+            client="ca-pub-4354135056247821"
+            slot="5578767845"
+            layout="display"
+            format="auto"
+            responsive="true"
+          />{" "}
+          <br />
+          <table className="mediaGroup" style={{width:'100%'}}>
+            <tbody>
+              <tr>
+                {this.state.groupJoinList.length > 0
+                  ? this.state.groupJoinList.map(function(list, index) {
+                      switch (list.media) {
+                        case "0":
+                          return (
+                            <td key={index}>
+                              <table style={{align:'center'}}>
+                                <tr>
+                                  <td className="mediaGroupIcon">
+                                    <WhatsappIcon size={40} round />{" "}
+                                  </td>
+                                  <td className="mediaGroupText">
+                                    {" "}
+                                    <a href={list.link} target="_blank">
+                                      Join WhatsApp Group
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          );
+
+                        case "1":
+                          return (
+                            
+                            <td key={index}>
+                              <table style={{align:'center'}}>
+                                <tr>
+                                  <td className="mediaGroupIcon">
+                                    <TelegramIcon size={40} round />{" "}
+                                  </td>
+                                  <td className="mediaGroupText">
+                                    <a target="_blank" href={list.link}>
+                                      Join Telegram Channel
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          );
+                      }
+                    })
+                  : null}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default SubscriberPopup;
+//slot="7853251398"
+
+{
+  /* <table class="table">
             <tr className="mediaGroup">
               {this.state.groupJoinList.length > 0
                 ? this.state.groupJoinList.map(function(list, index) {
@@ -123,27 +215,5 @@ class SubscriberPopup extends React.Component {
                 : null}
             </tr>
           </table>
-          <NewsLetterSubscriber /> */}
-          <AdSense.Google
-            client="ca-pub-4354135056247821"
-            slot="5578767845"
-            layout="display"
-            format="auto"
-            responsive="true"
-          />
-          <div >
-            <strong
-              onClick={this.closePopup}
-              style={{ padding: "0px", cursor: "pointer", float: "right", background:"white",color:"black" }}
-            >
-              close
-            </strong>
-          </div>
-        </div>
-      </div>
-    );
-  }
+          <NewsLetterSubscriber /> */
 }
-
-export default SubscriberPopup;
-//slot="7853251398"

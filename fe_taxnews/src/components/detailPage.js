@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import FBComment from "./fbComment";
 import { Helmet } from "react-helmet";
 import AdSense from "react-adsense";
+import SubscriberPopup from "./subscriberPopup";
+
 import {
   FacebookShareButton,
   GooglePlusShareButton,
@@ -42,8 +44,21 @@ class DetailPage extends Component {
     this.state = {
       isLoading: true,
       detailArticle: [],
-      sharebleUrl: shareUrl
-    };
+      sharebleUrl: shareUrl,
+      loadSubscriberPopup: false,
+    };    
+
+    setTimeout(()=> 
+    this.setState({
+      loadSubscriberPopup: true
+    })
+    ,40000)
+  }
+
+  closeSubscriberPopup(e) {
+    this.setState({
+      loadSubscriberPopup: false
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -299,6 +314,13 @@ class DetailPage extends Component {
                   style={{ windowWidth: "100%" }}
                 />
               </div>
+              {this.state.loadSubscriberPopup ? (
+            <SubscriberPopup
+              closeSubscriberPopup={this.closeSubscriberPopup.bind(this)}
+            />
+          ) : (
+            ""
+          )}
             </React.Fragment>
           );
         } else {
@@ -326,7 +348,6 @@ class DetailPage extends Component {
     for (let index = 0; index < nextParaStart; index++) {
       completeParaWithAds += countTotalPara[index];
     }
-    console.log("compelete para top " + completeParaWithAds);
     return completeParaWithAds;
   }
 
@@ -338,7 +359,6 @@ class DetailPage extends Component {
     for (let index = nextParaStart; index < countTotalPara.length; index++) {
       completeParaWithAds += countTotalPara[index];
     }
-    console.log("compelete para bottom " + completeParaWithAds);
     return completeParaWithAds;
   }
 }

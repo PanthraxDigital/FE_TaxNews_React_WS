@@ -145,13 +145,16 @@ class body extends Component {
                           </div>
                         </div>
                         <br />
-                        <AdSense.Google
+                        
+                        {/* <AdSense.Google
                           client="ca-pub-4354135056247821"
-                          slot="5578767845"
+                          slot="1483284168"
+                          style={{ display: 'block' }}
                           layout="in-article"
                           format="fluid"
                           responsive="true"
-                        />
+                        /> */}
+                        
                       </React.Fragment>
                     );
                   })}

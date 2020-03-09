@@ -6,10 +6,8 @@ import { TelegramIcon, WhatsappIcon } from "react-share";
 import axios from "axios";
 import { URL_GROUP_JOIN } from "../networkUtility";
 import { URL_VIDEO_LIST } from "../networkUtility";
-import { showAds1 } from "../bitvertiser/ads1";
 import AdSense from "react-adsense";
 // import { StickyContainer, Sticky } from "react-sticky";
-import Sticky from "react-stickynode";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -116,7 +114,11 @@ class Sidebar extends Component {
               </div>
             ))}
           </div>
-          <a className="more" href="https://www.youtube.com/channel/UC9BNHuiceHP6brh1P4aSY-A" target="_blank">
+          <a
+            className="more"
+            href="https://www.youtube.com/channel/UC9BNHuiceHP6brh1P4aSY-A"
+            target="_blank"
+          >
             Watch More +
           </a>
 
@@ -133,7 +135,6 @@ class Sidebar extends Component {
                   <p>
                     {data.title}
                     <Link to={`/generalTax/${data._id}`}> Read More</Link>
-                    
                   </p>
                 </div>
               ))}
@@ -151,7 +152,7 @@ class Sidebar extends Component {
               </a>
             </div>
           </div>
-          <div className="clearfix" />
+          <div className="clearfix" /><br/>
 
           <h4 style={{ textAlign: "center" }}>For Latest Updates</h4>
           <table className="mediaGroup">
@@ -193,18 +194,13 @@ class Sidebar extends Component {
             </tbody>
           </table>
           {/* <div id="ntv_1986077" /> */}
-
+          <br />
+          <br />
           <AdSense.Google
             client="ca-pub-4354135056247821"
             slot="5578767845"
-            style={{
-              width: 250,
-              height: 500,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center"
-            }}
-            format=""
+            style={{ display: "block" }}
+            format="auto"
             responsive="true"
           />
 
