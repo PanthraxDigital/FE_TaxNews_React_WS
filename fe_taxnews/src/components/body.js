@@ -100,12 +100,6 @@ class body extends Component {
                             slot="1483284168"
                             format="auto"
                             responsive="true"
-                            style={{
-                              width: 750,
-                              height: 50,
-                              float: "left",
-                              margin: "1em"
-                            }}
                           />
                           <div className="main-title-head">
                             <h3>{getArticleTitle(index + 1)}</h3>
