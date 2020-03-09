@@ -53,7 +53,7 @@ class Footer extends Component {
             </p>
           </div>
           <div>
-            <div id="adBottom">
+            <div id="adBottom" style={{height:'50px', display:'none'}}>
               <br />
               <div>
                 <strong
@@ -69,12 +69,12 @@ class Footer extends Component {
                   close
                 </strong>
               </div>
-              <AdSense.Google
+              {/* <AdSense.Google
                 client="ca-pub-4354135056247821"
                 slot="1483284168"
                 format="auto"
                 responsive="true"
-              />
+              /> */}
             </div>
           </div>
         </div>

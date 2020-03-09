@@ -196,13 +196,13 @@ class Sidebar extends Component {
           {/* <div id="ntv_1986077" /> */}
           <br />
           <br />
-          <AdSense.Google
+          {/* <AdSense.Google
             client="ca-pub-4354135056247821"
             slot="5578767845"
             style={{ display: "block" }}
             format="auto"
             responsive="true"
-          />
+          /> */}
 
           {/* <div
             style={{

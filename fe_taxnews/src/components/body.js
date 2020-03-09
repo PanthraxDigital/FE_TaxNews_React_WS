@@ -95,6 +95,16 @@ class body extends Component {
                     return (
                       <React.Fragment>
                         <div key={index}>
+                          <AdSense.Google
+                            client="ca-pub-4354135056247821"
+                            slot="1483284168"
+                            format="auto"
+                            responsive="true"
+                            style={{
+                              height : "50px",
+                              margin : "10px"
+                            }}
+                          />
                           <div className="main-title-head">
                             <h3>{getArticleTitle(index + 1)}</h3>
                             <Link to={`${getArticleURL(index + 1)}`}>
@@ -145,16 +155,6 @@ class body extends Component {
                           </div>
                         </div>
                         <br />
-                        
-                        {/* <AdSense.Google
-                          client="ca-pub-4354135056247821"
-                          slot="1483284168"
-                          style={{ display: 'block' }}
-                          layout="in-article"
-                          format="fluid"
-                          responsive="true"
-                        /> */}
-                        
                       </React.Fragment>
                     );
                   })}
@@ -180,7 +180,7 @@ class body extends Component {
                   <img src="https://via.placeholder.com/230x130" />
                 </div>
               </div>
-              <div className="clearfix" />
+              {/* <div className="clearfix" /> */}
             </div>
           </div>
         </React.Fragment>
