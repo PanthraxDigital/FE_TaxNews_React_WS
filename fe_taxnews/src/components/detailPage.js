@@ -53,6 +53,7 @@ class DetailPage extends Component {
       loadSubscriberPopup: true
     })
     ,40000)
+    window.scrollTo(0, 0);
   }
 
   closeSubscriberPopup(e) {
@@ -62,22 +63,25 @@ class DetailPage extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    
     if (
       nextProps.match.params.articleId !== this.props.match.params.articleId
     ) {
       this.dataURL = `${URL}${getCategoryId(this.categoryId)}/${
         nextProps.match.params.articleId
       }`;
+    
       this.fetchArticleDetail();
     }
   }
 
   componentDidMount() {
+    
     this.fetchArticleDetail();
   }
 
   render() {
-    window.scrollTo(0, 0);
+    
     let shareUrl = `http://www.taxknowledge.in${this.props.location.pathname}`;
     {
       if (this.state.isLoading) {
