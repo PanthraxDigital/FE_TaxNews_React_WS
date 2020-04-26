@@ -52,7 +52,7 @@ class body extends Component {
     } else {
       return (
         <React.Fragment>
-          <div className="total-news">
+          <div className="total-news row">
             <div className="live-market">
               <h3>
                 <span>From</span> The Desk
